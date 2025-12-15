@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathSix Web Designs | Custom Managed Websites</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            500: '#3b82f6', // Royal Blue
+                            600: '#2563eb',
+                            900: '#1e3a8a',
+                        },
+                        dark: {
+                            800: '#1e293b', // Slate 800 (Cards)
+                            900: '#0f172a', // Slate 900 (Secondary BG)
+                            950: '#020617', // Slate 950 (Main BG)
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Glass effect for Nav */
+        .glass-nav {
+            background: rgba(2, 6, 23, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-300 antialiased bg-dark-950 selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass-nav transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- LOGO: Use a white version of your logo here -->
+            <a href="https://pathsixsolutions.com" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-brand-600 rounded flex items-center justify-center text-white font-bold shadow-lg shadow-brand-600/20 group-hover:scale-105 transition-transform">P6</div>
+                <span class="text-xl font-bold text-white tracking-tight">PathSix <span class="text-brand-500">Designs</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#how-it-works" class="text-sm font-medium text-slate-300 hover:text-white transition">How It Works</a>
+                <a href="#pricing" class="text-sm font-medium text-slate-300 hover:text-white transition">Pricing</a>
+                <a href="#portfolio" class="text-sm font-medium text-slate-300 hover:text-white transition">Portfolio</a>
+                <a href="#contact" class="bg-brand-600 hover:bg-brand-500 text-white px-5 py-2.5 rounded-full text-sm font-bold transition shadow-lg shadow-brand-600/20">
+                    Get Free Preview
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center bg-dark-950 overflow-hidden pt-20 lg:pt-0">
+        
+        <!-- THE IMAGE BACKGROUND (Portfolio Collage) -->
+        <div class="absolute inset-y-0 right-0 w-full lg:w-[60%] h-full opacity-40 lg:opacity-100 mix-blend-lighten pointer-events-none">
+            <!-- 
+               REPLACE THIS IMAGE: 
+               Find an image of "Floating UI Screens" or "Website Mockups on Laptop". 
+               Something technical and clean.
+            -->
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" alt="Digital Workspace" class="w-full h-full object-cover object-left lg:object-center grayscale hover:grayscale-0 transition-all duration-1000">
+            
+            <!-- THE FADE: Blends dark background into image -->
+            <div class="absolute inset-0 bg-gradient-to-r from-dark-950 via-dark-950/90 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/50 to-transparent lg:hidden"></div>
+        </div>
+
+        <!-- CONTENT CONTAINER -->
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-2xl">
+                
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-900/30 border border-brand-500/30 text-brand-500 text-xs font-bold uppercase tracking-widest mb-8">
+                    Managed Web Services
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="text-5xl lg:text-7xl font-bold text-white leading-[1.1] mb-8">
+                    Custom Websites <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-indigo-400">
+                        You Can Afford.
+                    </span>
+                </h1>
+
+                <!-- Subtext -->
+                <p class="text-lg md:text-xl text-slate-400 mb-12 leading-relaxed max-w-lg border-l-4 border-brand-600 pl-6">
+                    We build, host, and maintain your professional website for a low monthly fee. See your site before you pay a cent.
+                </p>
+
+                <!-- Buttons -->
+                <div class="flex flex-col sm:flex-row gap-6 pt-4">
+                    <button class="group relative px-8 py-4 bg-brand-600 rounded-xl leading-none flex items-center divide-x divide-brand-500 overflow-hidden shadow-xl shadow-brand-600/20 hover:shadow-brand-600/40 transition-all hover:-translate-y-1">
+                        <span class="pr-6 text-white font-bold text-lg">Request Preview</span>
+                        <span class="pl-6 text-blue-200 group-hover:text-white transition">
+                            <svg class="w-6 h-6 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </button>
+                    
+                    <button class="px-8 py-4 rounded-xl text-slate-300 font-bold text-lg hover:text-white hover:bg-white/5 transition-all border border-slate-700 hover:border-white/20 flex items-center gap-3">
+                        <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        How it works
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Value Proposition (No Cartoon Guy) -->
+    <section id="how-it-works" class="py-24 bg-dark-900 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                
+                <!-- IMAGE: Abstract Tech/Server Representation -->
+                <div class="order-2 md:order-1 relative">
+                    <div class="absolute inset-0 bg-brand-600 blur-[100px] opacity-20 rounded-full"></div>
+                    <div class="relative bg-dark-800 border border-slate-700 rounded-2xl p-8 shadow-2xl">
+                        <!-- Abstract "Code/Server" Visualization -->
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="h-4 bg-slate-700 rounded w-3/4 animate-pulse"></div>
+                            <div class="h-4 bg-slate-700 rounded w-1/2 animate-pulse"></div>
+                            <div class="h-32 bg-slate-900 rounded border border-slate-700 p-4 mt-4">
+                                <div class="flex items-center justify-between text-xs text-slate-500 mb-2">
+                                    <span>Uptime</span>
+                                    <span class="text-green-500">99.99%</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-green-500 h-full w-full"></div>
+                                </div>
+                                <div class="mt-4 flex items-center justify-between text-xs text-slate-500">
+                                    <span>Security</span>
+                                    <span class="text-brand-500">SSL Active</span>
+                                </div>
+                            </div>
+                            <div class="absolute -right-6 -bottom-6 bg-brand-600 text-white px-6 py-3 rounded-xl shadow-lg font-bold">
+                                Managed Hosting
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Running a business is hard. <br><span class="text-brand-500">Your website shouldn't be.</span></h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-900/30 border border-brand-500/20 rounded-lg flex items-center justify-center text-brand-500">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Zero Upfront Cost</h3>
+                                <p class="mt-2 text-slate-400">Avoid big agency fees. We operate on a subscription model so you can keep your cash flow healthy.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-900/30 border border-brand-500/20 rounded-lg flex items-center justify-center text-brand-500">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Fully Managed</h3>
+                                <p class="mt-2 text-slate-400">Hosting, security, updates, and maintenance are all included. You run your business, we run your site.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / Features Grid -->
+    <section id="pricing" class="py-24 bg-dark-950">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Everything included. One monthly price.</h2>
+                <p class="text-lg text-slate-400">Stop paying for hosting, plugins, and developer hours separately.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-dark-800 p-8 rounded-2xl border border-slate-700 hover:border-brand-500 transition duration-300 hover:shadow-lg hover:shadow-brand-500/10">
+                    <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center text-green-500 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Custom Design</h3>
+                    <p class="text-slate-400">We don't use cookie-cutter templates. We design for your brand and your goals.</p>
+                </div>
+
+                <!-- Card 2 (Featured - Darker/Premium) -->
+                <div class="bg-gradient-to-b from-dark-800 to-dark-900 p-8 rounded-2xl shadow-2xl border border-brand-500 relative transform md:-translate-y-4">
+                    <div class="w-12 h-12 bg-brand-500/20 rounded-lg flex items-center justify-center text-brand-400 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Your Site</h3>
+                    <p class="text-slate-400 mb-6">Hosting, SSL security certificates, and domain management included.</p>
+                    <div class="text-3xl font-bold text-white"><span class="text-lg text-slate-500 font-normal">Starting at </span>$159<span class="text-lg text-slate-500 font-normal">/mo</span></div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-dark-800 p-8 rounded-2xl border border-slate-700 hover:border-brand-500 transition duration-300 hover:shadow-lg hover:shadow-brand-500/10">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center text-purple-500 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">SEO Optimized</h3>
+                    <p class="text-slate-400">Google Business Profile setup, local keyword optimization, and review management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-dark-900 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-white mb-16">Trusted by Local Businesses</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
+                <div class="bg-dark-800 p-8 rounded-2xl border border-slate-700 relative">
+                    <div class="text-4xl text-brand-900 absolute top-4 left-4">"</div>
+                    <p class="text-slate-300 italic relative z-10 mb-6">
+                        Working with Will was easy. He was much faster than we expected and had our new website up and running quickly. He is able to make updates within a day at the most.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <!-- Use logo here if available, otherwise text -->
+                        <div class="font-bold text-white">
+                            Melissa <br>
+                            <span class="text-sm text-brand-500 font-normal">Center for Social Success</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Client Logos Grid -->
+                <!-- Use white-versions or grayscale your logos so they look good on dark mode -->
+                <div class="grid grid-cols-2 gap-8 opacity-50">
+                   <!-- PLACEHOLDERS FOR LOGOS -->
+                   <div class="h-16 flex items-center justify-center border border-slate-700 rounded bg-dark-800 text-slate-500">Logo 1</div>
+                   <div class="h-16 flex items-center justify-center border border-slate-700 rounded bg-dark-800 text-slate-500">Logo 2</div>
+                   <div class="h-16 flex items-center justify-center border border-slate-700 rounded bg-dark-800 text-slate-500">Logo 3</div>
+                   <div class="h-16 flex items-center justify-center border border-slate-700 rounded bg-dark-800 text-slate-500">Logo 4</div>
+                </div>
+            </div>
+            
+            <!-- DesignRush Banner Spot -->
+            <div class="mt-20 flex justify-center">
+                <div class="bg-white/5 p-4 rounded-xl border border-white/10 backdrop-blur-sm">
+                    <!-- IMAGE: Replace with your DesignRush Banner -->
+                    <img src="images/verified_agencyv1.png" alt="Design Rush Verified" class="h-20 w-auto opacity-80 hover:opacity-100 transition">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-24 bg-dark-950 relative overflow-hidden border-t border-slate-800">
+        <!-- Abstract background shapes -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-brand-600 rounded-full mix-blend-multiply filter blur-[100px] opacity-20 animate-blob"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-indigo-600 rounded-full mix-blend-multiply filter blur-[100px] opacity-20 animate-blob animation-delay-2000"></div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">See your future website.</h2>
+            <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
+                We'll build a custom preview of your homepage in 3-5 days. If you don't love it, you don't pay.
+            </p>
+            <button class="bg-brand-600 hover:bg-brand-500 text-white text-xl font-bold py-4 px-10 rounded-xl shadow-lg shadow-brand-900/50 transition transform hover:-translate-y-1">
+                Get Your Free Preview
+            </button>
+            <p class="mt-6 text-sm text-slate-500">Limited availability for new clients.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 border-t border-slate-900 text-slate-500 py-12">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <span class="font-bold text-slate-300 text-xl">PathSix</span>
+                <p class="text-sm mt-2">&copy; 2025 PathSix Solutions LLC. All rights reserved.</p>
+            </div>
+            <div class="flex gap-6 text-sm">
+                <a href="https://pathsixsolutions.com" class="hover:text-white transition">← Back to Main Hub</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

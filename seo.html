@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathSix Growth | Advanced SEO & Local Search</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            400: '#34d399',
+                            500: '#10b981', // Emerald 500 (Growth Green)
+                            600: '#059669',
+                            900: '#064e3b',
+                        },
+                        dark: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px)",
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-nav {
+            background: rgba(2, 6, 23, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .grid-bg {
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-300 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="https://pathsixsolutions.com" class="flex items-center gap-2 group">
+                    <span class="text-xl font-bold text-white tracking-tight">PathSix <span class="text-brand-500">Growth</span></span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#map-pack" class="text-sm font-medium hover:text-brand-400 transition">The Map Pack</a>
+                    <a href="#strategy" class="text-sm font-medium hover:text-brand-400 transition">Strategy</a>
+                    <a href="#pricing" class="text-sm font-medium hover:text-brand-400 transition">Pricing</a>
+                    <a href="https://pathsixsolutions.com" class="text-slate-500 hover:text-white text-sm">← Main Hub</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Effect -->
+        <div class="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-900/20 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-900/30 border border-brand-500/30 text-brand-400 text-xs font-bold uppercase tracking-widest mb-6">
+                        Traffic & Authority
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+                        Don't just launch. <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-green-300">Dominate Local.</span>
+                    </h1>
+                    <p class="text-xl text-slate-400 mb-8 font-light leading-relaxed">
+                        A beautiful website is the engine. SEO is the fuel. <br>
+                        We turn your new site into a lead-generating machine by capturing the top spots on Google Maps.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#pricing" class="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-lg transition-all shadow-lg shadow-brand-500/20 text-center">
+                            View Growth Plans
+                        </a>
+                        <a href="#map-pack" class="px-8 py-4 bg-transparent border border-slate-700 hover:border-brand-500 hover:text-white text-slate-300 font-medium rounded-lg transition-all text-center">
+                            What is the Map Pack?
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic: The "Rank 1" visual -->
+                <div class="lg:w-1/2 relative">
+                    <div class="relative bg-dark-900 border border-slate-700 rounded-2xl p-6 shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500">
+                        <!-- Mockup of Google Search Result -->
+                        <div class="mb-4 flex items-center gap-4 bg-dark-950 p-3 rounded-lg border border-slate-800">
+                            <div class="w-6 h-6 rounded-full border-2 border-brand-500"></div>
+                            <div class="h-2 w-32 bg-slate-700 rounded"></div>
+                        </div>
+                        <!-- The Map Visual -->
+                        <div class="bg-slate-800 rounded-lg h-64 w-full relative overflow-hidden mb-4 opacity-80">
+                            <!-- Placeholder for Map Image -->
+                            <!-- Use an image of a Google Map with pins here -->
+                            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2674&auto=format&fit=crop" class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+                            
+                            <!-- Floating Pin 1 -->
+                            <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-500 text-white px-4 py-2 rounded-lg shadow-xl font-bold z-10 animate-bounce">
+                                #1 Your Business
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="h-2 w-3/4 bg-slate-700 rounded"></div>
+                            <div class="h-2 w-1/2 bg-slate-700 rounded"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem / Difference -->
+    <section id="map-pack" class="py-24 bg-dark-900 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">"Wait, isn't SEO included in my website?"</h2>
+                <p class="text-slate-400 max-w-3xl mx-auto text-lg">
+                    Yes and No. We build your website with perfect <strong>Technical SEO</strong> (speed, structure, tags). That's like building a race car. <br><br>
+                    <strong>Advanced SEO</strong> is the pit crew, the fuel, and the driver. It's the ongoing work required to beat the competitors who are also driving race cars.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Included Column -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-slate-800 opacity-70">
+                    <h3 class="text-xl font-bold text-slate-400 mb-6 border-b border-slate-800 pb-4">Included in Web Design</h3>
+                    <ul class="space-y-4 text-slate-500">
+                        <li class="flex items-center">✓ Fast Page Load Speeds</li>
+                        <li class="flex items-center">✓ Mobile Responsiveness</li>
+                        <li class="flex items-center">✓ Proper Meta Titles & Descriptions</li>
+                        <li class="flex items-center">✓ Schema Markup (Structured Data)</li>
+                        <li class="flex items-center">✓ Sitemap Submission</li>
+                    </ul>
+                </div>
+
+                <!-- Growth Column -->
+                <div class="bg-dark-800 p-8 rounded-2xl border border-brand-500 shadow-lg shadow-brand-500/10 relative">
+                    <div class="absolute -top-4 right-8 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded">THIS SERVICE</div>
+                    <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-700 pb-4">PathSix Growth Plan</h3>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex items-center"><span class="text-brand-500 mr-2 font-bold">➜</span> Monthly Blog/Content Writing</li>
+                        <li class="flex items-center"><span class="text-brand-500 mr-2 font-bold">➜</span> Google Map Pack Aggression</li>
+                        <li class="flex items-center"><span class="text-brand-500 mr-2 font-bold">➜</span> Review Generation Campaigns</li>
+                        <li class="flex items-center"><span class="text-brand-500 mr-2 font-bold">➜</span> Backlink Building (Authority)</li>
+                        <li class="flex items-center"><span class="text-brand-500 mr-2 font-bold">➜</span> Competitor Tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy Breakdown -->
+    <section id="strategy" class="py-24 bg-dark-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">How We Rank You</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="group p-6 rounded-xl bg-dark-900 border border-slate-800 hover:border-brand-500 transition-all">
+                    <div class="w-12 h-12 bg-brand-900/30 rounded-lg flex items-center justify-center text-brand-500 mb-4 text-2xl">📍</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Google Maps First</h3>
+                    <p class="text-slate-400 text-sm">
+                        Most local searches happen on mobile. We optimize your Google Business Profile (photos, posts, categories) to get you into the "Top 3 Pack."
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="group p-6 rounded-xl bg-dark-900 border border-slate-800 hover:border-brand-500 transition-all">
+                    <div class="w-12 h-12 bg-brand-900/30 rounded-lg flex items-center justify-center text-brand-500 mb-4 text-2xl">✍️</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Content That Ranks</h3>
+                    <p class="text-slate-400 text-sm">
+                        Google loves fresh content. We write localized blog posts and service pages (e.g., "Plumber in [City Name]") to catch specific search traffic.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="group p-6 rounded-xl bg-dark-900 border border-slate-800 hover:border-brand-500 transition-all">
+                    <div class="w-12 h-12 bg-brand-900/30 rounded-lg flex items-center justify-center text-brand-500 mb-4 text-2xl">⭐</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Reputation Engine</h3>
+                    <p class="text-slate-400 text-sm">
+                        Reviews are a ranking factor. We set up automated email/SMS campaigns to ask your happy clients for 5-star reviews on autopilot.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-dark-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Simple Monthly Growth</h2>
+                <p class="text-slate-400">No lock-in contracts. Cancel anytime.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:w-3/4 mx-auto gap-8">
+                
+                <!-- Plan 1: Local Booster -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-slate-700 flex flex-col hover:border-slate-500 transition-colors">
+                    <h3 class="text-xl font-bold text-white mb-2">Maps Booster</h3>
+                    <div class="text-4xl font-bold text-brand-500 mb-2">$299<span class="text-lg text-slate-500 font-normal">/mo</span></div>
+                    <p class="text-sm text-slate-400 mb-6 flex-grow">Perfect for local service businesses who just want to show up on the map.</p>
+                    
+                    <ul class="space-y-4 text-slate-300 mb-8 text-sm">
+                        <li class="flex items-center"><span class="text-brand-500 mr-2">✓</span> Google Business Profile Management</li>
+                        <li class="flex items-center"><span class="text-brand-500 mr-2">✓</span> Weekly "Google Posts" Updates</li>
+                        <li class="flex items-center"><span class="text-brand-500 mr-2">✓</span> Review Request System (SMS/Email)</li>
+                        <li class="flex items-center"><span class="text-brand-500 mr-2">✓</span> 10 Local Citations / Month</li>
+                        <li class="flex items-center"><span class="text-brand-500 mr-2">✓</span> Monthly Ranking Report</li>
+                    </ul>
+                    <a href="#contact" class="w-full py-3 border border-brand-500 text-brand-500 hover:bg-brand-500 hover:text-white rounded font-bold transition-colors text-center">Start Boosting</a>
+                </div>
+
+                <!-- Plan 2: Authority -->
+                <div class="bg-dark-800 p-8 rounded-2xl border-2 border-brand-500 shadow-xl shadow-brand-500/10 flex flex-col relative">
+                    <div class="absolute top-0 right-0 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">RECOMMENDED</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Total Domination</h3>
+                    <div class="text-4xl font-bold text-brand-500 mb-2">$799<span class="text-lg text-slate-500 font-normal">/mo</span></div>
+                    <p class="text-sm text-slate-400 mb-6 flex-grow">For businesses who want to expand their service area and crush competitors.</p>
+                    
+                    <ul class="space-y-4 text-white mb-8 text-sm font-medium">
+                        <li class="flex items-center"><span class="text-brand-400 mr-2">✓</span> <strong>Everything in Maps Booster</strong></li>
+                        <li class="flex items-center"><span class="text-brand-400 mr-2">✓</span> 2 SEO-Optimized Blog Posts / Month</li>
+                        <li class="flex items-center"><span class="text-brand-400 mr-2">✓</span> Advanced Competitor Spy Reports</li>
+                        <li class="flex items-center"><span class="text-brand-400 mr-2">✓</span> Backlink Outreach Campaign</li>
+                        <li class="flex items-center"><span class="text-brand-400 mr-2">✓</span> Dedicated Account Manager</li>
+                    </ul>
+                    <a href="#contact" class="w-full py-3 bg-brand-600 hover:bg-brand-500 text-white rounded font-bold transition-colors text-center">Get Domination Plan</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="contact" class="py-20 bg-dark-950 border-t border-slate-800 text-center">
+        <div class="max-w-2xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white mb-6">Ready to climb the ranks?</h2>
+            <p class="text-slate-400 mb-8">SEO isn't magic. It's consistency. Let us handle the grind while you handle the leads.</p>
+            <a href="mailto:growth@pathsixsolutions.com" class="inline-block bg-white text-dark-950 font-bold px-8 py-4 rounded-lg hover:bg-slate-200 transition-colors">Contact Growth Team</a>
+            
+            <div class="mt-16 pt-8 border-t border-slate-900 text-slate-600 text-sm">
+                &copy; 2025 PathSix Solutions LLC.
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

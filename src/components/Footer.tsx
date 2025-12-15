@@ -17,8 +17,8 @@ export default function Footer() {
             </p>
             <div className="space-y-2">
               <p className="text-slate-400">
-                <a href="mailto:hello@pathsixsolutions.com" className="hover:text-amber-500 transition-colors">
-                  hello@pathsixsolutions.com
+                <a href="mailto:support@pathsixsolutions.com" className="hover:text-amber-500 transition-colors">
+                  support@pathsixsolutions.com
                 </a>
               </p>
             </div>
@@ -29,18 +29,28 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4 text-white">Services</h4>
             <ul className="space-y-2">
               <li>
-                <a href="https://pathsixdesigns.com" className="text-slate-400 hover:text-amber-500 transition-colors">
-                  Web Design & SEO
+                <a href="/web-design" className="text-slate-400 hover:text-amber-500 transition-colors">
+                  Web Design
                 </a>
               </li>
               <li>
-                <a href="https://crm.pathsixsolutions.com" className="text-slate-400 hover:text-amber-500 transition-colors">
+                <a href="/seo" className="text-slate-400 hover:text-amber-500 transition-colors">
+                  SEO & Growth
+                </a>
+              </li>
+              <li>
+                <a href="/crm" className="text-slate-400 hover:text-amber-500 transition-colors">
                   Custom CRM
                 </a>
               </li>
               <li>
-                <a href="https://build.pathsixsolutions.com" className="text-slate-400 hover:text-amber-500 transition-colors">
+                <a href="/build" className="text-slate-400 hover:text-amber-500 transition-colors">
                   Custom Development
+                </a>
+              </li>
+              <li>
+                <a href="/vibe" className="text-slate-400 hover:text-amber-500 transition-colors">
+                  AI Deployment
                 </a>
               </li>
             </ul>

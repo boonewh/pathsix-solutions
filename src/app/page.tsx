@@ -122,7 +122,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <a href="https://pathsixdesigns.com" className="text-white border-b-2 border-amber-500 pb-1 hover:text-amber-500 transition-colors font-medium inline-flex items-center gap-1">
+              <a href="/web-design" className="text-white border-b-2 border-amber-500 pb-1 hover:text-amber-500 transition-colors font-medium inline-flex items-center gap-1">
                 See Pricing & Details <span className="text-xl">→</span>
               </a>
             </div>
@@ -240,7 +240,7 @@ export default function Home() {
                     Reputation Management
                   </li>
                 </ul>
-                <a href="https://pathsixdesigns.com/seo" className="text-white border-b-2 border-amber-500 pb-1 hover:text-amber-500 transition-colors font-medium inline-flex items-center gap-1">
+                <a href="/seo" className="text-white border-b-2 border-amber-500 pb-1 hover:text-amber-500 transition-colors font-medium inline-flex items-center gap-1">
                   View SEO Services <span className="text-xl">→</span>
                 </a>
               </div>
@@ -275,7 +275,7 @@ export default function Home() {
               <div className="bg-slate-800 p-6 rounded-lg border-l-4 border-amber-500 mb-8">
                 <p className="italic text-slate-300">&quot;PathSix built us a system that tracks exactly what we care about. No more fighting with Salesforce settings.&quot;</p>
               </div>
-              <a href="https://crm.pathsixsolutions.com" className="text-white border-b-2 border-amber-500 pb-1 hover:text-amber-500 transition-colors font-medium inline-flex items-center gap-1">
+              <a href="/crm" className="text-white border-b-2 border-amber-500 pb-1 hover:text-amber-500 transition-colors font-medium inline-flex items-center gap-1">
                 Explore CRM Solutions <span className="text-xl">→</span>
               </a>
             </div>
@@ -331,7 +331,7 @@ export default function Home() {
                   <li>• Secure API Integrations</li>
                   <li>• Database Design</li>
                 </ul>
-                <a href="https://build.pathsixsolutions.com" className="inline-flex items-center text-amber-500 hover:text-amber-400 font-semibold transition-colors">
+                <a href="/build" className="inline-flex items-center text-amber-500 hover:text-amber-400 font-semibold transition-colors">
                   Learn More →
                 </a>
               </div>
@@ -350,7 +350,7 @@ export default function Home() {
                   <li>• Hosting Configuration</li>
                   <li>• Production-Ready Refactoring</li>
                 </ul>
-                <a href="https://vibe.pathsixsolutions.com" className="inline-flex items-center text-cyan-500 hover:text-cyan-400 font-semibold transition-colors">
+                <a href="/vibe" className="inline-flex items-center text-cyan-500 hover:text-cyan-400 font-semibold transition-colors">
                   Learn More →
                 </a>
               </div>
@@ -358,69 +358,28 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Unified Call to Action */}
+        {/* Contact CTA */}
         <section id="contact" className="py-20 bg-slate-950 border-t border-slate-800">
-          <div className="max-w-4xl mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto px-4 text-center">
             {/* Email Icon */}
             <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-500/10 rounded-full mb-6">
               <svg className="w-8 h-8 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
               </svg>
             </div>
-            
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Let&apos;s Start a Conversation</h2>
-            <p className="text-slate-400 mb-3 text-lg">Fill out this quick form and we&apos;ll reach out within 24 hours.</p>
-            <p className="text-slate-500 text-sm mb-10">
-              Or email us directly at <a href="mailto:support@pathsixsolutions.com" className="text-amber-500 hover:text-amber-400 underline">support@pathsixsolutions.com</a>
-            </p>
-            
-            <div className="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-2xl text-left">
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-slate-400 mb-2">Name</label>
-                    <input type="text" className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-400 mb-2">Email</label>
-                    <input type="email" className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" />
-                  </div>
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-slate-400 mb-2">I need help with...</label>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <label className="flex items-center p-4 border border-slate-700 rounded-lg cursor-pointer hover:border-amber-500 hover:bg-slate-800 transition-colors">
-                      <input type="checkbox" className="form-checkbox text-amber-500 h-5 w-5 rounded border-slate-600 bg-slate-900" />
-                      <span className="ml-3 text-white">Foundation (New Website)</span>
-                    </label>
-                    <label className="flex items-center p-4 border border-slate-700 rounded-lg cursor-pointer hover:border-amber-500 hover:bg-slate-800 transition-colors">
-                      <input type="checkbox" className="form-checkbox text-amber-500 h-5 w-5 rounded border-slate-600 bg-slate-900" />
-                      <span className="ml-3 text-white">Growth (SEO & Traffic)</span>
-                    </label>
-                    <label className="flex items-center p-4 border border-slate-700 rounded-lg cursor-pointer hover:border-amber-500 hover:bg-slate-800 transition-colors">
-                      <input type="checkbox" className="form-checkbox text-amber-500 h-5 w-5 rounded border-slate-600 bg-slate-900" />
-                      <span className="ml-3 text-white">Operations (CRM)</span>
-                    </label>
-                    <label className="flex items-center p-4 border border-slate-700 rounded-lg cursor-pointer hover:border-amber-500 hover:bg-slate-800 transition-colors">
-                      <input type="checkbox" className="form-checkbox text-amber-500 h-5 w-5 rounded border-slate-600 bg-slate-900" />
-                      <span className="ml-3 text-white">Innovation (Custom/AI)</span>
-                    </label>
-                  </div>
-                </div>
 
-                <button type="submit" className="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 rounded-lg transition-colors shadow-lg shadow-amber-500/20 text-lg">
-                  Send Message
-                </button>
-                
-                <p className="text-center text-slate-500 text-sm">
-                  <svg className="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                  We typically respond within 24 hours
-                </p>
-              </form>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Let&apos;s Start a Conversation</h2>
+            <p className="text-slate-400 mb-8 text-lg">
+              Ready to unify your digital strategy? Fill out our contact form and we&apos;ll reach out within 24 hours to discuss your needs.
+            </p>
+
+            <a href="/contact" className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-lg transition-all shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 text-lg">
+              Get in Touch
+            </a>
+
+            <p className="mt-6 text-slate-500 text-sm">
+              Or email us directly: <a href="mailto:contact@pathsixsolutions.com" className="text-amber-500 hover:text-amber-400 underline">contact@pathsixsolutions.com</a>
+            </p>
           </div>
         </section>
       </main>

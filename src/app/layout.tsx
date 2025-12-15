@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   description: 'Custom websites, CRM solutions, and AI deployment help for small businesses. Professional digital tools you can actually afford.',
   keywords: ['web design', 'custom CRM', 'AI deployment', 'small business software'],
   authors: [{ name: 'PathSix Solutions' }],
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   openGraph: {
     title: 'PathSix Solutions | Digital Tools for Growing Businesses',
     description: 'Custom websites, CRM solutions, and AI deployment help.',

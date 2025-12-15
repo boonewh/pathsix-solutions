@@ -1,23 +1,56 @@
-# PathSix Solutions Website
+# PathSix Solutions - Unified Ecosystem
 
-This is the unified ecosystem hub for PathSix Solutions, built with Next.js 14 and Tailwind CSS. Single-page architecture showcasing our four service pillars: Foundation (Web Design), Growth (SEO), Operations (CRM), and Scale (Custom Development & AI Deployment).
+This is the complete PathSix Solutions unified platform, built with Next.js 14 and Tailwind CSS. All services previously hosted on separate subdomains are now consolidated into a single, cohesive website.
+
+## 🎯 New Direction (December 2024)
+
+**Major Pivot:** We've unified all PathSix services under one roof at `pathsixsolutions.com`. What were previously separate subdomain sites are now service pages within this single Next.js application.
+
+### Service Pages
+- `/` - Main ecosystem hub
+- `/web-design` - Managed web design services (formerly pathsixdesigns.com)
+- `/seo` - SEO & local search services (formerly pathsixdesigns.com/seo)
+- `/crm` - Custom CRM solutions (formerly crm.pathsixsolutions.com)
+- `/build` - Custom software development (formerly build.pathsixsolutions.com)
+- `/vibe` - AI code deployment services (formerly vibe.pathsixsolutions.com)
+
+### Why the Change?
+- **Better User Experience:** Single cohesive site vs. multiple disconnected subdomains
+- **Unified Branding:** The "Ecosystem" page ties all services together narratively
+- **Simpler Maintenance:** One codebase instead of 5+ separate sites
+- **Improved SEO:** Internal linking and authority consolidated
+- **Clearer Value Prop:** Shows the full PathSix stack in one place
 
 ## Project Structure
 
 ```
 src/
-├── app/                 # Next.js App Router pages
-│   ├── layout.tsx      # Root layout with metadata
-│   ├── page.tsx        # Single-page homepage with all sections
-│   ├── globals.css     # Global styles with Tailwind
-│   ├── sitemap.ts      # Auto-generated sitemap
-│   └── robots.ts       # Robots.txt configuration
-└── components/         # Reusable React components
-    ├── Header.tsx      # Fixed navigation header
-    └── Footer.tsx      # Footer component
+├── app/                     # Next.js App Router
+│   ├── layout.tsx          # Root layout with metadata
+│   ├── page.tsx            # Main ecosystem hub page
+│   ├── web-design/         # Web Design service page
+│   │   └── page.tsx
+│   ├── seo/                # SEO/Growth service page
+│   │   └── page.tsx
+│   ├── crm/                # CRM service page
+│   │   └── page.tsx
+│   ├── build/              # Custom Development service page
+│   │   └── page.tsx
+│   ├── vibe/               # AI Deployment service page
+│   │   └── page.tsx
+│   ├── globals.css         # Global Tailwind styles
+│   ├── sitemap.ts          # Auto-generated sitemap
+│   └── robots.ts           # Robots.txt configuration
+└── components/             # Shared components
+    ├── Header.tsx          # Main navigation (used on homepage)
+    └── Footer.tsx          # Shared footer (all pages)
 public/
-├── favicon.svg         # Custom P6 favicon
-└── images/             # Hero images and assets
+├── favicon.svg             # Custom P6 favicon
+└── images/                 # Service images and assets
+    ├── solutions_hero.jpg  # Main page hero
+    ├── web_hero.jpg        # Web design page hero
+    ├── seo-map.jpg         # SEO page map visual
+    └── dashboard.jpg       # CRM dashboard mockup
 ```
 
 ## Getting Started
@@ -36,19 +69,24 @@ public/
 
 ## Features
 
-- ✅ **Next.js 14.2.33** with App Router
-- ✅ **Dark Theme UI** with amber/slate color system
-- ✅ **Tailwind CSS** for styling  
+- ✅ **Next.js 14.2.35** with App Router
+- ✅ **Unified Multi-Page Architecture** - All services under one domain
+- ✅ **Service-Specific Themes** - Each page has unique color scheme and branding
+  - Web Design: Blue theme
+  - SEO/Growth: Emerald green theme
+  - CRM: Blue theme with dashboard focus
+  - Build: Cyan theme
+  - Vibe: Fuchsia/pink theme with cyberpunk aesthetic
+- ✅ **Embedded Headers** - Each service page has custom navigation
+- ✅ **Shared Footer** - Consistent footer with all service links
+- ✅ **Dark Theme UI** with service-specific accent colors
+- ✅ **Tailwind CSS** for styling
 - ✅ **TypeScript** for type safety
-- ✅ **Single-Page Architecture** with smooth anchor scrolling
-- ✅ **Dual Hero CTAs** for conversion optimization
-- ✅ **Ecosystem Flow Visualization** connecting all four service pillars
-- ✅ **External Subdomain Strategy** maintaining focused service sites
-- ✅ **Custom P6 Favicon** for brand identity
-- ✅ **SEO Optimized** with metadata API
-- ✅ **Responsive Design** mobile-first approach
-- ✅ **Vercel Analytics** integration ready
+- ✅ **SEO Optimized** - Individual metadata and JSON-LD for each service
+- ✅ **Responsive Design** - Mobile-first approach across all pages
+- ✅ **Next.js Image Optimization** - Automatic image optimization
 - ✅ **Auto-generated Sitemap & Robots.txt**
+- ✅ **Vercel Analytics** integration ready
 
 ## Deployment
 
@@ -72,73 +110,93 @@ npm run start
 
 ## Design System
 
-### Color Scheme
-- **Background:** `slate-900` (#0f172a) - Dark theme base
-- **Accent:** `amber-500` (#f59e0b) - Primary brand color
-- **Secondary Backgrounds:** `slate-800`, `slate-950`
-- **AI Deployment Accent:** `cyan-500` (#06b6d4) - Distinct from typical AI purple cliché
+### Color Scheme by Service
+- **Main Hub:** `amber-500` (#f59e0b) - Warm, welcoming brand color
+- **Web Design:** `blue-500/600` (#3b82f6) - Professional, trustworthy
+- **SEO/Growth:** `emerald-500` (#10b981) - Growth, organic traffic
+- **CRM:** `blue-500/600` (#3b82f6) - Business operations focus
+- **Build:** `cyan-500/600` (#06b6d4) - Technical, engineering
+- **Vibe:** `fuchsia-500` (#d946ef) - Modern, AI-forward (avoiding purple cliché)
+- **Backgrounds:** `slate-900/950` (#0f172a, #020617) - Consistent dark theme
 
 ### Typography
-- **System Font Stack:** -apple-system, BlinkMacSystemFont, sans-serif
-- **Hero Line Height:** Custom 1.3 for optimal spacing
-- **Tailwind Classes:** text-5xl, text-3xl, text-xl
+- **System Font Stack:** Inter, -apple-system, BlinkMacSystemFont, sans-serif
+- **Monospace (Vibe):** JetBrains Mono for code aesthetic
+- **Hero Sizing:** text-5xl to text-7xl responsive
+- **Body Text:** text-lg to text-xl for readability
 
 ## Architecture
 
-**Single-Page Hub:** All service information on main page with external links to specialized subdomains.
+**Unified Single-Domain Structure:** All services consolidated into one Next.js application with dedicated service pages.
 
-### Service Links & Subdomains
+### Internal Routing
 
-- **Foundation (Web Design):** `https://pathsixdesigns.com`
-- **Growth (SEO):** `https://pathsixdesigns.com/seo`
-- **Operations (CRM):** `https://crm.pathsixsolutions.com`
-- **Custom Development:** `https://build.pathsixsolutions.com`
-- **AI Deployment (Vibe):** `https://vibe.pathsixsolutions.com`
+- **Main Hub:** `/` - Ecosystem overview
+- **Web Design:** `/web-design` - Managed web design services
+- **SEO/Growth:** `/seo` - Local search and traffic generation
+- **CRM:** `/crm` - Custom CRM solutions
+- **Custom Development:** `/build` - Custom software engineering
+- **AI Deployment:** `/vibe` - AI code deployment services
 
-## Page Sections
+### 301 Redirects (Planned)
+Old subdomain structure will redirect to new service pages:
+- `pathsixdesigns.com` → `pathsixsolutions.com/web-design`
+- `pathsixdesigns.com/seo` → `pathsixsolutions.com/seo`
+- `crm.pathsixsolutions.com` → `pathsixsolutions.com/crm`
+- `build.pathsixsolutions.com` → `pathsixsolutions.com/build`
+- `vibe.pathsixsolutions.com` → `pathsixsolutions.com/vibe`
 
-1. **Hero Section**
-   - Dual CTAs: "Start Your Project" + "View The Ecosystem"
-   - Hero background image with gradient overlay
-   - Custom line-height for optimal typography
+## Page Structure
 
-2. **Ecosystem Connector**
-   - Visual flow: Foundation → Growth → Operations → Scale
-   - Large bold arrows showing progression
-   - Explains how services build on each other
+### Main Hub (`/`)
+1. **Hero Section** - "Stop piecing together your digital strategy"
+2. **Ecosystem Flow** - Visual progression: Foundation → Growth → Operations → Scale
+3. **Service Deep Dives** - Detailed sections for each offering with internal links
+4. **Contact Section** - Unified contact form
 
-3. **Foundation (Web Design)**
-   - Website mockup with amber glow effect
-   - Grid pattern background for depth
-   - Links to pathsixdesigns.com
+### Service Pages
+Each service page follows this pattern:
+- **Custom Header** - Service-specific branding and navigation
+- **Hero Section** - Unique value proposition with imagery
+- **Problem/Solution** - Addressing specific pain points
+- **Features/Benefits** - Detailed capabilities
+- **Pricing** - Transparent pricing (where applicable)
+- **CTA Section** - Clear next steps
+- **Shared Footer** - Consistent footer across all pages
 
-4. **Growth (SEO)**
-   - Statistics and feature cards
-   - Links to pathsixdesigns.com/seo
+### Design Philosophy per Service
+- **Web Design (`/web-design`)**: Professional, business-focused, blue theme, emphasizes managed service model
+- **SEO (`/seo`)**: Growth-oriented, emerald green, "map pack" strategy focus
+- **CRM (`/crm`)**: Clean, data-focused, blue theme, anti-bloat messaging
+- **Build (`/build`)**: Technical, cyan theme, "spreadsheet ceiling" pain point
+- **Vibe (`/vibe`)**: Modern, fuchsia theme, cyberpunk aesthetic, AI deployment focus
 
-5. **Operations (CRM)**
-   - Abstract CRM visualization
-   - Links to crm.pathsixsolutions.com
+## Implementation Status
 
-6. **Innovation (Scale)**
-   - Split cards: Custom Development + AI Deployment
-   - Cyan accent for AI section (avoiding purple cliché)
-   - Links to build.pathsixsolutions.com and vibe.pathsixsolutions.com
+### ✅ Completed
+- [x] All 5 service pages built and integrated
+- [x] Unified navigation with internal routing
+- [x] Service-specific themes and branding
+- [x] Embedded headers for each service
+- [x] Shared footer component with all service links
+- [x] Hero images integrated (web-design, seo)
+- [x] SEO metadata and JSON-LD for all pages
+- [x] Responsive design across all pages
 
-7. **Contact Section**
-   - Email icon for clarity
-   - "Let's Start a Conversation" heading
-   - Clear response time expectation (24 hours)
-   - Direct email option displayed
+### 🔄 In Progress
+- [ ] Additional AI-generated hero images (build, vibe pages)
+- [ ] Image positioning and overlay refinements
+- [ ] Contact form backend integration
 
-## Next Steps
-
-1. **Deploy to Vercel:** Import GitHub repository at https://vercel.com/new
-2. **Domain Setup:** Configure DNS to point `pathsixsolutions.com` to Vercel
-3. **Hero Image:** Add production hero image to `/public/images/solutions_hero.jpg`
-4. **Subdomain Deployments:** Ensure all linked subdomains are live
-5. **Analytics:** Add Google Analytics and Vercel Analytics
-6. **Contact Form Backend:** Implement form submission with Formspree or Resend
+### 📋 Next Steps
+1. **Complete Images:** Generate remaining hero images for Build and Vibe pages
+2. **301 Redirects:** Set up redirects from old subdomain URLs
+3. **Deploy to Production:** Push to Vercel production environment
+4. **DNS Configuration:** Point main domain to new unified site
+5. **Analytics:** Configure Google Analytics and Vercel Analytics
+6. **Contact Form:** Implement backend (Formspree/Resend)
+7. **Testing:** Full cross-browser and mobile testing
+8. **Launch:** Announce unified site to existing customers
 
 ## Contact Form Integration
 
