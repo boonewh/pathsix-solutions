@@ -1,5 +1,17 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'AI Code Deployment Services | PathSix Solutions',
+  description: 'Professional deployment for AI-generated code. We secure, host, and fix your ChatGPT or Claude prototypes for production use.',
+  openGraph: {
+    title: 'AI Code Deployment | PathSix Solutions',
+    description: 'For the Vibe Coders. We professionally deploy and secure your AI-generated applications.',
+    url: 'https://pathsixsolutions.com/vibe',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+  },
+}
 
 export default function VibePage() {
   const jsonLd = {

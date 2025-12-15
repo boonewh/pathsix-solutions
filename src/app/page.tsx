@@ -6,19 +6,38 @@ export default function Home() {
   // Schema markup for SEO
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': 'LocalBusiness',
     name: 'PathSix Solutions',
     url: 'https://pathsixsolutions.com',
     logo: 'https://pathsixsolutions.com/logo.png',
-    description: 'The Full-Stack Growth Partner - unified web design, SEO, CRM solutions, and custom development.',
+    description: 'The Full-Stack Growth Partner - unified web design, SEO, CRM solutions, and custom development for small businesses.',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: '10 Ave K E',
+      addressLocality: 'Haskell',
+      addressRegion: 'TX',
+      postalCode: '79521',
       addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '33.1576',
+      longitude: '-99.7342',
+    },
+    telephone: '+1-325-305-9446',
+    email: 'support@pathsixsolutions.com',
+    priceRange: '$$',
+    areaServed: {
+      '@type': 'State',
+      name: 'Texas',
     },
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
+      telephone: '+1-325-305-9446',
       email: 'support@pathsixsolutions.com',
+      areaServed: 'US',
+      availableLanguage: 'English',
     },
     sameAs: [
       'https://pathsixdesigns.com',
@@ -38,7 +57,7 @@ export default function Home() {
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             {/* PLACEHOLDER FOR YOUR HERO IMAGE */}
-            <Image src="/images/solutions_hero.jpg" alt="Developer Workspace" fill className="object-cover" />
+            <Image src="/images/solutions_hero.jpg" alt="Developer Workspace" fill className="object-cover" priority />
             {/* Dark Overlay to unify design */}
             <div className="absolute inset-0 bg-slate-950/80 mix-blend-multiply"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>

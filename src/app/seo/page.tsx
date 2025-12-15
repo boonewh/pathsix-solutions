@@ -1,6 +1,18 @@
 import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Advanced SEO & Local Search Services | PathSix Solutions',
+  description: 'Dominate Google Maps and local search rankings. Advanced SEO services focused on getting your business to the top of local search results.',
+  openGraph: {
+    title: 'SEO & Local Search Dominance | PathSix Solutions',
+    description: 'Turn your website into a lead-generating machine by capturing the top spots on Google Maps.',
+    url: 'https://pathsixsolutions.com/seo',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+  },
+}
 
 export default function SEOPage() {
   const jsonLd = {

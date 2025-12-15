@@ -3,9 +3,9 @@ import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://pathsixsolutions.com'),
   title: 'PathSix Solutions | Web Design, CRM & Development Services',
   description: 'Custom websites, CRM solutions, and AI deployment help for small businesses. Professional digital tools you can actually afford.',
-  keywords: ['web design', 'custom CRM', 'AI deployment', 'small business software'],
   authors: [{ name: 'PathSix Solutions' }],
   icons: {
     icon: '/favicon.svg',
@@ -36,6 +36,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: 'https://pathsixsolutions.com',
   },
 }
 

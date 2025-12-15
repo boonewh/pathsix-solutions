@@ -1,6 +1,18 @@
 import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Custom Software Development | PathSix Solutions',
+  description: 'Replace spreadsheets with custom web applications. Client portals, internal tools, and business software built for your exact workflow.',
+  openGraph: {
+    title: 'Custom Software & Web Apps | PathSix Solutions',
+    description: 'Custom web applications and internal tools to streamline your operations.',
+    url: 'https://pathsixsolutions.com/build',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+  },
+}
 
 export default function BuildPage() {
   const jsonLd = {
@@ -56,6 +68,7 @@ export default function BuildPage() {
                     alt="Blueprint to Application"
                     fill
                     className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
+                    priority
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-slate-900/90 border-t border-slate-700 p-4 font-mono text-xs text-cyan-400 z-10">
                     <div className="flex gap-2 mb-2">

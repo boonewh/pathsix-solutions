@@ -1,6 +1,18 @@
 import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Custom CRM Solutions | PathSix Solutions',
+  description: 'Lean, focused CRM built for your workflow. No bloat, no complexity - just the features your business actually needs.',
+  openGraph: {
+    title: 'Custom CRM Software | PathSix Solutions',
+    description: 'The CRM you actually need. Lightweight, custom-built for your specific business processes.',
+    url: 'https://pathsixsolutions.com/crm',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+  },
+}
 
 export default function CRMPage() {
   const jsonLd = {

@@ -17,6 +17,8 @@ export default function Footer() {
             </p>
             <div className="space-y-2">
               <p className="text-slate-400">
+              </p>
+              <p className="text-slate-400">
                 <a href="mailto:support@pathsixsolutions.com" className="hover:text-amber-500 transition-colors">
                   support@pathsixsolutions.com
                 </a>

@@ -1,6 +1,18 @@
 import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Managed Web Design Services | PathSix Solutions',
+  description: 'Custom websites built, hosted, and maintained for a low monthly fee. See your site before you pay. Starting at $159/mo with zero upfront costs.',
+  openGraph: {
+    title: 'Affordable Managed Web Design | PathSix Solutions',
+    description: 'Custom websites you can actually afford. Build, host, and maintain your professional website for $159/mo.',
+    url: 'https://pathsixsolutions.com/web-design',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+  },
+}
 
 export default function WebDesignPage() {
   const jsonLd = {
@@ -28,6 +40,7 @@ export default function WebDesignPage() {
               alt="Digital Workspace"
               fill
               className="object-cover object-left lg:object-center grayscale hover:grayscale-0 transition-all duration-1000"
+              priority
             />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/20 to-transparent"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/5 to-transparent lg:hidden"></div>
