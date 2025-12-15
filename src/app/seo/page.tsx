@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'SEO & Local Search Dominance | PathSix Solutions',
     description: 'Turn your website into a lead-generating machine by capturing the top spots on Google Maps.',
     url: 'https://pathsixsolutions.com/seo',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://pathsixsolutions.com/og-image.jpg', width: 1200, height: 630 }],
   },
 }
 

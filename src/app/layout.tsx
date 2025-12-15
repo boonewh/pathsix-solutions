@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: 'PathSix Solutions',
     images: [
       {
-        url: '/og-image.jpg',
+        url: 'https://pathsixsolutions.com/og-image.jpg',
         width: 1200,
         height: 630,
       },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'PathSix Solutions | Digital Tools for Growing Businesses',
     description: 'Custom websites, CRM solutions, and AI deployment help.',
-    images: ['/og-image.jpg'],
+    images: ['https://pathsixsolutions.com/og-image.jpg'],
   },
   robots: {
     index: true,

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: 'AI Code Deployment | PathSix Solutions',
     description: 'For the Vibe Coders. We professionally deploy and secure your AI-generated applications.',
     url: 'https://pathsixsolutions.com/vibe',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://pathsixsolutions.com/og-image.jpg', width: 1200, height: 630 }],
   },
 }
 
