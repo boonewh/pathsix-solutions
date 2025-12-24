@@ -34,6 +34,7 @@ export default function Header({ serviceName, serviceColor }: HeaderProps = {}) 
               <Link href="/crm" className="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium text-slate-300">CRM</Link>
               <Link href="/build" className="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium text-slate-300">Custom Apps</Link>
               <Link href="/vibe" className="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium text-slate-300">AI Deployment</Link>
+              <Link href="/resources" className="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium text-slate-300">Resources</Link>
               <Link href="/contact" className="border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white px-4 py-2 rounded-md text-sm font-bold transition-all">Contact</Link>
             </div>
           </div>
@@ -74,6 +75,7 @@ export default function Header({ serviceName, serviceColor }: HeaderProps = {}) 
             <Link href="/crm" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">CRM</Link>
             <Link href="/build" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">Custom Apps</Link>
             <Link href="/vibe" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">AI Deployment</Link>
+            <Link href="/resources" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">Resources</Link>
             <Link href="/contact" className="block border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white px-3 py-2 rounded-md text-base font-bold transition-all mx-3 my-2 text-center">Contact</Link>
           </div>
         </div>
