@@ -10,7 +10,6 @@ export const metadata: Metadata = {
     title: 'Custom CRM Software | PathSix Solutions',
     description: 'The CRM you actually need. Lightweight, custom-built for your specific business processes.',
     url: 'https://pathsixsolutions.com/crm',
-    images: [{ url: 'https://pathsixsolutions.com/og-image.jpg', width: 1200, height: 630 }],
   },
 }
 

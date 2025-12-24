@@ -10,7 +10,6 @@ export const metadata: Metadata = {
     title: 'Affordable Managed Web Design | PathSix Solutions',
     description: 'Custom websites you can actually afford. Build, host, and maintain your professional website for $159/mo.',
     url: 'https://pathsixsolutions.com/web-design',
-    images: [{ url: 'https://pathsixsolutions.com/og-image.jpg', width: 1200, height: 630 }],
   },
 }
 

@@ -10,7 +10,6 @@ export const metadata: Metadata = {
     title: 'Custom Software & Web Apps | PathSix Solutions',
     description: 'Custom web applications and internal tools to streamline your operations.',
     url: 'https://pathsixsolutions.com/build',
-    images: [{ url: 'https://pathsixsolutions.com/og-image.jpg', width: 1200, height: 630 }],
   },
 }
 

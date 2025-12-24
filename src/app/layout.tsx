@@ -17,13 +17,6 @@ export const metadata: Metadata = {
     description: 'Custom websites, CRM solutions, and AI deployment help.',
     url: 'https://pathsixsolutions.com',
     siteName: 'PathSix Solutions',
-    images: [
-      {
-        url: 'https://pathsixsolutions.com/og-image.jpg',
-        width: 1200,
-        height: 630,
-      },
-    ],
     locale: 'en_US',
     type: 'website',
   },
@@ -31,7 +24,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'PathSix Solutions | Digital Tools for Growing Businesses',
     description: 'Custom websites, CRM solutions, and AI deployment help.',
-    images: ['https://pathsixsolutions.com/og-image.jpg'],
   },
   robots: {
     index: true,
