@@ -67,7 +67,7 @@ export default function Home() {
             <div className="max-w-3xl">
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6" style={{ lineHeight: '1.20' }}>
                 The Technical Partner <br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">for Growing Businesses.</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-200">for Growing Businesses.</span>
               </h1>
               <p className="text-xl text-slate-300 mb-8 font-light leading-relaxed">
                 Start with a <strong className="text-white">fully managed website</strong>. Scale with custom software when you&apos;re ready.
@@ -75,7 +75,7 @@ export default function Home() {
                 The same team that builds custom CRMs and web applications also builds affordable, professional websites starting at $159/mo.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/web-design" className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg text-lg transition-all shadow-lg shadow-blue-500/30 text-center">
+                <a href="/web-design" className="px-8 py-4 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-lg text-lg transition-all shadow-lg shadow-amber-500/20 text-center">
                   Get Your Website ($159/mo)
                 </a>
                 <a href="#foundation" className="px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-slate-900 text-white font-bold rounded-lg text-lg transition-all text-center">
