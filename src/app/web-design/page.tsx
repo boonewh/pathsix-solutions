@@ -194,32 +194,47 @@ export default function WebDesignPage() {
 
             {/* Top Row - 3 Projects */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-              {/* Project 1 */}
-              <div className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30">
+              {/* Project 1 - ASFI */}
+              <a
+                href="https://asficonstruction.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
+              >
                 <div className="aspect-[16/9] relative overflow-hidden">
                   <Image
                     src="/images/asfi.jpg"
-                    alt="ASFI Website"
+                    alt="ASFI Construction Website"
                     fill
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-              </div>
+              </a>
 
-              {/* Project 2 */}
-              <div className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30">
+              {/* Project 2 - All Seasons */}
+              <a
+                href="https://allseasonsfoam.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
+              >
                 <div className="aspect-[16/9] relative overflow-hidden">
                   <Image
                     src="/images/allseasons.jpg"
-                    alt="All Seasons Website"
+                    alt="All Seasons Foam Website"
                     fill
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-              </div>
+              </a>
 
-              {/* Project 3 */}
-              <div className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30">
+              {/* Project 3 - CSS Dallas */}
+              <a
+                href="https://cssdallas.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
+              >
                 <div className="aspect-[16/9] relative overflow-hidden">
                   <Image
                     src="/images/cssdallas.jpg"
@@ -228,7 +243,7 @@ export default function WebDesignPage() {
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-              </div>
+              </a>
             </div>
 
             {/* Testimonial - Centered */}
@@ -249,8 +264,13 @@ export default function WebDesignPage() {
 
             {/* Bottom Row - 3 Projects */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Project 4 */}
-              <div className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30">
+              {/* Project 4 - Permian Alliance */}
+              <a
+                href="https://permianalliance.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
+              >
                 <div className="aspect-[16/9] relative overflow-hidden">
                   <Image
                     src="/images/permian_alliance.jpg"
@@ -259,22 +279,32 @@ export default function WebDesignPage() {
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-              </div>
+              </a>
 
-              {/* Project 5 */}
-              <div className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30">
+              {/* Project 5 - PathSix Games */}
+              <a
+                href="https://pathsix.games"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
+              >
                 <div className="aspect-[16/9] relative overflow-hidden">
                   <Image
                     src="/images/games.jpg"
-                    alt="Games Website"
+                    alt="PathSix Games Website"
                     fill
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-              </div>
+              </a>
 
-              {/* Project 6 */}
-              <div className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30">
+              {/* Project 6 - Lotus RPG */}
+              <a
+                href="https://lotusrpg.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
+              >
                 <div className="aspect-[16/9] relative overflow-hidden">
                   <Image
                     src="/images/lotusrpg.jpg"
@@ -283,7 +313,7 @@ export default function WebDesignPage() {
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-              </div>
+              </a>
             </div>
 
             {/* DesignRush Banner Spot */}
