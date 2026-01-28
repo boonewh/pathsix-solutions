@@ -201,7 +201,7 @@ export default function SEOPage() {
 
               {/* Plan 2: Authority */}
               <div className="bg-slate-800 p-8 rounded-2xl border-2 border-emerald-500 shadow-xl shadow-emerald-500/10 flex flex-col relative">
-                <div className="absolute top-0 right-0 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">RECOMMENDED</div>
+                <div className="absolute top-0 right-0 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-[13px]">RECOMMENDED</div>
                 <h3 className="text-xl font-bold text-white mb-2">Total Domination</h3>
                 <div className="text-4xl font-bold text-emerald-500 mb-2">$799<span className="text-lg text-slate-500 font-normal">/mo</span></div>
                 <p className="text-sm text-slate-400 mb-6 flex-grow">For businesses who want to expand their service area and crush competitors.</p>

@@ -39,12 +39,12 @@ const articles = [
     available: true,
   },
   {
-    title: 'Website Cost Calculator: What Should You Really Pay?',
-    slug: 'website-cost-calculator',
-    excerpt: 'Breaking down the real costs of building and maintaining a professional website in 2025.',
-    readTime: '6 min read',
-    date: 'Coming Soon',
-    available: false,
+    title: 'WordPress vs. Custom Software: Selecting the Right Foundation',
+    slug: 'wordpress-vs-custom',
+    excerpt: 'A comparative analysis of WordPress CMS versus Custom Software Development. Understand when to choose managed hosting and when to invest in bespoke applications.',
+    readTime: '5 min read',
+    date: 'January 2026',
+    available: true,
   },
 ]
 

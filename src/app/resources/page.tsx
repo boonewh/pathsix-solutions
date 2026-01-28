@@ -23,7 +23,7 @@ const resourceCategories = [
     articles: [
       'The Subscription Model: Website as a Service',
       'How to Choose the Right Web Designer',
-      'Managed vs Traditional Hosting',
+      'WordPress vs. Custom Software',
     ],
   },
   {
