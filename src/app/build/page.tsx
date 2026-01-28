@@ -194,7 +194,7 @@ export default function BuildPage() {
 
               {/* Step 2: MVP */}
               <div className="bg-gradient-to-b from-slate-800 to-slate-900 p-8 rounded-2xl border border-cyan-500 shadow-xl shadow-cyan-500/10 flex flex-col relative transform md:-translate-y-4">
-                <div className="absolute top-0 right-0 bg-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                <div className="absolute top-0 right-0 bg-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-[13px]">POPULAR</div>
                 <h3 className="text-xl font-bold text-white mb-2">02. MVP Sprint</h3>
                 <div className="text-3xl font-bold text-cyan-400 mb-2">Starts at $2,500</div>
                 <p className="text-xs text-cyan-600 font-bold uppercase mb-6">2-Week Turnaround</p>
