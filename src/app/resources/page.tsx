@@ -21,9 +21,9 @@ const resourceCategories = [
     icon: '🎨',
     color: 'blue',
     articles: [
+      'The Subscription Model: Website as a Service',
+      'How to Choose the Right Web Designer',
       'Managed vs Traditional Hosting',
-      'Choosing the Right Web Designer',
-      'Website Cost Calculator',
     ],
   },
   {

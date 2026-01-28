@@ -15,18 +15,28 @@ export const metadata: Metadata = {
 
 const articles = [
   {
-    title: 'Managed vs Traditional Hosting: What\'s Best for Your Business?',
-    slug: 'managed-vs-traditional-hosting',
-    excerpt: 'Understanding the difference between managed hosting and traditional hosting can save you thousands of dollars and countless hours.',
-    readTime: '5 min read',
-    date: 'Coming Soon',
+    title: 'The Subscription Model: Treating Your Website as a Service',
+    slug: 'subscription-model',
+    excerpt: 'Learn why subscription-based web design aligns with the reality of maintaining a modern digital presence. CapEx vs OpEx explained.',
+    readTime: '4 min read',
+    date: 'January 2026',
+    available: true,
   },
   {
     title: 'How to Choose the Right Web Designer',
     slug: 'choosing-a-web-designer',
     excerpt: 'Not all web designers are created equal. Learn what questions to ask and red flags to avoid when hiring a designer.',
-    readTime: '7 min read',
-    date: 'Coming Soon',
+    readTime: '5 min read',
+    date: 'January 2026',
+    available: true,
+  },
+  {
+    title: 'Managed vs Traditional Hosting: What\'s Best for Your Business?',
+    slug: 'managed-vs-traditional-hosting',
+    excerpt: 'Understanding the difference between managed hosting and traditional hosting can save you thousands of dollars and countless hours.',
+    readTime: '4 min read',
+    date: 'January 2026',
+    available: true,
   },
   {
     title: 'Website Cost Calculator: What Should You Really Pay?',
@@ -34,6 +44,7 @@ const articles = [
     excerpt: 'Breaking down the real costs of building and maintaining a professional website in 2025.',
     readTime: '6 min read',
     date: 'Coming Soon',
+    available: false,
   },
 ]
 
@@ -67,28 +78,54 @@ export default function WebDesignResourcesPage() {
           <div className="max-w-4xl mx-auto">
             <div className="space-y-8">
               {articles.map((article) => (
-                <article
-                  key={article.slug}
-                  className="bg-slate-900 border border-slate-700 rounded-2xl p-8 hover:border-blue-500 transition-all duration-300"
-                >
-                  <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
-                    <span>{article.date}</span>
-                    <span>•</span>
-                    <span>{article.readTime}</span>
-                  </div>
+                article.available ? (
+                  <Link
+                    key={article.slug}
+                    href={`/resources/web-design/${article.slug}`}
+                    className="block bg-slate-900 border border-slate-700 rounded-2xl p-8 hover:border-blue-500 transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
+                      <span>{article.date}</span>
+                      <span>•</span>
+                      <span>{article.readTime}</span>
+                    </div>
 
-                  <h2 className="text-2xl font-bold text-white mb-3 hover:text-blue-500 transition-colors">
-                    {article.title}
-                  </h2>
+                    <h2 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-500 transition-colors">
+                      {article.title}
+                    </h2>
 
-                  <p className="text-slate-400 mb-6">
-                    {article.excerpt}
-                  </p>
+                    <p className="text-slate-400 mb-6">
+                      {article.excerpt}
+                    </p>
 
-                  <div className="flex items-center gap-2 text-blue-500 font-semibold">
-                    <span className="opacity-50">Article coming soon</span>
-                  </div>
-                </article>
+                    <div className="flex items-center gap-2 text-blue-500 font-semibold">
+                      Read Article →
+                    </div>
+                  </Link>
+                ) : (
+                  <article
+                    key={article.slug}
+                    className="bg-slate-900 border border-slate-700 rounded-2xl p-8"
+                  >
+                    <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
+                      <span>{article.date}</span>
+                      <span>•</span>
+                      <span>{article.readTime}</span>
+                    </div>
+
+                    <h2 className="text-2xl font-bold text-white mb-3">
+                      {article.title}
+                    </h2>
+
+                    <p className="text-slate-400 mb-6">
+                      {article.excerpt}
+                    </p>
+
+                    <div className="flex items-center gap-2 text-blue-500 font-semibold">
+                      <span className="opacity-50">Article coming soon</span>
+                    </div>
+                  </article>
+                )
               ))}
             </div>
           </div>

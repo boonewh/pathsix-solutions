@@ -17,7 +17,6 @@ module.exports = {
         foreground: 'var(--foreground)',
       },
       fontFamily: {
-        'alkatra': ['Alkatra', 'cursive'],
         'sans': ['Arial', 'sans-serif'],
       },
     },
