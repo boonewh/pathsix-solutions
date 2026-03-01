@@ -16,10 +16,10 @@ export const metadata: Metadata = {
 const articles = [
   {
     title: 'Google Maps Optimization: The Complete Guide',
-    slug: 'google-maps-optimization',
+    slug: 'google-map-optimization',
     excerpt: 'Step-by-step guide to ranking #1 in the Google Maps 3-pack for your local area.',
-    readTime: '10 min read',
-    date: 'Coming Soon',
+    readTime: '4 min read',
+    date: 'Feb 2025',
   },
   {
     title: 'Local SEO Checklist for Small Businesses',
@@ -56,20 +56,34 @@ export default function SEOResourcesPage() {
 
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto space-y-8">
-            {articles.map((article) => (
-              <article key={article.slug} className="bg-slate-900 border border-slate-700 rounded-2xl p-8 hover:border-green-500 transition-all duration-300">
-                <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
-                  <span>{article.date}</span>
-                  <span>•</span>
-                  <span>{article.readTime}</span>
-                </div>
-                <h2 className="text-2xl font-bold text-white mb-3 hover:text-green-500 transition-colors">{article.title}</h2>
-                <p className="text-slate-400 mb-6">{article.excerpt}</p>
-                <div className="flex items-center gap-2 text-green-500 font-semibold">
-                  <span className="opacity-50">Article coming soon</span>
-                </div>
-              </article>
-            ))}
+            {articles.map((article) => {
+              const isPublished = article.date !== 'Coming Soon'
+              const content = (
+                <article key={article.slug} className="bg-slate-900 border border-slate-700 rounded-2xl p-8 hover:border-green-500 transition-all duration-300">
+                  <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
+                    <span>{article.date}</span>
+                    <span>•</span>
+                    <span>{article.readTime}</span>
+                  </div>
+                  <h2 className="text-2xl font-bold text-white mb-3 hover:text-green-500 transition-colors">{article.title}</h2>
+                  <p className="text-slate-400 mb-6">{article.excerpt}</p>
+                  <div className="flex items-center gap-2 text-green-500 font-semibold">
+                    {isPublished ? (
+                      <span>Read article &rarr;</span>
+                    ) : (
+                      <span className="opacity-50">Article coming soon</span>
+                    )}
+                  </div>
+                </article>
+              )
+              return isPublished ? (
+                <Link key={article.slug} href={`/resources/seo/${article.slug}`}>
+                  {content}
+                </Link>
+              ) : (
+                <div key={article.slug}>{content}</div>
+              )
+            })}
           </div>
         </section>
 
