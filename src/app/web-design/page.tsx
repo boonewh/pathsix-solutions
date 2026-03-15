@@ -192,8 +192,8 @@ export default function WebDesignPage() {
           <div className="container mx-auto px-6">
             <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-20">Recent Work</h2>
 
-            {/* Top Row - 3 Projects */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            {/* Top Row - 4 Projects */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
               {/* Project 1 - ASFI */}
               <a
                 href="https://asficonstruction.com"
@@ -244,6 +244,23 @@ export default function WebDesignPage() {
                   />
                 </div>
               </a>
+
+              {/* Project 4 - Lone Star Glass & Shower */}
+              <a
+                href="https://lsglassandshower.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
+              >
+                <div className="aspect-[16/9] relative overflow-hidden">
+                  <Image
+                    src="/images/lonestar.jpg"
+                    alt="Lone Star Glass and Shower Website"
+                    fill
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </a>
             </div>
 
             {/* Testimonial - Centered */}
@@ -262,9 +279,9 @@ export default function WebDesignPage() {
               </div>
             </div>
 
-            {/* Bottom Row - 3 Projects */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Project 4 - Permian Alliance */}
+            {/* Bottom Row - 4 Projects */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {/* Project 5 - Permian Alliance */}
               <a
                 href="https://permianalliance.com"
                 target="_blank"
@@ -281,7 +298,7 @@ export default function WebDesignPage() {
                 </div>
               </a>
 
-              {/* Project 5 - PathSix Games */}
+              {/* Project 6 - PathSix Games */}
               <a
                 href="https://pathsix.games"
                 target="_blank"
@@ -298,7 +315,7 @@ export default function WebDesignPage() {
                 </div>
               </a>
 
-              {/* Project 6 - Lotus RPG */}
+              {/* Project 7 - Lotus RPG */}
               <a
                 href="https://lotusrpg.com"
                 target="_blank"
@@ -309,6 +326,23 @@ export default function WebDesignPage() {
                   <Image
                     src="/images/lotusrpg.jpg"
                     alt="Lotus RPG Website"
+                    fill
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </a>
+
+              {/* Project 8 - Odessa Symphony Guild */}
+              <a
+                href="https://odessasymphonyguild.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
+              >
+                <div className="aspect-[16/9] relative overflow-hidden">
+                  <Image
+                    src="/images/osg.jpg"
+                    alt="Odessa Symphony Guild Website"
                     fill
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
