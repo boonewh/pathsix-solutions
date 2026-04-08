@@ -230,9 +230,6 @@ export default function SEOPage() {
               Or email directly: <a href="mailto:growth@pathsixsolutions.com" className="text-emerald-500 hover:text-emerald-400 underline">growth@pathsixsolutions.com</a>
             </p>
 
-            <div className="mt-16 pt-8 border-t border-slate-900 text-slate-600 text-sm">
-              © 2025 PathSix Solutions LLC.
-            </div>
           </div>
         </section>
       </main>
