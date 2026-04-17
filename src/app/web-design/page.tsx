@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Metadata } from 'next'
@@ -147,42 +148,81 @@ export default function WebDesignPage() {
           </div>
         </section>
 
-        {/* Pricing / Features Grid */}
+        {/* Pricing / Features Grid — Bento Layout */}
         <section id="pricing" className="py-24 bg-slate-950">
           <div className="container mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Everything included. One monthly price.</h2>
-              <p className="text-lg text-slate-400">Stop paying for hosting, plugins, and developer hours separately.</p>
+              <p className="text-lg text-slate-400">High-end results. Small business price.</p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Card 1 */}
-              <div className="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition duration-300 hover:shadow-lg hover:shadow-blue-500/10">
-                <div className="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center text-green-500 mb-6">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+              {/* Card 1: Custom Design — spans 2 cols */}
+              <div className="md:col-span-2 bg-slate-800 border border-slate-700 hover:border-blue-500 transition-all duration-300 rounded-2xl p-8 relative overflow-hidden">
+                <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+                  backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)',
+                  backgroundSize: '24px 24px'
+                }}></div>
+                <div className="relative z-10">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">100% Original</div>
+                  <h3 className="text-2xl font-bold text-white mb-3">Custom Design</h3>
+                  <p className="text-slate-400 mb-6">We don&apos;t do templates. Every site is built from scratch around your brand, your voice, and your customers.</p>
+                  <ul className="space-y-3 text-slate-300">
+                    <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Brand-matched color palette &amp; typography</li>
+                    <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Unique layout — never a template</li>
+                    <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Mobile-first, responsive on every screen</li>
+                    <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Performance optimized for fast load times</li>
+                    <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Built to convert visitors into customers</li>
+                  </ul>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Custom Design</h3>
-                <p className="text-slate-400">We don&apos;t use cookie-cutter templates. We design for your brand and your goals.</p>
               </div>
 
-              {/* Card 2 (Featured - Darker/Premium) */}
-              <div className="bg-gradient-to-b from-slate-800 to-slate-900 p-8 rounded-2xl shadow-2xl border border-blue-500 relative transform md:-translate-y-4">
-                <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 mb-6">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              {/* Card 2: Price Stat */}
+              <div className="bg-slate-800 border border-slate-700 hover:border-blue-500 transition-all duration-300 rounded-2xl p-8 flex flex-col items-center justify-center text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-blue-600 blur-[80px] opacity-10 pointer-events-none rounded-2xl"></div>
+                <div className="relative z-10">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">$0 Upfront</div>
+                  <div className="text-slate-500 text-sm font-medium mb-1">Starting at</div>
+                  <div className="text-7xl font-bold text-blue-500 leading-none mb-2">$159</div>
+                  <div className="text-slate-400 text-lg font-medium mb-4">per month</div>
+                  <p className="text-slate-500 text-sm mb-6">See your site before you pay a cent.</p>
+                  <a href="/contact" className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-all text-sm">Request Free Preview</a>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Your Site</h3>
-                <p className="text-slate-400 mb-6">Hosting, SSL security certificates, and domain management included.</p>
-                <div className="text-3xl font-bold text-white"><span className="text-lg text-slate-500 font-normal">Starting at </span>$159<span className="text-lg text-slate-500 font-normal">/mo</span></div>
               </div>
 
-              {/* Card 3 */}
-              <div className="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition duration-300 hover:shadow-lg hover:shadow-blue-500/10">
-                <div className="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center text-purple-500 mb-6">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">SEO Optimized</h3>
-                <p className="text-slate-400">Google Business Profile setup, local keyword optimization, and review management.</p>
+              {/* Card 3: Fully Managed */}
+              <div className="bg-slate-800 border border-slate-700 hover:border-blue-500 transition-all duration-300 rounded-2xl p-8">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">We Handle Everything</div>
+                <h3 className="text-2xl font-bold text-white mb-6">Fully Managed</h3>
+                <ul className="space-y-3 text-slate-300">
+                  <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Managed hosting — 99.9% uptime</li>
+                  <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> SSL security certificate</li>
+                  <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Domain management</li>
+                  <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Monthly content updates</li>
+                  <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Security monitoring</li>
+                  <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> No WordPress, no plugins, no headaches</li>
+                </ul>
               </div>
+
+              {/* Card 4: Built-in SEO Foundation — spans 2 cols */}
+              <div className="md:col-span-2 bg-slate-800 border border-slate-700 hover:border-emerald-500 transition-all duration-300 rounded-2xl p-8 relative overflow-hidden">
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-b-2xl pointer-events-none"></div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/30 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6">Ships Search-Ready</div>
+                <h3 className="text-2xl font-bold text-white mb-3">Built-in SEO Foundation</h3>
+                <p className="text-slate-400 mb-6">Every site we build starts with a technical SEO foundation — no add-on required.</p>
+                <ul className="space-y-3 text-slate-300 mb-6">
+                  <li className="flex items-center gap-3"><span className="text-emerald-500 font-bold">✓</span> Core Web Vitals optimized (fast load speeds)</li>
+                  <li className="flex items-center gap-3"><span className="text-emerald-500 font-bold">✓</span> Mobile responsiveness</li>
+                  <li className="flex items-center gap-3"><span className="text-emerald-500 font-bold">✓</span> Meta titles &amp; descriptions</li>
+                  <li className="flex items-center gap-3"><span className="text-emerald-500 font-bold">✓</span> Schema markup (structured data)</li>
+                  <li className="flex items-center gap-3"><span className="text-emerald-500 font-bold">✓</span> Sitemap submission &amp; Google indexing</li>
+                </ul>
+                <Link href="/seo" className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-semibold text-sm transition-colors">
+                  Want to go further? See Growth Plans →
+                </Link>
+              </div>
+
             </div>
           </div>
         </section>

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -90,29 +91,70 @@ export default function Home() {
         <section className="py-24 bg-slate-900 border-b border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-12 uppercase tracking-wider">The PathSix Ecosystem</h2>
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6 relative">
-              {/* Connector Line for Desktop */}
-              <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent -z-10"></div>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-8">
 
-              <div className="bg-slate-800 border-2 border-slate-700 hover:border-amber-500 transition-colors px-8 py-6 rounded-xl z-10 w-full md:w-auto shadow-lg">
-                <span className="text-amber-500 font-bold block text-2xl mb-1">01. Foundation</span>
-                <span className="text-base text-slate-300 font-medium">Web Design</span>
+              <div className="flip-card w-60 h-60 shrink-0">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front bg-slate-800 border-2 border-slate-700 text-center">
+                    <span className="text-amber-500 font-bold text-2xl">01.</span>
+                    <span className="text-white font-bold text-2xl block">Foundation</span>
+                    <span className="text-slate-400 text-base">Web Design</span>
+                  </div>
+                  <Link href="/web-design" className="flip-card-back bg-amber-500 text-center">
+                    <p className="text-slate-900 font-semibold text-base leading-snug px-4">Your site, built right. Fast, beautiful, and yours to own.</p>
+                    <span className="text-slate-900 font-bold text-sm mt-3 underline">Learn More →</span>
+                  </Link>
+                </div>
               </div>
+
               <div className="text-amber-500 hidden md:block text-3xl font-bold">→</div>
-              <div className="bg-slate-800 border-2 border-slate-700 hover:border-amber-500 transition-colors px-8 py-6 rounded-xl z-10 w-full md:w-auto shadow-lg">
-                <span className="text-amber-500 font-bold block text-2xl mb-1">02. Growth</span>
-                <span className="text-base text-slate-300 font-medium">SEO & Traffic</span>
+
+              <div className="flip-card w-60 h-60 shrink-0">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front bg-slate-800 border-2 border-slate-700 text-center">
+                    <span className="text-amber-500 font-bold text-2xl">02.</span>
+                    <span className="text-white font-bold text-2xl block">Growth</span>
+                    <span className="text-slate-400 text-base">SEO & Traffic</span>
+                  </div>
+                  <Link href="/seo" className="flip-card-back bg-amber-500 text-center">
+                    <p className="text-slate-900 font-semibold text-base leading-snug px-4">Get found online. Own your market before your competition does.</p>
+                    <span className="text-slate-900 font-bold text-sm mt-3 underline">Learn More →</span>
+                  </Link>
+                </div>
               </div>
+
               <div className="text-amber-500 hidden md:block text-3xl font-bold">→</div>
-              <div className="bg-slate-800 border-2 border-slate-700 hover:border-amber-500 transition-colors px-8 py-6 rounded-xl z-10 w-full md:w-auto shadow-lg">
-                <span className="text-amber-500 font-bold block text-2xl mb-1">03. Operations</span>
-                <span className="text-base text-slate-300 font-medium">Custom CRM</span>
+
+              <div className="flip-card w-60 h-60 shrink-0">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front bg-slate-800 border-2 border-slate-700 text-center">
+                    <span className="text-amber-500 font-bold text-2xl">03.</span>
+                    <span className="text-white font-bold text-2xl block">Operations</span>
+                    <span className="text-slate-400 text-base">Custom CRM</span>
+                  </div>
+                  <Link href="/crm" className="flip-card-back bg-amber-500 text-center">
+                    <p className="text-slate-900 font-semibold text-base leading-snug px-4">Stop juggling tools. Run your whole business in one place.</p>
+                    <span className="text-slate-900 font-bold text-sm mt-3 underline">Learn More →</span>
+                  </Link>
+                </div>
               </div>
+
               <div className="text-amber-500 hidden md:block text-3xl font-bold">→</div>
-              <div className="bg-slate-800 border-2 border-slate-700 hover:border-amber-500 transition-colors px-8 py-6 rounded-xl z-10 w-full md:w-auto shadow-lg">
-                <span className="text-amber-500 font-bold block text-2xl mb-1">04. Scale</span>
-                <span className="text-base text-slate-300 font-medium">Apps & AI</span>
+
+              <div className="flip-card w-60 h-60 shrink-0">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front bg-slate-800 border-2 border-slate-700 text-center">
+                    <span className="text-amber-500 font-bold text-2xl">04.</span>
+                    <span className="text-white font-bold text-2xl block">Scale</span>
+                    <span className="text-slate-400 text-base">Apps & AI</span>
+                  </div>
+                  <Link href="/build" className="flip-card-back bg-amber-500 text-center">
+                    <p className="text-slate-900 font-semibold text-base leading-snug px-4">Build smarter. Ship faster. Let AI carry the load.</p>
+                    <span className="text-slate-900 font-bold text-sm mt-3 underline">Learn More →</span>
+                  </Link>
+                </div>
               </div>
+
             </div>
           </div>
         </section>

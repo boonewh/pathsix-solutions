@@ -109,14 +109,15 @@ export default function SEOPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {/* Included Column */}
-              <div className="bg-slate-950 p-8 rounded-2xl border border-slate-800 opacity-70">
-                <h3 className="text-xl font-bold text-slate-400 mb-6 border-b border-slate-800 pb-4">Included in Web Design</h3>
-                <ul className="space-y-4 text-slate-500">
-                  <li className="flex items-center">✓ Fast Page Load Speeds</li>
-                  <li className="flex items-center">✓ Mobile Responsiveness</li>
-                  <li className="flex items-center">✓ Proper Meta Titles & Descriptions</li>
-                  <li className="flex items-center">✓ Schema Markup (Structured Data)</li>
-                  <li className="flex items-center">✓ Sitemap Submission</li>
+              <div className="bg-slate-800 p-8 rounded-2xl border border-slate-500 relative">
+                <div className="absolute -top-4 right-8 bg-slate-500 text-white text-xs font-bold px-3 py-1 rounded">FREE WITH WEB DESIGN</div>
+                <h3 className="text-xl font-bold text-white mb-6 border-b border-slate-600 pb-4">Included in Web Design</h3>
+                <ul className="space-y-4 text-slate-300">
+                  <li className="flex items-center"><span className="text-slate-400 mr-2 font-bold">✓</span> Fast Page Load Speeds</li>
+                  <li className="flex items-center"><span className="text-slate-400 mr-2 font-bold">✓</span> Mobile Responsiveness</li>
+                  <li className="flex items-center"><span className="text-slate-400 mr-2 font-bold">✓</span> Proper Meta Titles & Descriptions</li>
+                  <li className="flex items-center"><span className="text-slate-400 mr-2 font-bold">✓</span> Schema Markup (Structured Data)</li>
+                  <li className="flex items-center"><span className="text-slate-400 mr-2 font-bold">✓</span> Sitemap Submission</li>
                 </ul>
               </div>
 
