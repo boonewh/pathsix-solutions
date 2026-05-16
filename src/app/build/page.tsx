@@ -113,58 +113,117 @@ export default function BuildPage() {
           </div>
         </section>
 
-        {/* Solutions / Use Cases */}
+        {/* Solutions / Real Projects */}
         <section id="solutions" className="py-24 bg-slate-950">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-16">
+            <div className="mb-6">
               <h2 className="text-3xl font-bold text-white mb-4">What We Build</h2>
               <div className="h-1 w-20 bg-cyan-500 rounded"></div>
             </div>
+            <p className="text-slate-400 mb-16 max-w-2xl">These aren&apos;t mockups. Every project below is in production, handling real users and real data.</p>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Use Case 1 */}
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-12 h-12 bg-cyan-900/30 rounded-lg flex items-center justify-center text-cyan-400 border border-cyan-500/20">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Client Portals</h3>
-                  <p className="text-slate-400 mb-4">Stop emailing PDFs. Give your clients a secure login to view their project status, download invoices, and upload files directly.</p>
-                  <div className="w-full h-48 bg-slate-800 rounded border border-slate-700 overflow-hidden relative group">
-                    <Image
-                      src="/images/portal.jpg"
-                      alt="Client Portal UI"
-                      fill
-                      className="object-cover opacity-60 group-hover:opacity-100 transition-opacity"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-                      <span className="bg-black/50 text-white px-3 py-1 rounded text-xs backdrop-blur-sm">Secure Client Access</span>
-                    </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+              {/* Project 1 — CABC Email Router */}
+              <div className="bg-slate-800 border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 rounded-2xl p-8 flex flex-col gap-6">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <div className="inline-flex items-center gap-2 px-2 py-1 rounded bg-cyan-900/30 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3">Webhook Automation</div>
+                    <h3 className="text-xl font-bold text-white">Booster Club Purchase Router</h3>
                   </div>
+                  <span className="flex-shrink-0 text-xs font-bold text-slate-500 border border-slate-600 rounded px-2 py-1 uppercase tracking-wide">Production</span>
+                </div>
+                <p className="text-slate-400 text-sm italic border-l-2 border-slate-600 pl-4">
+                  &ldquo;A school athletics booster club was manually checking Stripe and forwarding every membership, yard sign, and donation notification to the right person by hand.&rdquo;
+                </p>
+                <ul className="space-y-2 text-slate-300 text-sm">
+                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Stripe purchases automatically route to the right inbox — zero manual forwarding</li>
+                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Admin dashboard with per-recipient delivery tracking, fulfillment workflow, and CSV export</li>
+                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Passwordless admin access via magic link — no credentials to manage</li>
+                </ul>
+                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-700">
+                  {['Next.js', 'Supabase', 'Stripe', 'Resend'].map(t => (
+                    <span key={t} className="text-xs text-slate-500 border border-slate-700 rounded px-2 py-0.5">{t}</span>
+                  ))}
+                  <a href="https://willboone.dev/#cabc" target="_blank" rel="noopener noreferrer" className="ml-auto text-xs text-cyan-500 hover:text-cyan-400 font-medium transition-colors">Case study ↗</a>
                 </div>
               </div>
 
-              {/* Use Case 2 */}
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-12 h-12 bg-cyan-900/30 rounded-lg flex items-center justify-center text-cyan-400 border border-cyan-500/20">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Internal Tools & Calculators</h3>
-                  <p className="text-slate-400 mb-4">Do you have a complex pricing formula only one person understands? We turn that logic into an easy-to-use web form for your sales team.</p>
-                  <div className="w-full h-48 bg-slate-800 rounded border border-slate-700 overflow-hidden relative group">
-                    <Image
-                      src="/images/internal_tools.jpg"
-                      alt="Internal Tool UI"
-                      fill
-                      className="object-cover opacity-60 group-hover:opacity-100 transition-opacity"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-                      <span className="bg-black/50 text-white px-3 py-1 rounded text-xs backdrop-blur-sm">Complex Logic Simplified</span>
-                    </div>
+              {/* Project 2 — OSG Belles & Beaux */}
+              <div className="bg-slate-800 border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 rounded-2xl p-8 flex flex-col gap-6">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <div className="inline-flex items-center gap-2 px-2 py-1 rounded bg-cyan-900/30 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3">Payments & Registration</div>
+                    <h3 className="text-xl font-bold text-white">Symphony Guild Student Platform</h3>
                   </div>
+                  <span className="flex-shrink-0 text-xs font-bold text-slate-500 border border-slate-600 rounded px-2 py-1 uppercase tracking-wide">Production</span>
+                </div>
+                <p className="text-slate-400 text-sm italic border-l-2 border-slate-600 pl-4">
+                  &ldquo;A performing arts organization was collecting student registrations on paper forms and chasing unpaid dues by email. They had a hard deadline — a parent meeting where signups were expected — and needed a fully working system in two weeks.&rdquo;
+                </p>
+                <ul className="space-y-2 text-slate-300 text-sm">
+                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Students register online; a QuickBooks invoice is created automatically in the background</li>
+                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Roster marks paid the moment QuickBooks payment clears — no one touches a dashboard</li>
+                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Admin panel: real-time roster, grade filters, KPI cards, and configurable pricing</li>
+                </ul>
+                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-700">
+                  {['Next.js', 'Supabase', 'QuickBooks API', 'Vercel'].map(t => (
+                    <span key={t} className="text-xs text-slate-500 border border-slate-700 rounded px-2 py-0.5">{t}</span>
+                  ))}
+                  <a href="https://willboone.dev/#osg" target="_blank" rel="noopener noreferrer" className="ml-auto text-xs text-cyan-500 hover:text-cyan-400 font-medium transition-colors">Case study ↗</a>
                 </div>
               </div>
+
+              {/* Project 3 — PathSix CRM */}
+              <div className="bg-slate-800 border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 rounded-2xl p-8 flex flex-col gap-6">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <div className="inline-flex items-center gap-2 px-2 py-1 rounded bg-cyan-900/30 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3">Custom SaaS Platform</div>
+                    <h3 className="text-xl font-bold text-white">PathSix CRM</h3>
+                  </div>
+                  <span className="flex-shrink-0 text-xs font-bold text-slate-500 border border-slate-600 rounded px-2 py-1 uppercase tracking-wide">Production</span>
+                </div>
+                <p className="text-slate-400 text-sm italic border-l-2 border-slate-600 pl-4">
+                  &ldquo;Field services businesses were tracking leads in spreadsheets, following up by memory, and had zero visibility into their pipeline or revenue.&rdquo;
+                </p>
+                <ul className="space-y-2 text-slate-300 text-sm">
+                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Full lead → client lifecycle: capture, assignment, follow-up, conversion, and project tracking</li>
+                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> 13 reporting endpoints: pipeline, revenue by client, MRR forecasting, retention, and more</li>
+                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> White-label config — each tenant gets their own branding, statuses, and feature set</li>
+                </ul>
+                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-700">
+                  {['React', 'Python', 'PostgreSQL', 'Fly.io'].map(t => (
+                    <span key={t} className="text-xs text-slate-500 border border-slate-700 rounded px-2 py-0.5">{t}</span>
+                  ))}
+                  <a href="https://willboone.dev/#crm" target="_blank" rel="noopener noreferrer" className="ml-auto text-xs text-cyan-500 hover:text-cyan-400 font-medium transition-colors">Case study ↗</a>
+                </div>
+              </div>
+
+              {/* Project 4 — Sunday Nudge */}
+              <div className="bg-slate-800 border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 rounded-2xl p-8 flex flex-col gap-6">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <div className="inline-flex items-center gap-2 px-2 py-1 rounded bg-cyan-900/30 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3">AI-Powered App</div>
+                    <h3 className="text-xl font-bold text-white">SMS Reminder Platform</h3>
+                  </div>
+                  <span className="flex-shrink-0 text-xs font-bold text-slate-500 border border-slate-600 rounded px-2 py-1 uppercase tracking-wide">Production</span>
+                </div>
+                <p className="text-slate-400 text-sm italic border-l-2 border-slate-600 pl-4">
+                  &ldquo;Wanted to prove that AI-guided development could ship production-grade software. No app to download. No account to create. Just text it.&rdquo;
+                </p>
+                <ul className="space-y-2 text-slate-300 text-sm">
+                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Text naturally (&ldquo;Call client Tue 2pm&rdquo;) — Claude Haiku parses intent, schedules the reminder</li>
+                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> DST-safe scheduling, 14+ SMS commands, full TCPA compliance built in</li>
+                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Ships as two products (personal + group) sharing a single core package</li>
+                </ul>
+                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-700">
+                  {['Next.js', 'Claude Haiku', 'Twilio', 'PostgreSQL'].map(t => (
+                    <span key={t} className="text-xs text-slate-500 border border-slate-700 rounded px-2 py-0.5">{t}</span>
+                  ))}
+                  <a href="https://willboone.dev/#ai-builds" target="_blank" rel="noopener noreferrer" className="ml-auto text-xs text-cyan-500 hover:text-cyan-400 font-medium transition-colors">Case study ↗</a>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
@@ -192,22 +251,23 @@ export default function BuildPage() {
                 <a href="/contact" className="w-full py-3 border border-slate-600 hover:border-cyan-400 hover:text-cyan-400 text-white rounded font-medium transition-colors text-center">Book Session</a>
               </div>
 
-              {/* Step 2: MVP */}
+              {/* Step 2: Build Subscription */}
               <div className="bg-gradient-to-b from-slate-800 to-slate-900 p-8 rounded-2xl border border-cyan-500 shadow-xl shadow-cyan-500/10 flex flex-col relative transform md:-translate-y-4">
-                <div className="absolute top-0 right-0 bg-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-[13px]">POPULAR</div>
-                <h3 className="text-xl font-bold text-white mb-2">02. MVP Sprint</h3>
-                <div className="text-3xl font-bold text-cyan-400 mb-2">Starts at $2,500</div>
-                <p className="text-xs text-cyan-600 font-bold uppercase mb-6">2-Week Turnaround</p>
+                <div className="absolute top-0 right-0 bg-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-[13px]">MOST POPULAR</div>
+                <h3 className="text-xl font-bold text-white mb-2">02. Build Subscription</h3>
+                <div className="text-3xl font-bold text-cyan-400 mb-1">$499<span className="text-lg text-slate-400 font-normal">/mo</span></div>
+                <p className="text-xs text-cyan-600 font-bold uppercase mb-6">5-Month Minimum Contract</p>
                 <p className="text-slate-400 text-sm mb-6 flex-grow">
-                  We build the &quot;Minimum Viable Product.&quot; The core feature you need to solve the immediate problem. Fast, functional, and extendable.
+                  Most agencies quote a big project fee, take the money, and hand you something half-finished. We work differently. One monthly rate gets you a dedicated developer in your corner — building and iterating on your software every month until it&apos;s exactly what your business needs.
                 </p>
-                <ul className="text-sm text-slate-300 space-y-2 mb-8">
-                  <li>✓ Database Setup</li>
-                  <li>✓ User Authentication</li>
-                  <li>✓ Core Business Logic</li>
-                  <li>✓ Hosted & Secure</li>
+                <ul className="text-sm text-slate-300 space-y-3 mb-8">
+                  <li className="flex items-start gap-2"><span className="text-cyan-400 font-bold mt-0.5">✓</span> Dedicated development hours each month</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400 font-bold mt-0.5">✓</span> Continuous build, test, and iterate — no disappearing acts</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400 font-bold mt-0.5">✓</span> Hosted, deployed, and production-ready from day one</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400 font-bold mt-0.5">✓</span> You own 100% of the code, always</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400 font-bold mt-0.5">✓</span> Priority response between sessions</li>
                 </ul>
-                <a href="/contact" className="w-full py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded font-bold transition-colors text-center">Start Build</a>
+                <a href="/contact" className="w-full py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded font-bold transition-colors text-center">Start Your Build</a>
               </div>
 
               {/* Step 3: Enterprise */}
