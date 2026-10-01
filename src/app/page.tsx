@@ -370,10 +370,10 @@ export default function Home() {
         <section id="innovation" className="py-24 bg-gradient-to-br from-slate-900 to-slate-900 relative border-t border-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div className="inline-block px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 rounded-full text-xs font-bold mb-4">ADVANCED ENGINEERING</div>
-              <h2 className="text-4xl font-bold text-white mb-4">And The Future is Custom.</h2>
+              <div className="inline-block px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 rounded-full text-xs font-bold mb-4">TOOLS FOR YOUR NEXT CHAPTER</div>
+              <h2 className="text-4xl font-bold text-white mb-4">Make Technology Work for Your Business.</h2>
               <p className="text-slate-400 max-w-2xl mx-auto">
-                When off-the-shelf software stops working, we build the bridge. Whether it&apos;s a custom internal app or deploying an AI prototype you vibe-coded.
+                Get purpose-built software for your unique needs, or practical guidance on choosing and using AI in your everyday work.
               </p>
             </div>
 
@@ -397,21 +397,21 @@ export default function Home() {
                 </a>
               </div>
 
-              {/* AI Deployment Card */}
+              {/* AI Consulting Card */}
               <div className="group bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-cyan-500 transition-all">
                 <div className="text-cyan-500 mb-4">
                   <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">AI Deployment Assistance</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">AI Consulting</h3>
                 <p className="text-slate-400 mb-6">
-                  For the &quot;Vibe Coders.&quot; You used ChatGPT or Claude to build a tool, but you can&apos;t get it online safely. We professionally deploy, secure, and fix your AI-generated code.
+                  Find the right AI tools, put them to work, and help your team use them confidently. Practical support for small businesses, from first questions to everyday use.
                 </p>
                 <ul className="text-sm text-slate-500 space-y-2 mb-6">
-                  <li>• Security Audits (API Keys)</li>
-                  <li>• Hosting Configuration</li>
-                  <li>• Production-Ready Refactoring</li>
+                  <li>• Tool Selection & Practical Planning</li>
+                  <li>• Implementation & Team Training</li>
+                  <li>• Ongoing Guidance & Troubleshooting</li>
                 </ul>
-                <a href="/vibe" className="inline-flex items-center text-cyan-500 hover:text-cyan-400 font-semibold transition-colors">
+                <a href="/ai-consulting" className="inline-flex items-center text-cyan-500 hover:text-cyan-400 font-semibold transition-colors">
                   Learn More →
                 </a>
               </div>

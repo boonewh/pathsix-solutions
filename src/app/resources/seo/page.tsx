@@ -19,21 +19,21 @@ const articles = [
     slug: 'google-map-optimization',
     excerpt: 'Step-by-step guide to ranking #1 in the Google Maps 3-pack for your local area.',
     readTime: '4 min read',
-    date: 'Feb 2025',
+    available: true,
   },
   {
     title: 'Local SEO Checklist for Small Businesses',
     slug: 'local-seo-checklist',
     excerpt: 'Everything you need to do to rank higher in local search results.',
     readTime: '8 min read',
-    date: 'Coming Soon',
+    available: false,
   },
   {
     title: 'Reputation Management: Get More 5-Star Reviews',
     slug: 'reputation-management',
     excerpt: 'Proven strategies to get more positive reviews and manage your online reputation.',
     readTime: '6 min read',
-    date: 'Coming Soon',
+    available: false,
   },
 ]
 
@@ -57,12 +57,16 @@ export default function SEOResourcesPage() {
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto space-y-8">
             {articles.map((article) => {
-              const isPublished = article.date !== 'Coming Soon'
+              const isPublished = article.available
               const content = (
                 <article key={article.slug} className="bg-slate-900 border border-slate-700 rounded-2xl p-8 hover:border-green-500 transition-all duration-300">
                   <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
-                    <span>{article.date}</span>
-                    <span>•</span>
+                    {!isPublished && (
+                      <>
+                        <span>Coming Soon</span>
+                        <span>•</span>
+                      </>
+                    )}
                     <span>{article.readTime}</span>
                   </div>
                   <h2 className="text-2xl font-bold text-white mb-3 hover:text-green-500 transition-colors">{article.title}</h2>

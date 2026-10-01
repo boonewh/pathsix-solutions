@@ -26,7 +26,12 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env*.local
+.env*
+!.env.example
+
+# local tooling
+.claude/settings.local.json
+.demo-staging/
 
 # vercel
 .vercel

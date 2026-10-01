@@ -250,7 +250,7 @@ export default function ContactPage() {
                       <option value="seo">SEO & Growth</option>
                       <option value="crm">Custom CRM</option>
                       <option value="build">Custom Development</option>
-                      <option value="vibe">AI Deployment</option>
+                      <option value="ai-consulting">AI Consulting</option>
                       <option value="multiple">Multiple Services</option>
                       <option value="not-sure">Not Sure Yet</option>
                     </select>
@@ -342,9 +342,9 @@ export default function ContactPage() {
                 <div className="text-cyan-500 mb-2">⚙️</div>
                 <div className="text-white font-medium text-sm group-hover:text-cyan-500 transition-colors">Custom Apps</div>
               </a>
-              <a href="/vibe" className="p-4 bg-slate-800 hover:bg-slate-700 rounded-lg border border-slate-700 hover:border-fuchsia-500 transition-all text-center group">
-                <div className="text-fuchsia-500 mb-2">🚀</div>
-                <div className="text-white font-medium text-sm group-hover:text-fuchsia-500 transition-colors">AI Deployment</div>
+              <a href="/ai-consulting" className="p-4 bg-slate-800 hover:bg-slate-700 rounded-lg border border-slate-700 hover:border-teal-500 transition-all text-center group">
+                <div className="text-teal-500 mb-2">AI</div>
+                <div className="text-white font-medium text-sm group-hover:text-teal-500 transition-colors">AI Consulting</div>
               </a>
             </div>
           </div>

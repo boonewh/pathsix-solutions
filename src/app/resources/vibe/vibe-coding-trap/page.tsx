@@ -41,7 +41,7 @@ export default function VibeCodingTrap() {
               </Link>
               <span>/</span>
               <Link href="/resources/vibe" className="hover:text-amber-500 transition-colors">
-                AI Deployment
+                AI Resources
               </Link>
               <span>/</span>
               <span className="text-slate-400">The Vibe Coding Trap</span>
@@ -252,22 +252,12 @@ export default function VibeCodingTrap() {
               A prototype proves an idea; production code sustains a business. For the entrepreneur, the &quot;Vibe Coding&quot; phase is the beginning of the journey, not the destination.
             </p>
 
-            <div className="bg-gradient-to-br from-amber-900/40 to-slate-800 p-10 rounded-2xl border border-amber-700/50 shadow-2xl">
-              <h3 className="text-2xl font-bold text-white mb-2">Sanity Check Audit</h3>
-              <p className="text-slate-400 text-sm mb-4">Find out what&apos;s broken before your users do.</p>
-              <div className="flex justify-center items-baseline gap-1 my-6">
-                <span className="text-5xl font-extrabold text-amber-400">$99</span>
-                <span className="text-slate-400">one-time</span>
+            <div className="rounded-lg border border-slate-700 bg-slate-800 p-8">
+              <h3 className="text-2xl font-semibold tracking-tight text-white">Need help with your application?</h3>
+              <p className="mt-4 text-base text-slate-300">Our Custom Apps service covers purpose-built software and technical development. Tell us what you have and where you need help.</p>
+              <div className="mt-6 font-medium text-amber-400">
+                <Link href="/build" className="inline-flex min-h-12 items-center hover:underline">Explore Custom Apps →</Link>
               </div>
-              <ul className="text-left max-w-sm mx-auto space-y-3 text-slate-300 mb-8">
-                <li className="flex items-center gap-2"><span className="text-green-400 font-bold">&#10003;</span> Security Vulnerability Scan</li>
-                <li className="flex items-center gap-2"><span className="text-green-400 font-bold">&#10003;</span> Code Structure Review</li>
-                <li className="flex items-center gap-2"><span className="text-green-400 font-bold">&#10003;</span> Fix Roadmap (PDF)</li>
-                <li className="flex items-center gap-2"><span className="text-green-400 font-bold">&#10003;</span> 30-min Consultation</li>
-              </ul>
-              <Link href="/vibe" className="inline-block bg-white text-slate-900 hover:bg-amber-50 font-bold py-4 px-8 rounded-lg shadow-lg text-lg transition-colors">
-                Audit My Prototype
-              </Link>
             </div>
 
             <div className="mt-12">

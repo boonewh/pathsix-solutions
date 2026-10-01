@@ -19,7 +19,6 @@ const articles = [
     slug: 'subscription-model',
     excerpt: 'Learn why subscription-based web design aligns with the reality of maintaining a modern digital presence. CapEx vs OpEx explained.',
     readTime: '4 min read',
-    date: 'January 2026',
     available: true,
   },
   {
@@ -27,7 +26,6 @@ const articles = [
     slug: 'choosing-a-web-designer',
     excerpt: 'Not all web designers are created equal. Learn what questions to ask and red flags to avoid when hiring a designer.',
     readTime: '5 min read',
-    date: 'January 2026',
     available: true,
   },
   {
@@ -35,7 +33,6 @@ const articles = [
     slug: 'managed-vs-traditional-hosting',
     excerpt: 'Understanding the difference between managed hosting and traditional hosting can save you thousands of dollars and countless hours.',
     readTime: '4 min read',
-    date: 'January 2026',
     available: true,
   },
   {
@@ -43,7 +40,6 @@ const articles = [
     slug: 'wordpress-vs-custom',
     excerpt: 'A comparative analysis of WordPress CMS versus Custom Software Development. Understand when to choose managed hosting and when to invest in bespoke applications.',
     readTime: '5 min read',
-    date: 'January 2026',
     available: true,
   },
 ]
@@ -85,8 +81,6 @@ export default function WebDesignResourcesPage() {
                     className="block bg-slate-900 border border-slate-700 rounded-2xl p-8 hover:border-blue-500 transition-all duration-300"
                   >
                     <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
-                      <span>{article.date}</span>
-                      <span>•</span>
                       <span>{article.readTime}</span>
                     </div>
 
@@ -108,8 +102,6 @@ export default function WebDesignResourcesPage() {
                     className="bg-slate-900 border border-slate-700 rounded-2xl p-8"
                   >
                     <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
-                      <span>{article.date}</span>
-                      <span>•</span>
                       <span>{article.readTime}</span>
                     </div>
 

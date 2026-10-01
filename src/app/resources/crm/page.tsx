@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 }
 
 const articles = [
-  { title: 'Custom CRM vs Salesforce: Which is Right for You?', slug: 'anti-bloat', excerpt: 'The hidden costs of feature bloat and the case for purpose-built, right-sized CRM solutions.', readTime: '4 min read', date: 'Feb 2025' },
-  { title: 'Workflow Automation Basics', slug: 'workflow-automation', excerpt: 'How to automate repetitive tasks and streamline your business processes.', readTime: '7 min read', date: 'Coming Soon' },
-  { title: 'CRM Implementation Checklist', slug: 'implementation-checklist', excerpt: 'Step-by-step guide to implementing a CRM system without disrupting your business.', readTime: '6 min read', date: 'Coming Soon' },
+  { title: 'Custom CRM vs Salesforce: Which is Right for You?', slug: 'anti-bloat', excerpt: 'The hidden costs of feature bloat and the case for purpose-built, right-sized CRM solutions.', readTime: '4 min read', available: true },
+  { title: 'Workflow Automation Basics', slug: 'workflow-automation', excerpt: 'How to automate repetitive tasks and streamline your business processes.', readTime: '7 min read', available: false },
+  { title: 'CRM Implementation Checklist', slug: 'implementation-checklist', excerpt: 'Step-by-step guide to implementing a CRM system without disrupting your business.', readTime: '6 min read', available: false },
 ]
 
 export default function CRMResourcesPage() {
@@ -34,12 +34,16 @@ export default function CRMResourcesPage() {
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto space-y-8">
             {articles.map((article) => {
-              const isPublished = article.date !== 'Coming Soon'
+              const isPublished = article.available
               const content = (
                 <article key={article.slug} className="bg-slate-900 border border-slate-700 rounded-2xl p-8 hover:border-purple-500 transition-all duration-300">
                   <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
-                    <span>{article.date}</span>
-                    <span>•</span>
+                    {!isPublished && (
+                      <>
+                        <span>Coming Soon</span>
+                        <span>•</span>
+                      </>
+                    )}
                     <span>{article.readTime}</span>
                   </div>
                   <h2 className="text-2xl font-bold text-white mb-3 hover:text-purple-500 transition-colors">{article.title}</h2>

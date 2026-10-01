@@ -63,11 +63,11 @@ const resourceCategories = [
     ],
   },
   {
-    title: 'AI Deployment',
-    description: 'Deploy and secure your AI-generated applications',
+    title: 'AI Resources',
+    description: 'Perspectives on AI tools, software, and practical business use',
     href: '/resources/vibe',
     icon: '🤖',
-    color: 'pink',
+    color: 'teal',
     articles: [
       'Securing AI-Generated Code',
       'Deployment Best Practices',
@@ -101,11 +101,11 @@ const colorClasses = {
     text: 'text-cyan-500',
     hover: 'hover:border-cyan-500 hover:shadow-cyan-500/20',
   },
-  pink: {
-    border: 'border-pink-500',
-    bg: 'bg-pink-500/10',
-    text: 'text-pink-500',
-    hover: 'hover:border-pink-500 hover:shadow-pink-500/20',
+  teal: {
+    border: 'border-teal-500',
+    bg: 'bg-teal-500/10',
+    text: 'text-teal-500',
+    hover: 'hover:border-teal-500 hover:shadow-teal-500/20',
   },
 }
 

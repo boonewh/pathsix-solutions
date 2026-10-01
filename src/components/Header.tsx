@@ -14,6 +14,7 @@ export default function Header({ serviceName, serviceColor }: HeaderProps = {}) 
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
+    onScroll()
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -22,7 +23,7 @@ export default function Header({ serviceName, serviceColor }: HeaderProps = {}) 
     <nav className={`fixed w-full z-50 transition-all duration-300 border-b ${scrolled ? 'bg-slate-950/90 backdrop-blur-md border-white/5' : 'bg-transparent border-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex-shrink-0 group">
+          <Link href="/" aria-label="Homepage" className="shrink-0 group">
             <span className="text-2xl font-bold text-white tracking-tight">
               Path<span className="text-amber-500">Six</span>{' '}
               {serviceName ? (
@@ -34,24 +35,26 @@ export default function Header({ serviceName, serviceColor }: HeaderProps = {}) 
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
+          <div className="hidden xl:block">
             <div className="ml-10 flex items-baseline space-x-8">
               <Link href="/web-design" className="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium text-slate-300">Web Design</Link>
               <Link href="/seo" className="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium text-slate-300">SEO</Link>
               <Link href="/crm" className="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium text-slate-300">CRM</Link>
               <Link href="/build" className="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium text-slate-300">Custom Apps</Link>
-              <Link href="/vibe" className="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium text-slate-300">AI Deployment</Link>
+              <Link href="/ai-consulting" className="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium text-slate-300">AI Consulting</Link>
               <Link href="/resources" className="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium text-slate-300">Resources</Link>
               <Link href="/contact" className="border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white px-4 py-2 rounded-md text-sm font-bold transition-all">Contact</Link>
             </div>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="xl:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
               aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="main-mobile-menu"
             >
               <svg
                 className="h-6 w-6"
@@ -75,15 +78,15 @@ export default function Header({ serviceName, serviceColor }: HeaderProps = {}) 
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-slate-900 border-t border-slate-800">
+        <div id="main-mobile-menu" className="xl:hidden bg-slate-900 border-t border-slate-800">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link href="/web-design" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">Web Design</Link>
-            <Link href="/seo" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">SEO</Link>
-            <Link href="/crm" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">CRM</Link>
-            <Link href="/build" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">Custom Apps</Link>
-            <Link href="/vibe" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">AI Deployment</Link>
-            <Link href="/resources" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">Resources</Link>
-            <Link href="/contact" className="block border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white px-3 py-2 rounded-md text-base font-bold transition-all mx-3 my-2 text-center">Contact</Link>
+            <Link onClick={() => setMobileMenuOpen(false)} href="/web-design" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">Web Design</Link>
+            <Link onClick={() => setMobileMenuOpen(false)} href="/seo" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">SEO</Link>
+            <Link onClick={() => setMobileMenuOpen(false)} href="/crm" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">CRM</Link>
+            <Link onClick={() => setMobileMenuOpen(false)} href="/build" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">Custom Apps</Link>
+            <Link onClick={() => setMobileMenuOpen(false)} href="/ai-consulting" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">AI Consulting</Link>
+            <Link onClick={() => setMobileMenuOpen(false)} href="/resources" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">Resources</Link>
+            <Link onClick={() => setMobileMenuOpen(false)} href="/contact" className="block border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white px-3 py-2 rounded-md text-base font-bold transition-all mx-3 my-2 text-center">Contact</Link>
           </div>
         </div>
       )}

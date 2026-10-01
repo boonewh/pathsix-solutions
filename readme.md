@@ -1,6 +1,6 @@
 # PathSix Solutions - Unified Ecosystem
 
-This is the complete PathSix Solutions unified platform, built with Next.js 14 and Tailwind CSS. All services previously hosted on separate subdomains are now consolidated into a single, cohesive website.
+This is the complete PathSix Solutions unified platform, built with Next.js 15, React 19, and Tailwind CSS. All services previously hosted on separate subdomains are now consolidated into a single, cohesive website.
 
 ## 🎯 New Direction (December 2024)
 
@@ -55,9 +55,11 @@ public/
 
 ## Getting Started
 
+Use Node.js 24.x and npm. No `.env` file or database is required for local development. The contact form uses the existing hosted Formspree endpoint; submitting it sends a real inquiry.
+
 1. **Install dependencies:**
    ```bash
-   npm install
+   npm ci
    ```
 
 2. **Run development server:**
@@ -67,9 +69,15 @@ public/
 
 3. **Open [http://localhost:3000](http://localhost:3000) in your browser**
 
+Before committing changes, run `npm run lint` and `npm run build`. To preview the production build locally, stop the development server and run `npm start`.
+
+The GitHub repository is [boonewh/pathsix-solutions](https://github.com/boonewh/pathsix-solutions). Commit dependency changes with `package-lock.json` so `npm ci` reproduces the same installation. Publishing to `main` may trigger the existing Vercel deployment.
+
+The npm override for Next.js uses the project's patched PostCSS 8 dependency in place of Next.js 15's older pinned copy. Reassess this override when upgrading Next.js.
+
 ## Features
 
-- ✅ **Next.js 14.2.35** with App Router
+- ✅ **Next.js 15** with App Router
 - ✅ **Unified Multi-Page Architecture** - All services under one domain
 - ✅ **Service-Specific Themes** - Each page has unique color scheme and branding
   - Web Design: Blue theme

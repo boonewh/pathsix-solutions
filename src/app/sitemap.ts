@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: 'https://pathsixsolutions.com/vibe',
+      url: 'https://pathsixsolutions.com/ai-consulting',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,

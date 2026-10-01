@@ -15,7 +15,7 @@ export default function Footer() {
               Path<span className="text-amber-500">Six</span> Solutions
             </h3>
             <p className="text-slate-400 mb-4">
-              The Full-Stack Growth Partner. We unify web design, SEO, CRM solutions, and custom development for growing businesses.
+              The Full-Stack Growth Partner. We unify web design, SEO, CRM solutions, custom development, and AI consulting for growing businesses.
             </p>
             <div className="space-y-2">
               <p className="text-slate-400">
@@ -53,8 +53,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/vibe" className="text-slate-400 hover:text-amber-500 transition-colors">
-                  AI Deployment
+                <a href="/ai-consulting" className="text-slate-400 hover:text-amber-500 transition-colors">
+                  AI Consulting
                 </a>
               </li>
             </ul>
