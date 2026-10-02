@@ -1,7 +1,10 @@
+import { pageMetadata } from '@/lib/metadata'
 import Image from 'next/image'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+
+export const metadata = pageMetadata('/', 'PathSix Solutions | Web Design, CRM & AI Consulting', 'Custom websites, SEO, CRM solutions, custom applications, and practical AI consulting for small businesses.')
 
 export default function Home() {
   // Schema markup for SEO
@@ -9,9 +12,9 @@ export default function Home() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'PathSix Solutions',
-    url: 'https://pathsixsolutions.com',
-    logo: 'https://pathsixsolutions.com/logo.png',
-    description: 'The Full-Stack Growth Partner - unified web design, SEO, CRM solutions, and custom development for small businesses.',
+    url: 'https://www.pathsixsolutions.com',
+    logo: 'https://www.pathsixsolutions.com/images/pathsix_logo_optimized.png',
+    description: 'Web design, SEO, CRM solutions, custom development, and AI consulting for small businesses.',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '10 Ave K E',
@@ -169,7 +172,7 @@ export default function Home() {
                 Your website isn&apos;t a brochure; it&apos;s infrastructure. But infrastructure shouldn&apos;t cost you $5,000 upfront.
               </p>
               <p className="text-slate-400 mb-8 leading-relaxed">
-                Our flagship subscription model treats your website like software. We build it, host it, secure it, and update it forever. You don&apos;t buy a website; you subscribe to a digital department.
+                Our flagship subscription model treats your website like software. We build it, host it, maintain it, and handle updates through your service plan. You don&apos;t buy a website; you subscribe to a digital department.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">
@@ -178,7 +181,7 @@ export default function Home() {
                   <div className="text-sm text-slate-500">Keep your cash flow</div>
                 </div>
                 <div className="border-l-2 border-amber-500 pl-4">
-                  <div className="text-white font-bold">Unlimited Updates</div>
+                  <div className="text-white font-bold">Content Updates</div>
                   <div className="text-sm text-slate-500">Never goes stale</div>
                 </div>
               </div>
@@ -285,12 +288,12 @@ export default function Home() {
                   A beautiful website without traffic is an expensive diary. 
                 </p>
                 <p className="text-slate-400 mb-8 leading-relaxed">
-                  Because we built the code, we control the technical SEO at a deeper level than any external agency can. We optimize your structure, your content, and your local presence to ensure the foundation we built actually gets seen.
+                  We can work directly on your website structure and content, alongside your local business information, to improve how customers find and understand your services.
                 </p>
                 <ul className="space-y-3 text-slate-300 mb-8">
                   <li className="flex items-center">
                     <svg className="w-5 h-5 text-amber-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                    Google My Business Optimization
+                    Google Business Profile Optimization
                   </li>
                   <li className="flex items-center">
                     <svg className="w-5 h-5 text-amber-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
@@ -308,12 +311,12 @@ export default function Home() {
               <div className="lg:w-1/2">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-slate-900 p-6 rounded-lg border border-slate-700">
-                    <div className="text-3xl font-bold text-white mb-2">93%</div>
-                    <div className="text-sm text-slate-500">Online experiences begin with a search engine.</div>
+                    <div className="text-3xl font-bold text-white mb-2">Search</div>
+                    <div className="text-sm text-slate-500">Help customers find clear answers about your services.</div>
                   </div>
                   <div className="bg-slate-900 p-6 rounded-lg border border-slate-700">
-                    <div className="text-3xl font-bold text-amber-500 mb-2">#1</div>
-                    <div className="text-sm text-slate-500">Goal: Get you to the top of the Google Maps search. Yes, Google MAPS.</div>
+                    <div className="text-3xl font-bold text-amber-500 mb-2">Local</div>
+                    <div className="text-sm text-slate-500">Keep your business information accurate across your website and Google Business Profile.</div>
                   </div>
                 </div>
               </div>
@@ -334,7 +337,7 @@ export default function Home() {
                 Most CRMs are bloated, expensive, and confusing. We build custom, lightweight CRM solutions that fit <em>your</em> specific workflow. If you don&apos;t need it, we don&apos;t code it.
               </p>
               <div className="bg-slate-800 p-6 rounded-lg border-l-4 border-amber-500 mb-8">
-                <p className="italic text-slate-300">&quot;PathSix built us a system that tracks exactly what we care about. No more fighting with Salesforce settings.&quot;</p>
+                <p className="italic text-slate-300">Keep leads, follow-ups, and project information together in a workflow built around your team.</p>
               </div>
               <a href="/crm" className="text-white border-b-2 border-amber-500 pb-1 hover:text-amber-500 transition-colors font-medium inline-flex items-center gap-1">
                 Explore CRM Solutions <span className="text-xl">→</span>

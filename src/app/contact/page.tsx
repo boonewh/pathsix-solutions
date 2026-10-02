@@ -70,10 +70,13 @@ export default function ContactPage() {
   })
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSubmitting(true)
+    setSubmitError(false)
+    setSubmitted(false)
 
     try {
       const response = await fetch('https://formspree.io/f/myzrvbra', {
@@ -84,7 +87,9 @@ export default function ContactPage() {
         body: JSON.stringify(formData),
       })
 
-      if (response.ok) {
+      if (!response.ok) {
+        setSubmitError(true)
+      } else {
         setSubmitted(true)
         setFormData({
           name: '',
@@ -94,8 +99,8 @@ export default function ContactPage() {
           message: ''
         })
       }
-    } catch (error) {
-      console.error('Form submission error:', error)
+    } catch {
+      setSubmitError(true)
     } finally {
       setSubmitting(false)
     }
@@ -112,8 +117,8 @@ export default function ContactPage() {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
     name: 'Contact PathSix Solutions',
-    url: 'https://pathsixsolutions.com/contact',
-    description: 'Get in touch with PathSix Solutions for web design, SEO, CRM, custom development, or AI deployment services.',
+    url: 'https://www.pathsixsolutions.com/contact',
+    description: 'Get in touch with PathSix Solutions for web design, SEO, CRM, custom development, or AI consulting services.',
   }
 
   return (
@@ -138,7 +143,7 @@ export default function ContactPage() {
               Let&apos;s Start a <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-300">Conversation</span>
             </h1>
             <p className="text-xl text-slate-400 mb-4">
-              Whether you need a new website, better SEO, a custom CRM, or help deploying your app—we&apos;re here to help.
+              Whether you need a new website, better SEO, a custom CRM, a custom application, or practical AI consulting—we&apos;re here to help.
             </p>
             <p className="text-slate-500">
               Fill out the form below and we&apos;ll get back to you within 24 hours.
@@ -177,7 +182,7 @@ export default function ContactPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
                 <h3 className="text-white font-bold mb-1">Location</h3>
-                <p className="text-slate-400 text-sm">Remote & On-Site</p>
+                <p className="text-slate-400 text-sm">Ask about remote and on-site options</p>
               </div>
             </div>
 
@@ -284,10 +289,17 @@ export default function ContactPage() {
                 </button>
 
                 {submitted && (
-                  <div className="text-center p-4 bg-green-900/20 border border-green-500/30 rounded-lg">
+                  <div role="status" className="text-center p-4 bg-green-900/20 border border-green-500/30 rounded-lg">
                     <p className="text-green-400 font-medium">
                       ✓ Thanks! We&apos;ll get back to you within 24 hours.
                     </p>
+                  </div>
+                )}
+
+                {submitError && (
+                  <div role="alert" className="text-center p-4 bg-red-900/20 border border-red-500/30 rounded-lg text-red-200">
+                    We couldn&apos;t send your message. Your entries are still here, so you can try again.
+                    You can also <a href="mailto:support@pathsixsolutions.com" className="underline">email support@pathsixsolutions.com</a>.
                   </div>
                 )}
 
@@ -295,7 +307,7 @@ export default function ContactPage() {
                   <svg className="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                   </svg>
-                  Your information is secure and will never be shared.
+                  Please include only the information we need to respond to your inquiry.
                 </p>
               </form>
             </div>
@@ -311,10 +323,10 @@ export default function ContactPage() {
                   Email Us Directly
                 </a>
                 <a
-                  href="tel:+1234567890"
+                  href="mailto:support@pathsixsolutions.com?subject=Call%20request"
                   className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors border border-slate-700 hover:border-amber-500"
                 >
-                  Schedule a Call
+                  Request a Call
                 </a>
               </div>
             </div>

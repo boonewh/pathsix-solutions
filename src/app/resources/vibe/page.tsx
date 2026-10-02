@@ -1,12 +1,9 @@
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'AI Resources | PathSix Solutions',
-  description: 'Perspectives on AI tools, software, and practical business use.',
-}
+export const metadata = pageMetadata('/resources/vibe', 'AI Resources | PathSix Solutions', 'Perspectives on AI tools, software, and practical business use.')
 
 const articles = [
   { title: 'The "Vibe Coding" Trap: When AI Prototypes Meet Production', slug: 'vibe-coding-trap', excerpt: 'Generating code is easy. Engineering a system is hard. The gap between a prompt and a product is larger than you think.', readTime: '3 min read', available: true },

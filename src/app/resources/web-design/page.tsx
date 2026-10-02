@@ -1,23 +1,15 @@
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Web Design Resources | PathSix Solutions',
-  description: 'Expert guides on choosing a web designer, hosting options, and building professional websites for your business.',
-  openGraph: {
-    title: 'Web Design Resources | PathSix Solutions',
-    description: 'Learn everything you need to know about professional web design and hosting.',
-    url: 'https://pathsixsolutions.com/resources/web-design',
-  },
-}
+export const metadata = pageMetadata('/resources/web-design', 'Web Design Resources | PathSix Solutions', 'Expert guides on choosing a web designer, hosting options, and building professional websites for your business.')
 
 const articles = [
   {
     title: 'The Subscription Model: Treating Your Website as a Service',
     slug: 'subscription-model',
-    excerpt: 'Learn why subscription-based web design aligns with the reality of maintaining a modern digital presence. CapEx vs OpEx explained.',
+    excerpt: 'Learn why subscription-based web design aligns with the reality of maintaining a modern digital presence. Compare upfront and ongoing costs.',
     readTime: '4 min read',
     available: true,
   },

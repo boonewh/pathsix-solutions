@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://pathsixsolutions.com/sitemap.xml',
+    sitemap: 'https://www.pathsixsolutions.com/sitemap.xml',
   }
 }

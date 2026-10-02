@@ -1,85 +1,30 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next'
+import { siteUrl } from '@/lib/metadata'
+
+// Include every published page. Omit lastModified until actual content dates are maintained.
+const publishedPaths = [
+  "/ai-consulting",
+  "/build",
+  "/contact",
+  "/crm",
+  "/",
+  "/resources/build",
+  "/resources/crm/anti-bloat",
+  "/resources/crm",
+  "/resources",
+  "/resources/seo/google-map-optimization",
+  "/resources/seo",
+  "/resources/vibe",
+  "/resources/vibe/vibe-coding-trap",
+  "/resources/web-design/choosing-a-web-designer",
+  "/resources/web-design/managed-vs-traditional-hosting",
+  "/resources/web-design",
+  "/resources/web-design/subscription-model",
+  "/resources/web-design/wordpress-vs-custom",
+  "/seo",
+  "/web-design"
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: 'https://pathsixsolutions.com',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: 'https://pathsixsolutions.com/web-design',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://pathsixsolutions.com/seo',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://pathsixsolutions.com/crm',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://pathsixsolutions.com/build',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://pathsixsolutions.com/ai-consulting',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://pathsixsolutions.com/contact',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    // Resources
-    {
-      url: 'https://pathsixsolutions.com/resources',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://pathsixsolutions.com/resources/web-design',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://pathsixsolutions.com/resources/seo',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://pathsixsolutions.com/resources/crm',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://pathsixsolutions.com/resources/build',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://pathsixsolutions.com/resources/vibe',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-  ]
+  return publishedPaths.map(path => ({ url: new URL(path, siteUrl).toString() }))
 }

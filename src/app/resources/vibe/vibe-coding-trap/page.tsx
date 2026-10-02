@@ -1,17 +1,9 @@
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'The "Vibe Coding" Trap | PathSix Solutions',
-  description: 'When AI Prototypes Meet Real-World Production. From Vibe to Viable.',
-  openGraph: {
-    title: 'The "Vibe Coding" Trap: When AI Prototypes Meet Production',
-    description: 'Generating code is easy. Engineering a system is hard. The gap between a prompt and a product is larger than you think.',
-    url: 'https://pathsixsolutions.com/resources/vibe/vibe-coding-trap',
-  },
-}
+export const metadata = pageMetadata('/resources/vibe/vibe-coding-trap', 'The "Vibe Coding" Trap | PathSix Solutions', 'When AI Prototypes Meet Real-World Production. From Vibe to Viable.')
 
 // Simple SVG Icons
 const WarningIcon = () => (
@@ -105,7 +97,7 @@ export default function VibeCodingTrap() {
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-slate-900">The Illusion of Functionality</h2>
                 <p className="mb-6 text-slate-700 leading-relaxed">
-                  When an LLM generates code, its objective is to satisfy your immediate prompt. It is optimized for the <strong className="text-slate-900">&quot;Happy Path&quot;</strong>&mdash;the scenario where every user input is correct, the server never times out, and malicious actors do not exist.
+                  A quickly generated prototype may demonstrate only the <strong className="text-slate-900">&quot;Happy Path&quot;</strong>. Check invalid inputs, failed requests, permissions, and recovery rather than assuming those cases were handled.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
@@ -152,11 +144,11 @@ export default function VibeCodingTrap() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
               <h4 className="font-bold text-slate-900 mb-3">Inline Logic</h4>
-              <p className="text-sm text-slate-700">AI mixes HTML, CSS, and JS into a single file to make it &quot;easy to copy-paste.&quot; This creates a rigid, fragile structure.</p>
+              <p className="text-sm text-slate-700">Generated code can mix responsibilities in ways that make changes difficult. Review its structure in the context of the framework and application.</p>
             </div>
             <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
               <h4 className="font-bold text-slate-900 mb-3">Zero Modularity</h4>
-              <p className="text-sm text-slate-700">Business logic is entwined with the UI. Updating the design breaks the database connection, and vice-versa.</p>
+              <p className="text-sm text-slate-700">Tightly coupled business logic and UI can make unrelated changes affect each other. Explicit interfaces and regression tests help.</p>
             </div>
             <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
               <h4 className="font-bold text-slate-900 mb-3">Maintenance Debt</h4>
@@ -170,7 +162,7 @@ export default function VibeCodingTrap() {
           <div className="max-w-5xl mx-auto">
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-white mb-4">Security &amp; Scalability: Hidden Debt</h2>
-              <p className="text-lg">Business owners view the prototype as 90% complete. In reality, it represents <span className="text-amber-500 font-bold">20% of the engineering effort</span>.</p>
+              <p className="text-lg">A working prototype can still require substantial <span className="text-amber-500 font-bold">testing, security, and operational work</span>. The effort depends on the application.</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -178,7 +170,7 @@ export default function VibeCodingTrap() {
                 <WarningIcon />
                 <h3 className="text-xl font-bold text-white mt-4 mb-2">Scalability</h3>
                 <p className="text-sm leading-relaxed">
-                  An AI script might store data in a local JSON file. Works for 10 users. Crashes at 1,000. It lacks indexing and asynchronous processing.
+                  A prototype may store data in a local JSON file. Concurrent writes, persistence, and recovery requirements can make that unsuitable for production; test against the actual workload.
                 </p>
               </div>
               <div className="bg-slate-800 p-8 rounded-lg border border-slate-700 hover:border-amber-500 transition-colors">
@@ -214,8 +206,8 @@ export default function VibeCodingTrap() {
                 <ServerIcon />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Refactoring for MVC</h3>
-                <p className="text-slate-700 leading-relaxed">We bridge the gap between &quot;Vibe Coder&quot; and Enterprise Engineer. We separate your data (Model), interface (View), and logic (Controller) to ensure future features can be added without breaking the system.</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Organizing the Application</h3>
+                <p className="text-slate-700 leading-relaxed">We separate responsibilities using an architecture suited to the application. MVC is one option; clear data ownership, modularity, and tests matter more than a particular pattern.</p>
               </div>
             </div>
 

@@ -1,17 +1,9 @@
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'How to Choose the Right Web Designer | PathSix Solutions',
-  description: 'Learn what questions to ask and red flags to avoid when hiring a web designer. A guide for business owners navigating the crowded marketplace.',
-  openGraph: {
-    title: 'How to Choose the Right Web Designer',
-    description: 'Learn what questions to ask and red flags to avoid when hiring a web designer.',
-    url: 'https://pathsixsolutions.com/resources/web-design/choosing-a-web-designer',
-  },
-}
+export const metadata = pageMetadata('/resources/web-design/choosing-a-web-designer', 'How to Choose the Right Web Designer | PathSix Solutions', 'Learn what questions to ask and red flags to avoid when hiring a web designer. A guide for business owners navigating the crowded marketplace.')
 
 export default function ChoosingWebDesignerArticle() {
   return (
@@ -102,11 +94,10 @@ export default function ChoosingWebDesignerArticle() {
 
               {/* Persona 2 */}
               <div className="bg-white p-8 shadow-sm border-t-4 border-slate-300">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">The &quot;Template Churner&quot;</h3>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">The Template-Based Provider</h3>
                 <p className="text-sm text-slate-500 uppercase tracking-wide mb-4 font-semibold">Focus: Speed &amp; Cost</p>
                 <p className="text-slate-600 leading-relaxed text-sm">
-                  Relies heavily on pre-made templates (Wix, generic WordPress themes). Prices are low, but code
-                  is bloated, security is an afterthought, and the site will look identical to thousands of others.
+                  Uses a pre-made theme or site builder. Evaluate the actual customization, accessibility, performance, maintenance, and price rather than assuming the platform determines quality.
                 </p>
               </div>
 
@@ -185,7 +176,7 @@ export default function ChoosingWebDesignerArticle() {
               <div className="md:w-3/4">
                 <p className="text-slate-600 leading-relaxed">
                   If the designer shows you a portfolio that looks great on a desktop monitor but breaks or looks
-                  cluttered on a smartphone, they are ignoring the reality that over 50% of web traffic is mobile.
+                  cluttered on a smartphone, ask how they verify the experience on smaller screens and different devices.
                 </p>
               </div>
             </div>
@@ -203,8 +194,7 @@ export default function ChoosingWebDesignerArticle() {
               <div>
                 <h4 className="text-lg font-bold text-white mb-3 border-l-4 border-blue-500 pl-4">&quot;Who owns the assets upon completion?&quot;</h4>
                 <p className="text-slate-300 leading-relaxed text-sm">
-                  The correct answer should always be the client. The business should own its domain name, the hosting
-                  account credentials, and the rights to the code and imagery.
+                  Ask who controls the domain, what can be exported or transferred, and which code and images are licensed rather than owned. Get cancellation and handover terms in writing.
                 </p>
               </div>
 
@@ -221,8 +211,7 @@ export default function ChoosingWebDesignerArticle() {
               <div>
                 <h4 className="text-lg font-bold text-white mb-3 border-l-4 border-blue-500 pl-4">&quot;Do you use custom code or pre-bought themes?&quot;</h4>
                 <p className="text-slate-300 leading-relaxed text-sm">
-                  A &quot;custom&quot; price tag should not be attached to a $50 pre-made theme. Custom code often allows for
-                  better &quot;separation of concerns,&quot; ensuring design and logic are not dangerously intertwined.
+                  Ask what is being designed or built specifically for you and what uses existing components. Both custom and template-based work need sound implementation, testing, and maintenance.
                 </p>
               </div>
 

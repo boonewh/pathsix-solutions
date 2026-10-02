@@ -1,15 +1,12 @@
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'CRM Resources | PathSix Solutions',
-  description: 'Learn about custom CRM solutions, implementation strategies, and workflow automation for small businesses.',
-}
+export const metadata = pageMetadata('/resources/crm', 'CRM Resources | PathSix Solutions', 'Learn about custom CRM solutions, implementation strategies, and workflow automation for small businesses.')
 
 const articles = [
-  { title: 'Custom CRM vs Salesforce: Which is Right for You?', slug: 'anti-bloat', excerpt: 'The hidden costs of feature bloat and the case for purpose-built, right-sized CRM solutions.', readTime: '4 min read', available: true },
+  { title: 'The Anti-Bloat Philosophy: Choosing a CRM That Fits', slug: 'anti-bloat', excerpt: 'The hidden costs of feature bloat and the case for purpose-built, right-sized CRM solutions.', readTime: '4 min read', available: true },
   { title: 'Workflow Automation Basics', slug: 'workflow-automation', excerpt: 'How to automate repetitive tasks and streamline your business processes.', readTime: '7 min read', available: false },
   { title: 'CRM Implementation Checklist', slug: 'implementation-checklist', excerpt: 'Step-by-step guide to implementing a CRM system without disrupting your business.', readTime: '6 min read', available: false },
 ]

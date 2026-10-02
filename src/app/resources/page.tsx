@@ -1,17 +1,8 @@
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Resources & Guides | PathSix Solutions',
-  description: 'Expert guides, tutorials, and insights on web design, SEO, custom development, and CRM solutions for small businesses.',
-  openGraph: {
-    title: 'Resources & Guides | PathSix Solutions',
-    description: 'Learn from our experts about web design, SEO, development, and business software.',
-    url: 'https://pathsixsolutions.com/resources',
-  },
-}
+export const metadata = pageMetadata('/resources', 'Resources & Guides | PathSix Solutions', 'Expert guides, tutorials, and insights on web design, SEO, custom development, and CRM solutions for small businesses.')
 
 const resourceCategories = [
   {
@@ -28,14 +19,13 @@ const resourceCategories = [
   },
   {
     title: 'SEO & Growth',
-    description: 'Strategies to dominate local search and drive organic traffic',
+    description: 'Practical guidance on local search and business profiles',
     href: '/resources/seo',
     icon: '📈',
     color: 'green',
     articles: [
       'Google Maps Optimization Guide',
-      'Local SEO Checklist',
-      'Reputation Management Tips',
+
     ],
   },
   {
@@ -45,9 +35,7 @@ const resourceCategories = [
     icon: '⚙️',
     color: 'purple',
     articles: [
-      'Custom CRM vs Salesforce',
-      'Workflow Automation Basics',
-      'CRM Implementation Checklist',
+            'The Anti-Bloat Philosophy',
     ],
   },
   {
@@ -57,9 +45,7 @@ const resourceCategories = [
     icon: '💻',
     color: 'cyan',
     articles: [
-      'Spreadsheet to Software Migration',
-      'API Integration Guide',
-      'Building Client Portals',
+            'Development guides are coming soon',
     ],
   },
   {
@@ -69,9 +55,7 @@ const resourceCategories = [
     icon: '🤖',
     color: 'teal',
     articles: [
-      'Securing AI-Generated Code',
-      'Deployment Best Practices',
-      'Production Readiness Checklist',
+            'The Vibe Coding Trap',
     ],
   },
 ]

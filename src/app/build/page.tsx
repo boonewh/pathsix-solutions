@@ -1,24 +1,16 @@
+import { pageMetadata } from '@/lib/metadata'
 import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Custom Software Development | PathSix Solutions',
-  description: 'Replace spreadsheets with custom web applications. Client portals, internal tools, and business software built for your exact workflow.',
-  openGraph: {
-    title: 'Custom Software & Web Apps | PathSix Solutions',
-    description: 'Custom web applications and internal tools to streamline your operations.',
-    url: 'https://pathsixsolutions.com/build',
-  },
-}
+export const metadata = pageMetadata('/build', 'Custom Software Development | PathSix Solutions', 'Replace spreadsheets with custom web applications. Client portals, internal tools, and business software built for your exact workflow.')
 
 export default function BuildPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'PathSix Build - Custom Software Engineering',
-    url: 'https://pathsixsolutions.com/build',
+    url: 'https://www.pathsixsolutions.com/build',
     description: 'Custom web applications and internal tools to replace spreadsheets and streamline operations.',
   }
 
@@ -213,7 +205,7 @@ export default function BuildPage() {
                 </p>
                 <ul className="space-y-2 text-slate-300 text-sm">
                   <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Text naturally (&ldquo;Call client Tue 2pm&rdquo;) — Claude Haiku parses intent, schedules the reminder</li>
-                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> DST-safe scheduling, 14+ SMS commands, full TCPA compliance built in</li>
+                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> DST-safe scheduling, 14+ SMS commands, consent and opt-out workflows</li>
                   <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Ships as two products (personal + group) sharing a single core package</li>
                 </ul>
                 <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-700">
@@ -263,7 +255,7 @@ export default function BuildPage() {
                 <ul className="text-sm text-slate-300 space-y-3 mb-8">
                   <li className="flex items-start gap-2"><span className="text-cyan-400 font-bold mt-0.5">✓</span> Dedicated development hours each month</li>
                   <li className="flex items-start gap-2"><span className="text-cyan-400 font-bold mt-0.5">✓</span> Continuous build, test, and iterate — no disappearing acts</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400 font-bold mt-0.5">✓</span> Hosted, deployed, and production-ready from day one</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400 font-bold mt-0.5">✓</span> Hosting and deployment planned as part of your build</li>
                   <li className="flex items-start gap-2"><span className="text-cyan-400 font-bold mt-0.5">✓</span> You own 100% of the code, always</li>
                   <li className="flex items-start gap-2"><span className="text-cyan-400 font-bold mt-0.5">✓</span> Priority response between sessions</li>
                 </ul>

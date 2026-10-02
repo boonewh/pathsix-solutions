@@ -1,17 +1,9 @@
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'The Anti-Bloat Philosophy | PathSix Solutions',
-  description: 'Why your CRM is costing you more than just subscription fees. The case for right-sized, purpose-built CRM solutions.',
-  openGraph: {
-    title: 'The Anti-Bloat Philosophy',
-    description: 'Why your CRM is costing you more than just subscription fees.',
-    url: 'https://pathsixsolutions.com/resources/crm/anti-bloat',
-  },
-}
+export const metadata = pageMetadata('/resources/crm/anti-bloat', 'The Anti-Bloat Philosophy | PathSix Solutions', 'Why your CRM is costing you more than just subscription fees. The case for right-sized, purpose-built CRM solutions.')
 
 // Inline SVG icons
 const BarChartIcon = () => (
@@ -179,7 +171,7 @@ export default function AntiBloatArticle() {
                   <div className="flex-shrink-0"><TrendingUpIcon /></div>
                   <div>
                     <h3 className="text-lg font-semibold text-white">High Performance</h3>
-                    <p className="text-slate-400 mt-1 leading-relaxed">Without millions of lines of unnecessary code, load times are measured in milliseconds. Latency is a killer of engagement.</p>
+                    <p className="text-slate-400 mt-1 leading-relaxed">A focused interface can reduce friction. Measure load times with realistic data and workflows rather than assuming fewer features guarantee speed.</p>
                   </div>
                 </div>
 
@@ -207,11 +199,11 @@ export default function AntiBloatArticle() {
               <div className="rounded-2xl bg-slate-100 p-8 border border-slate-200 flex flex-col">
                 <h3 className="text-sm font-bold text-slate-600 mb-4 uppercase tracking-wider">Standard SaaS Model</h3>
                 <p className="text-slate-700 mb-6 flex-grow leading-relaxed">
-                  Charges a perpetual rent. For a team of ten users paying $100 per user/month over five years:
+                  Charges a perpetual rent. Illustrative subscription-only calculation, not a current vendor quote: ten users at $100 per user/month over five years:
                 </p>
                 <div className="mt-auto">
                   <span className="block text-4xl font-extrabold text-slate-900">$60,000</span>
-                  <span className="text-sm text-red-600 font-medium mt-2 block">Zero Asset Value (Rent)</span>
+                  <span className="text-sm text-red-600 font-medium mt-2 block">Subscription Fees Only</span>
                 </div>
               </div>
 
@@ -220,11 +212,11 @@ export default function AntiBloatArticle() {
                 <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">RECOMMENDED</div>
                 <h3 className="text-sm font-bold text-blue-900 mb-4 uppercase tracking-wider">Custom Solution</h3>
                 <p className="text-blue-800 mb-6 flex-grow leading-relaxed">
-                  An asset you own. While there is an initial development cost, ongoing maintenance is a fraction of enterprise licensing.
+                  Compare development, migration, hosting, maintenance, integrations, and support over the same period. Ownership and licensing depend on the agreement; custom software is not automatically cheaper.
                 </p>
                 <div className="mt-auto">
-                  <span className="block text-2xl font-bold text-slate-900">High ROI</span>
-                  <span className="text-sm text-green-700 font-medium mt-2 block">Owned Asset (Equity)</span>
+                  <span className="block text-2xl font-bold text-slate-900">Compare Full Costs</span>
+                  <span className="text-sm text-green-700 font-medium mt-2 block">Ownership Depends on Agreement</span>
                 </div>
               </div>
             </div>

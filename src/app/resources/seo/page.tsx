@@ -1,23 +1,15 @@
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'SEO Resources | PathSix Solutions',
-  description: 'Expert guides on local SEO, Google Maps optimization, and growing your organic traffic.',
-  openGraph: {
-    title: 'SEO Resources | PathSix Solutions',
-    description: 'Master local SEO and dominate Google search results.',
-    url: 'https://pathsixsolutions.com/resources/seo',
-  },
-}
+export const metadata = pageMetadata('/resources/seo', 'SEO Resources | PathSix Solutions', 'Expert guides on local SEO, Google Maps optimization, and growing your organic traffic.')
 
 const articles = [
   {
     title: 'Google Maps Optimization: The Complete Guide',
     slug: 'google-map-optimization',
-    excerpt: 'Step-by-step guide to ranking #1 in the Google Maps 3-pack for your local area.',
+    excerpt: 'Practical steps for accurate business information, useful content, and honest customer reviews.',
     readTime: '4 min read',
     available: true,
   },
@@ -50,7 +42,7 @@ export default function SEOResourcesPage() {
               <span className="text-slate-400">SEO</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">SEO Resources</h1>
-            <p className="text-xl text-slate-400">Strategies to dominate local search and drive organic traffic.</p>
+            <p className="text-xl text-slate-400">Practical guidance on local search visibility and business profiles.</p>
           </div>
         </section>
 
@@ -94,7 +86,7 @@ export default function SEOResourcesPage() {
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 border-t border-slate-800">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Need Help with SEO?</h2>
-            <p className="text-xl text-slate-400 mb-8">Our team can help you dominate local search results.</p>
+            <p className="text-xl text-slate-400 mb-8">Our team can help improve your local search presence.</p>
             <Link href="/seo" className="inline-block bg-green-600 hover:bg-green-500 text-white font-bold py-4 px-10 rounded-xl shadow-lg shadow-green-600/20 hover:shadow-green-600/40 transition-all text-lg">
               View SEO Services
             </Link>

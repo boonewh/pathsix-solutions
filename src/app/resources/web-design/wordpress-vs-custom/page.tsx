@@ -1,17 +1,9 @@
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Architectural Decision: WordPress vs. Custom Code | PathSix Solutions',
-  description: 'A comparative analysis of WordPress CMS versus Custom Software Development. Understand when to choose managed hosting and when to invest in bespoke applications.',
-  openGraph: {
-    title: 'Selecting the Right Foundation: WordPress vs. Custom Software',
-    description: 'A comparative analysis of WordPress CMS versus Custom Software Development.',
-    url: 'https://pathsixsolutions.com/resources/web-design/wordpress-vs-custom',
-  },
-}
+export const metadata = pageMetadata('/resources/web-design/wordpress-vs-custom', 'Architectural Decision: WordPress vs. Custom Code | PathSix Solutions', 'A comparative analysis of WordPress CMS versus Custom Software Development. Understand when to choose managed hosting and when to invest in bespoke applications.')
 
 export default function WordPressVsCustomArticle() {
   return (
@@ -68,8 +60,7 @@ export default function WordPressVsCustomArticle() {
 
             <div className="bg-slate-50 border-l-4 border-blue-600 p-8 my-8 shadow-sm">
               <p className="text-lg text-slate-800 leading-relaxed">
-                At PathSix Solutions, we support both approaches. We do not believe in a &quot;one-size-fits-all&quot; solution.
-                This guide aims to help you decide whether your business needs the broad utility of WordPress or the precision of Custom Code.
+                This guide compares two approaches to building a website or application. PathSix builds custom websites and applications; the WordPress discussion explains an alternative rather than a managed WordPress offer.
               </p>
             </div>
           </div>
@@ -116,11 +107,11 @@ export default function WordPressVsCustomArticle() {
                 <ul className="space-y-4 text-sm text-slate-600 leading-relaxed">
                   <li className="flex items-start">
                     <span className="text-red-500 font-bold mr-2">⚠</span>
-                    <span><strong>Performance Drag:</strong> It carries &quot;heavy&quot; code you might never use, slowing down the site.</span>
+                    <span><strong>Performance Drag:</strong> Themes, plugins, media, and hosting choices can affect performance. Evaluate the actual site rather than assuming a platform is slow.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-red-500 font-bold mr-2">⚠</span>
-                    <span><strong>Security Targets:</strong> Being popular makes it a target. Cheap plugins can leave back doors open.</span>
+                    <span><strong>Security Targets:</strong> Keep the platform and extensions maintained, use reputable components, and review access controls.</span>
                   </li>
                 </ul>
               </div>
@@ -130,8 +121,7 @@ export default function WordPressVsCustomArticle() {
             <div className="mt-8 bg-blue-100 p-6 rounded-sm border border-blue-200">
               <h4 className="font-bold text-blue-900 mb-2 text-sm uppercase">The PathSix Approach</h4>
               <p className="text-blue-800 text-sm leading-relaxed">
-                We do not do &quot;set it and forget it.&quot; Our Managed Hosting treats your WordPress site like a secure vault.
-                We vet every plugin, handle security updates, and optimize servers so your site loads instantly.
+                Our managed web-design service uses custom code. If you are comparing a WordPress provider, ask who maintains the platform, tests updates, manages backups, and handles support.
               </p>
             </div>
           </div>
@@ -162,15 +152,15 @@ export default function WordPressVsCustomArticle() {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="p-6 border border-slate-200 rounded-sm hover:border-blue-400 transition-colors">
                 <h4 className="font-bold text-slate-900 mb-2">Lean and Fast</h4>
-                <p className="text-sm text-slate-600">We only build what you need. There is no excess baggage slowing down the system.</p>
+                <p className="text-sm text-slate-600">A focused feature set can reduce unnecessary complexity. Performance still depends on implementation and testing.</p>
               </div>
               <div className="p-6 border border-slate-200 rounded-sm hover:border-blue-400 transition-colors">
                 <h4 className="font-bold text-slate-900 mb-2">Tighter Security</h4>
-                <p className="text-sm text-slate-600">By eliminating unnecessary features, there are fewer places for attackers to break in.</p>
+                <p className="text-sm text-slate-600">A smaller feature set can reduce exposure, but custom code still needs secure design, testing, updates, and access controls.</p>
               </div>
               <div className="p-6 border border-slate-200 rounded-sm hover:border-blue-400 transition-colors">
                 <h4 className="font-bold text-slate-900 mb-2">Scalability</h4>
-                <p className="text-sm text-slate-600">Custom software grows with you. It doesn&apos;t break when your data becomes complex.</p>
+                <p className="text-sm text-slate-600">Custom software can be designed around growth, with capacity testing and changes as data and usage increase.</p>
               </div>
             </div>
 
@@ -178,8 +168,7 @@ export default function WordPressVsCustomArticle() {
             <div className="mt-8 bg-slate-900 p-6 rounded-sm text-white">
               <h4 className="font-bold text-blue-400 mb-2 text-sm uppercase">The PathSix Approach</h4>
               <p className="text-slate-300 text-sm leading-relaxed">
-                We bridge the gap between &quot;DIY&quot; and &quot;Enterprise.&quot; Whether we are refactoring a prototype you built with AI
-                (our &quot;Vibe Coding&quot; service) or building a custom CRM from scratch, we ensure the code is professional, secure, and yours to keep.
+                Our Custom Apps service covers purpose-built applications, integrations, and work on existing prototypes. AI Consulting separately helps businesses choose and use existing AI tools.
               </p>
             </div>
           </div>
@@ -199,11 +188,11 @@ export default function WordPressVsCustomArticle() {
                 <h3 className="text-blue-400 font-bold text-lg mb-4 uppercase tracking-wider">Functional Flexibility</h3>
                 <div className="mb-4">
                   <span className="block font-bold text-white mb-1">WordPress</span>
-                  <p className="text-sm text-slate-400">Excellent for visual changes and content editing. Poor for complex data logic.</p>
+                  <p className="text-sm text-slate-400">Provides content editing and an extension ecosystem. Complex workflows may require additional development.</p>
                 </div>
                 <div>
                   <span className="block font-bold text-white mb-1">Custom Code</span>
-                  <p className="text-sm text-slate-400">Unlimited logic. We can make the data behave exactly how your business process requires.</p>
+                  <p className="text-sm text-slate-400">Allows workflows to be designed around your requirements, within the agreed scope and budget.</p>
                 </div>
               </div>
 
@@ -212,11 +201,11 @@ export default function WordPressVsCustomArticle() {
                 <h3 className="text-blue-400 font-bold text-lg mb-4 uppercase tracking-wider">Security Posture</h3>
                 <div className="mb-4">
                   <span className="block font-bold text-white mb-1">WordPress</span>
-                  <p className="text-sm text-slate-400">Reactive. Requires constant vigilance and updates to stay safe (which we handle).</p>
+                  <p className="text-sm text-slate-400">Requires maintained themes and plugins, secure configuration, access controls, and tested backups.</p>
                 </div>
                 <div>
                   <span className="block font-bold text-white mb-1">Custom Code</span>
-                  <p className="text-sm text-slate-400">Proactive. Security is built into the foundation, not added as an afterthought.</p>
+                  <p className="text-sm text-slate-400">Requires secure implementation, maintained dependencies, access controls, and tested backups.</p>
                 </div>
               </div>
             </div>
@@ -234,7 +223,7 @@ export default function WordPressVsCustomArticle() {
                 <div>
                   <span className="block font-bold text-white mb-2">Custom Code</span>
                   <p className="text-sm text-slate-400 leading-relaxed">
-                    Higher upfront investment. However, long-term costs are often lower because you aren&apos;t paying monthly licensing fees for third-party add-ons.
+                    Development, hosting, maintenance, integrations, and future changes all affect cost. Custom code is not automatically cheaper over its lifetime.
                   </p>
                 </div>
               </div>
@@ -247,12 +236,10 @@ export default function WordPressVsCustomArticle() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">Recommendation</h2>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              If you need a marketing site to drive sales and explain your brand, choose <strong className="text-slate-900">Managed WordPress</strong>.
-              If you are building a digital product, a dashboard, or a complex tool for your team, choose <strong className="text-slate-900">Custom Software</strong>.
+              A <strong className="text-slate-900">CMS such as WordPress</strong> can suit teams that need to edit content themselves. <strong className="text-slate-900">Custom websites and applications</strong> can suit a managed site or a specialized workflow. Choose based on your editing needs, features, support, and budget.
             </p>
             <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-              Regardless of the choice, the infrastructure matters. PathSix Solutions provides the professional management
-              layer for both paths, ensuring your digital assets are secure, fast, and reliable.
+              PathSix provides custom web design and application development. Talk with us about your requirements so we can explain the options and agree on a suitable scope.
             </p>
             <Link
               href="/contact"

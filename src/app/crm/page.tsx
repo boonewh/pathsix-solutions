@@ -1,24 +1,16 @@
+import { pageMetadata } from '@/lib/metadata'
 import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Custom CRM Solutions | PathSix Solutions',
-  description: 'Lean, focused CRM built for your workflow. No bloat, no complexity - just the features your business actually needs.',
-  openGraph: {
-    title: 'Custom CRM Software | PathSix Solutions',
-    description: 'The CRM you actually need. Lightweight, custom-built for your specific business processes.',
-    url: 'https://pathsixsolutions.com/crm',
-  },
-}
+export const metadata = pageMetadata('/crm', 'Custom CRM Solutions | PathSix Solutions', 'Lean, focused CRM built for your workflow. No bloat, no complexity - just the features your business actually needs.')
 
 export default function CRMPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'PathSix CRM',
-    url: 'https://pathsixsolutions.com/crm',
+    url: 'https://www.pathsixsolutions.com/crm',
     applicationCategory: 'BusinessApplication',
     description: 'The CRM You Actually Need - Focused, lean, custom CRM solution with essential features and no bloat.',
     offers: {

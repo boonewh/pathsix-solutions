@@ -1,17 +1,9 @@
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Google Maps Optimization: The Complete Guide | PathSix Solutions',
-  description: 'Step-by-Step Strategy to Rank in the Google Maps 3-Pack. Local visibility is infrastructure.',
-  openGraph: {
-    title: 'Google Maps Optimization: The Complete Guide',
-    description: 'Step-by-Step Strategy to Rank in the Google Maps 3-Pack. Local visibility is infrastructure.',
-    url: 'https://pathsixsolutions.com/resources/seo/google-map-optimization',
-  },
-}
+export const metadata = pageMetadata('/resources/seo/google-map-optimization', 'Google Maps Optimization: The Complete Guide | PathSix Solutions', 'A practical guide to Google Business Profiles, accurate business information, website content, and honest customer reviews.')
 
 // Simple SVG Icons components to avoid external dependencies
 const MapIcon = () => (
@@ -55,7 +47,7 @@ export default function GoogleMapsGuide() {
               <span className="text-blue-400">The Complete Guide</span>
             </h1>
             <p className="text-xl text-slate-300 font-light mb-8 max-w-2xl mx-auto">
-              Step-by-Step Strategy to Rank in the Google Maps 3-Pack
+              Practical Steps to Improve Your Local Search Presence
             </p>
             <div className="flex flex-col items-center justify-center space-y-2">
               <p className="text-lg font-medium text-slate-200">
@@ -75,7 +67,7 @@ export default function GoogleMapsGuide() {
               In today&apos;s digital economy, visibility is not a marketing bonus — it is <span className="text-blue-700">infrastructure</span>.
             </p>
             <p className="text-lg leading-relaxed text-slate-600 mb-6">
-              For local businesses, the most valuable and defensible real estate on the internet is not your website homepage, and it is not your Instagram feed. It is the <strong className="text-slate-900">Google Maps 3-Pack</strong>: the three businesses Google displays at the top of a local search.
+              Local results can help people find nearby businesses. The <strong className="text-slate-900">Google Maps local pack</strong> often highlights three businesses, with results that vary by search, location, and context.
             </p>
 
             <div className="my-12 bg-slate-50 shadow-xl rounded-xl p-8 border border-slate-200">
@@ -89,11 +81,10 @@ export default function GoogleMapsGuide() {
             </div>
 
             <p className="leading-relaxed text-slate-600 mb-6">
-              Unlike traditional SEO, where rankings can shift due to trends or AI-driven changes, local intent is stable. People still need real businesses, in real locations, providing real services.
+              Local customers need accurate answers about services, locations, and availability. Rankings can change, so focus on useful information and measure relevant inquiries as well as search visibility.
             </p>
             <p className="font-bold text-slate-900">
-              Ranking in the 3-Pack is not about &quot;getting lucky.&quot;<br />
-              It is about building a system that Google trusts.
+              No provider can guarantee a particular Maps position. Start with accurate information, a useful website, and genuine customer feedback.
             </p>
           </div>
         </section>
@@ -101,19 +92,19 @@ export default function GoogleMapsGuide() {
         {/* Section I: The Triad */}
         <section className="bg-slate-50 py-20 px-6 md:px-12 border-y border-slate-200">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-slate-900">I. Local Search Is Not Organic SEO</h2>
+            <h2 className="text-3xl font-bold mb-12 text-slate-900">I. Understand Local Search</h2>
 
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
               <div>
-                <p className="mb-4 text-slate-700 leading-relaxed">Most business owners assume Google Maps rankings work the same way normal SEO works. <strong className="text-red-600">They do not.</strong></p>
-                <p className="mb-4 text-slate-700 leading-relaxed">Traditional SEO relies on backlinks and blog content. Local SEO is driven by a completely different algorithm.</p>
+                <p className="mb-4 text-slate-700 leading-relaxed">Local results and website search results overlap, but location has a distinct role in local search.</p>
+                <p className="mb-4 text-slate-700 leading-relaxed">Google describes local results in terms of relevance, distance, and prominence. Useful website content and legitimate links can support the wider picture.</p>
               </div>
               <div className="bg-white p-6 rounded-lg border border-slate-200 text-sm">
-                <p className="font-bold text-slate-700 uppercase mb-2">Traditional SEO Signals</p>
+                <p className="font-bold text-slate-700 uppercase mb-2">Website Foundations</p>
                 <ul className="list-disc list-inside text-slate-700 mb-6 space-y-1">
                   <li>Backlinks</li>
-                  <li>Domain Authority</li>
-                  <li>Keyword Targeting</li>
+                  <li>Useful, accessible content</li>
+                  <li>Clear service information</li>
                 </ul>
                 <p className="font-bold text-slate-900 uppercase mb-2">Local SEO Signals</p>
                 <ul className="list-disc list-inside text-blue-700 font-medium space-y-1">
@@ -143,7 +134,7 @@ export default function GoogleMapsGuide() {
               </div>
             </div>
             <p className="text-center mt-8 text-slate-700 font-medium">
-              If you want the 3-Pack, your job is to systematically strengthen Relevance and Prominence.
+              Improve the factors you can influence, while recognizing that distance and competition also affect results. See <a href="https://support.google.com/business/answer/7091" className="underline">Google&apos;s local ranking guidance</a>.
             </p>
           </div>
         </section>
@@ -152,7 +143,7 @@ export default function GoogleMapsGuide() {
         <section className="py-20 px-6 md:px-12 max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-slate-900">II. DIY vs. Managed Optimization</h2>
           <p className="mb-10 text-lg max-w-2xl text-slate-600 leading-relaxed">
-            Most small businesses engage in &quot;vibe management&quot; — random updates without structure. Here is the real comparison between DIY and a systems-based approach.
+            You can manage a Business Profile yourself or hire help. The difference is who does the work and how much time and expertise you can commit, not a guaranteed ranking outcome.
           </p>
 
           <div className="overflow-x-auto">
@@ -160,35 +151,35 @@ export default function GoogleMapsGuide() {
               <thead>
                 <tr className="bg-slate-900 text-white">
                   <th className="p-4 font-semibold">Feature</th>
-                  <th className="p-4 font-semibold text-slate-400">DIY / Vibe Management</th>
+                  <th className="p-4 font-semibold text-slate-400">Manage It Yourself</th>
                   <th className="p-4 font-semibold text-blue-300">Path Six Managed Model</th>
                 </tr>
               </thead>
               <tbody className="bg-white">
                 <tr className="border-b border-slate-100">
                   <td className="p-4 font-medium text-slate-900">Data Consistency</td>
-                  <td className="p-4 text-slate-700">Fragmented, inconsistent citations</td>
-                  <td className="p-4 font-medium text-blue-700">NAP synchronization across all directories</td>
+                  <td className="p-4 text-slate-700">You check and update your business listings</td>
+                  <td className="p-4 font-medium text-blue-700">Help checking important business listings</td>
                 </tr>
                 <tr className="border-b border-slate-100 bg-slate-50">
                   <td className="p-4 font-medium text-slate-900">Technical Integration</td>
-                  <td className="p-4 text-slate-700">None; profile exists in isolation</td>
-                  <td className="p-4 font-medium text-blue-700">Schema + website integration</td>
+                  <td className="p-4 text-slate-700">You coordinate website and profile information</td>
+                  <td className="p-4 font-medium text-blue-700">Help aligning website and profile information</td>
                 </tr>
                 <tr className="border-b border-slate-100">
                   <td className="p-4 font-medium text-slate-900">Risk Profile</td>
-                  <td className="p-4 text-slate-700">High; vulnerable to edits/suspension</td>
-                  <td className="p-4 font-medium text-blue-700">Low; proactive monitoring</td>
+                  <td className="p-4 text-slate-700">You monitor access and suggested edits</td>
+                  <td className="p-4 font-medium text-blue-700">Help monitoring access and suggested edits</td>
                 </tr>
                 <tr className="border-b border-slate-100 bg-slate-50">
                   <td className="p-4 font-medium text-slate-900">Cost Structure</td>
-                  <td className="p-4 text-slate-700">Hidden labor cost (Internal CapEx)</td>
-                  <td className="p-4 font-medium text-blue-700">Predictable monthly OpEx ($299/mo)</td>
+                  <td className="p-4 text-slate-700">Your time and any tools you choose</td>
+                  <td className="p-4 font-medium text-blue-700">Service subscription ($299/mo)</td>
                 </tr>
                 <tr>
                   <td className="p-4 font-medium text-slate-900">Performance</td>
-                  <td className="p-4 text-slate-700">Volatile rankings</td>
-                  <td className="p-4 font-medium text-blue-700">Stable long-term positioning</td>
+                  <td className="p-4 text-slate-700">Measure visibility and inquiries</td>
+                  <td className="p-4 font-medium text-blue-700">Reporting and follow-up improvements</td>
                 </tr>
               </tbody>
             </table>
@@ -205,32 +196,32 @@ export default function GoogleMapsGuide() {
             {/* Step 1 */}
             <div>
               <h2 className="text-3xl font-bold mb-6 text-slate-900">III. Step 1: NAP Consistency (Database Integrity)</h2>
-              <p className="mb-6 text-slate-700 leading-relaxed">Local SEO works like a database. If Google finds conflicting records (NAP: Name, Address, Phone), it cannot confidently rank you.</p>
+              <p className="mb-6 text-slate-700 leading-relaxed">Keep your business name, address where appropriate, phone, and hours accurate. Focus on substantive conflicts such as an old phone number or wrong location; punctuation and common abbreviations alone are not evidence of a ranking problem.</p>
 
               <div className="grid md:grid-cols-2 gap-8 my-8">
                 <div className="bg-red-50 p-6 rounded border border-red-100">
                   <h4 className="font-bold text-red-800 mb-2">Conflicting Records (Bad)</h4>
                   <ul className="text-sm space-y-2 text-red-700 font-mono">
-                    <li>&quot;Suite 100&quot; vs &quot;Ste 100&quot;</li>
-                    <li>&quot;Road&quot; vs &quot;Rd&quot;</li>
-                    <li>&quot;(325) 555-1212&quot; vs &quot;325-555-1212&quot;</li>
+                    <li>An old address after a move</li>
+                    <li>A disconnected phone number</li>
+                    <li>Incorrect opening hours</li>
                   </ul>
                 </div>
                 <div className="bg-green-50 p-6 rounded border border-green-100">
                   <h4 className="font-bold text-green-800 mb-2">Authoritative Record (Good)</h4>
                   <p className="text-sm text-green-700">
-                    Your Google Business Profile becomes the &quot;single source of truth.&quot; All other citations must match this exactly.
+                    Use current business records to keep your website, Business Profile, and relevant directories accurate. Respect the address-display rules for service-area businesses.
                   </p>
                 </div>
               </div>
-              <p className="text-slate-800"><strong>Why This Matters:</strong> Reduced trust reduces ranking.</p>
+              <p className="text-slate-800"><strong>Why This Matters:</strong> Customers need reliable information to reach you and understand what you offer.</p>
             </div>
 
             {/* Step 2 */}
             <div>
               <h2 className="text-3xl font-bold mb-6 text-slate-900">IV. Step 2: Website Integration</h2>
               <p className="mb-6 text-slate-700 leading-relaxed">
-                Most businesses treat Google Maps and their website as separate assets. This is like running a frontend and backend that don&apos;t share a data model.
+                Your website and Business Profile should describe the same business, services, and operating area. Put important information in readable page content as well as appropriate markup.
               </p>
 
               <div className="bg-slate-900 text-slate-300 p-8 rounded-lg font-mono text-sm relative shadow-2xl">
@@ -239,25 +230,25 @@ export default function GoogleMapsGuide() {
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
                 </div>
-                <p className="text-blue-400 mb-2">{'// The Technical Fix: Local Business Schema (JSON-LD)'}</p>
+                <p className="text-blue-400 mb-2">{'// Example information for appropriate LocalBusiness markup'}</p>
                 <p className="mb-4">
-                  At Path Six Solutions, we inject machine-readable metadata directly into your site structure:
+                  Structured data can describe verified business details that match the page. Appropriate properties may include:
                 </p>
                 <ul className="space-y-1 ml-4 text-green-400">
-                  <li>+ business_name</li>
-                  <li>+ exact_coordinates_lat_long</li>
-                  <li>+ service_category</li>
-                  <li>+ operating_hours</li>
-                  <li>+ service_area_validation</li>
+                  <li>+ name</li>
+                  <li>+ geo</li>
+                  <li>+ description</li>
+                  <li>+ openingHoursSpecification</li>
+                  <li>+ areaServed</li>
                 </ul>
                 <p className="mt-4 text-slate-400">
-                  {'/* This acts like a signed certificate telling Google: "This location is real, consistent, and verified." */'}
+                  {'/* Structured data describes the business. It does not verify a location or guarantee rankings. */'}
                 </p>
               </div>
 
               <div className="mt-8">
                 <h4 className="font-bold text-lg mb-2 text-slate-900">Separation of Concerns</h4>
-                <p className="text-slate-700 leading-relaxed">If you serve multiple cities, do not rely on a generic homepage. Create dedicated location pages (<code className="bg-slate-200 px-1 rounded text-slate-900">/plumbing-abilene</code>, <code className="bg-slate-200 px-1 rounded text-slate-900">/plumbing-sweetwater</code>). Each page is tied to a clear search intent.</p>
+                <p className="text-slate-700 leading-relaxed">Create a location page only when you have distinct, useful information about serving that area, such as relevant work and service details. Avoid pages that simply swap city names. <a href="https://developers.google.com/search/docs/appearance/structured-data/sd-policies" className="underline">Google&apos;s structured data guidance</a> explains how markup should reflect page content.</p>
               </div>
             </div>
           </div>
@@ -268,29 +259,29 @@ export default function GoogleMapsGuide() {
 
           <div className="mb-16">
             <h2 className="text-2xl font-bold mb-4 text-slate-900">V. Step 3: Performance (Speed Matters)</h2>
-            <p className="mb-4 text-slate-700 leading-relaxed">Google uses site performance as a tiebreaker. A fast site is a trust signal. A slow site is friction.</p>
-            <p className="text-slate-700 italic">Avoid: Bloated themes, oversized images, cheap shared hosting.</p>
+            <p className="mb-4 text-slate-700 leading-relaxed">A responsive, usable site helps visitors read your services and contact you. Measure performance on real devices; speed improvements alone do not guarantee a local ranking.</p>
+            <p className="text-slate-700 italic">Check image sizes, unnecessary scripts, layout stability, and the response time of your actual hosting setup.</p>
           </div>
 
           <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-4 text-slate-900">VI. Step 4: Review Velocity</h2>
-            <p className="mb-4 text-slate-700 leading-relaxed">It is not just about the score (5 stars). It is about <strong className="text-slate-900">Review Velocity</strong>.</p>
+            <h2 className="text-2xl font-bold mb-4 text-slate-900">VI. Step 4: Honest Customer Reviews</h2>
+            <p className="mb-4 text-slate-700 leading-relaxed">Invite customers to share honest feedback about their genuine experience. Do not filter requests to happy customers or offer rewards for reviews.</p>
             <div className="bg-blue-50 p-6 border-l-4 border-blue-500 rounded-r-lg">
-              <p className="font-bold mb-2 text-slate-900">The High Value Review Strategy</p>
-              <p className="italic text-slate-700 mb-2">&quot;Path Six Solutions built us a lightweight CRM and helped us fix our Google Maps listing. Now we show up in the top 3 in Abilene.&quot;</p>
-              <p className="text-sm text-blue-800 font-semibold">Keywords + Results + Location = High Relevance.</p>
+              <p className="font-bold mb-2 text-slate-900">A Neutral Review Request</p>
+              <p className="italic text-slate-700 mb-2">&quot;Thank you for working with us. If you would like to leave an honest review of your experience, here is our review link.&quot;</p>
+              <p className="text-sm text-blue-800 font-semibold">Let customers choose their rating and wording. Do not request specific keywords, names, or results. See <a href="https://support.google.com/contributionpolicy/answer/7400114" className="underline">Google&apos;s review policy</a>.</p>
             </div>
           </div>
 
           <div className="mb-16">
             <h2 className="text-2xl font-bold mb-4 text-slate-900">VII. Step 5: Media Optimization</h2>
             <p className="mb-4 text-slate-700 leading-relaxed">Your profile is a digital storefront. A profile with no photos looks abandoned.</p>
-            <p className="text-slate-700 leading-relaxed">We treat this as <strong className="text-slate-900">conversion engineering</strong>. Professional exterior photos, team photos, and completed projects increase clicks. Engagement increases ranking.</p>
+            <p className="text-slate-700 leading-relaxed">Use accurate photos of your team, premises where appropriate, and completed work to help people assess your business. Measure their usefulness without assuming clicks directly produce higher rankings.</p>
           </div>
 
           <div className="mb-16">
             <h2 className="text-2xl font-bold mb-4 text-slate-900">VIII. Step 6: Security and Defense</h2>
-            <p className="mb-4 text-slate-700 leading-relaxed">Competitors can submit suggested edits, change your categories, or mark you as closed. Poor security (shared Gmail logins) is an operational vulnerability.</p>
+            <p className="mb-4 text-slate-700 leading-relaxed">People can suggest edits to a Business Profile, so review changes for accuracy. Use individual account access and appropriate permissions rather than shared passwords.</p>
             <p className="font-semibold text-slate-900">We treat GBP security like application security: Access control, auditability, and proactive monitoring.</p>
           </div>
 
@@ -299,9 +290,9 @@ export default function GoogleMapsGuide() {
         {/* TCO & CTA Section */}
         <section className="bg-slate-900 text-white py-24 px-6 md:px-12 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">CapEx vs OpEx: The Subscription Model</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">Ongoing Help with Local Search</h2>
             <p className="text-slate-400 text-lg mb-12">
-              Most agencies charge a massive upfront fee ($3k-$5k) and disappear. But Google Maps is a living system. It accumulates technical debt if not maintained.
+              Business details and customer needs change. Ongoing support can help you maintain accurate information, review performance, and decide what to improve next.
             </p>
 
             <div className="bg-gradient-to-br from-blue-900 to-slate-800 p-10 rounded-2xl border border-blue-700 shadow-2xl transform md:hover:scale-105 transition-transform duration-300">

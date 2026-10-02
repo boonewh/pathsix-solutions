@@ -3,9 +3,9 @@ import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://pathsixsolutions.com'),
+  metadataBase: new URL('https://www.pathsixsolutions.com'),
   title: 'PathSix Solutions | Web Design, CRM & Development Services',
-  description: 'Custom websites, CRM solutions, and AI deployment help for small businesses. Professional digital tools you can actually afford.',
+  description: 'Custom websites, CRM solutions, and AI consulting for small businesses. Professional digital tools you can actually afford.',
   authors: [{ name: 'PathSix Solutions' }],
   icons: {
     icon: '/favicon.svg',
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'PathSix Solutions | Digital Tools for Growing Businesses',
-    description: 'Custom websites, CRM solutions, and AI deployment help.',
-    url: 'https://pathsixsolutions.com',
+    description: 'Custom websites, CRM solutions, and AI consulting.',
+    url: 'https://www.pathsixsolutions.com',
     siteName: 'PathSix Solutions',
     locale: 'en_US',
     type: 'website',
@@ -23,14 +23,11 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'PathSix Solutions | Digital Tools for Growing Businesses',
-    description: 'Custom websites, CRM solutions, and AI deployment help.',
+    description: 'Custom websites, CRM solutions, and AI consulting.',
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: 'https://pathsixsolutions.com',
   },
 }
 

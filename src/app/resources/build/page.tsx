@@ -1,12 +1,9 @@
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Development Resources | PathSix Solutions',
-  description: 'Technical guides for custom software development, API integrations, and building internal tools.',
-}
+export const metadata = pageMetadata('/resources/build', 'Development Resources | PathSix Solutions', 'Technical guides for custom software development, API integrations, and building internal tools.')
 
 const articles = [
   { title: 'Spreadsheet to Software: When to Make the Switch', slug: 'spreadsheet-to-software', excerpt: 'How to know when your Excel spreadsheet has outgrown itself and needs to become real software.', readTime: '8 min read', date: 'Coming Soon' },

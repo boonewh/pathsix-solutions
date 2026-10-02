@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/metadata'
 import localFont from 'next/font/local'
 import Link from 'next/link'
 import Header from '@/components/Header'
@@ -10,16 +10,7 @@ const inter = localFont({
   weight: '100 900',
 })
 
-export const metadata: Metadata = {
-  title: 'AI Consulting for Small Businesses | PathSix Solutions',
-  description: 'Practical help choosing AI tools, setting up useful workflows, and training your team. AI consulting built around your small business.',
-  alternates: { canonical: 'https://pathsixsolutions.com/ai-consulting' },
-  openGraph: {
-    title: 'Make AI useful in your business | PathSix Solutions',
-    description: 'The right tools. A practical plan. Help putting it all to work.',
-    url: 'https://pathsixsolutions.com/ai-consulting',
-  },
-}
+export const metadata = pageMetadata('/ai-consulting', 'AI Consulting for Small Businesses | PathSix Solutions', 'Practical help choosing AI tools, setting up useful workflows, and training your team. AI consulting built around your small business.')
 
 const services = [
   { title: 'Find your starting point', description: 'Look at the work your team does every day. Identify where AI could help, what is worth trying, and what can wait.', outcome: 'A prioritized action plan' },
@@ -61,9 +52,9 @@ export default function AIConsultingPage() {
     '@type': 'Service',
     name: 'AI Consulting for Small Businesses',
     serviceType: 'AI consulting, implementation, and team training',
-    url: 'https://pathsixsolutions.com/ai-consulting',
+    url: 'https://www.pathsixsolutions.com/ai-consulting',
     description: metadata.description,
-    provider: { '@type': 'Organization', name: 'PathSix Solutions', url: 'https://pathsixsolutions.com' },
+    provider: { '@type': 'Organization', name: 'PathSix Solutions', url: 'https://www.pathsixsolutions.com' },
   }
 
   return (

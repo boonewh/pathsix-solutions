@@ -1,17 +1,9 @@
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'The Subscription Model: Treating Your Website as a Service | PathSix Solutions',
-  description: 'Learn why subscription-based web design aligns with the reality of maintaining a modern digital presence. CapEx vs OpEx explained.',
-  openGraph: {
-    title: 'The Subscription Model: Treating Your Website as a Service',
-    description: 'Learn why subscription-based web design aligns with the reality of maintaining a modern digital presence.',
-    url: 'https://pathsixsolutions.com/resources/web-design/subscription-model',
-  },
-}
+export const metadata = pageMetadata('/resources/web-design/subscription-model', 'The Subscription Model: Treating Your Website as a Service | PathSix Solutions', 'Learn why subscription-based web design aligns with the reality of maintaining a modern digital presence. Compare upfront and ongoing costs.')
 
 export default function SubscriptionModelArticle() {
   return (
@@ -122,22 +114,19 @@ export default function SubscriptionModelArticle() {
         {/* FINANCIAL COMPARISON */}
         <section className="py-20 px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-10 border-b pb-4">Financial Considerations: CapEx vs. OpEx</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-10 border-b pb-4">Financial Considerations: Upfront vs. Monthly Costs</h2>
 
             <div className="grid md:grid-cols-2 gap-12">
               <div>
-                <h4 className="text-lg font-bold text-slate-400 uppercase tracking-wide mb-3">The Old Way (CapEx)</h4>
+                <h4 className="text-lg font-bold text-slate-400 uppercase tracking-wide mb-3">Project Pricing</h4>
                 <p className="text-slate-600 leading-relaxed">
-                  From a business management perspective, the Project Model requires a significant Capital Expenditure—a
-                  large cash outlay at a single point in time. This can be a barrier to entry for small businesses or
-                  a strain on cash flow for growing LLCs.
+                  A project may involve an upfront payment or milestone payments. Compare that cash commitment with your budget and the maintenance costs that follow.
                 </p>
               </div>
               <div>
-                <h4 className="text-lg font-bold text-blue-600 uppercase tracking-wide mb-3">The Subscription Model (OpEx)</h4>
+                <h4 className="text-lg font-bold text-blue-600 uppercase tracking-wide mb-3">Subscription Pricing</h4>
                 <p className="text-slate-800 leading-relaxed font-medium">
-                  The Subscription Model converts this into an Operating Expense. By paying a manageable monthly fee,
-                  the cost is predictable and spread out.
+                  A subscription spreads payments over time. Compare the minimum term, included work, ownership, cancellation conditions, and total cost; accounting treatment depends on your circumstances.
                 </p>
                 <p className="text-slate-600 leading-relaxed mt-4">
                   This lowers the barrier to entry, allowing a business to launch a professional, high-performance
@@ -207,7 +196,7 @@ export default function SubscriptionModelArticle() {
                 </div>
                 <div className="ml-4">
                   <h4 className="text-xl font-bold text-slate-900">Agility</h4>
-                  <p className="mt-2 text-slate-600">As the business changes—new services, new team members, new branding—the website changes with it, without the need for a renegotiated contract.</p>
+                  <p className="mt-2 text-slate-600">As the business changes—new services, new team members, new branding—the website changes with it, within the agreed update allowance, with larger changes scoped separately.</p>
                 </div>
               </li>
             </ul>
@@ -220,7 +209,7 @@ export default function SubscriptionModelArticle() {
             <h2 className="text-3xl font-bold text-slate-900 mb-6">Conclusion</h2>
             <p className="text-lg text-slate-600 mb-10 leading-relaxed">
               The internet is measured in milliseconds and changes daily. A static product cannot compete in a dynamic environment.
-              By treating your website as a service, you ensure that your digital storefront is always open, always secure, and always optimized.
+              An ongoing service provides a process for maintenance and improvements. No website is immune to downtime or security issues.
             </p>
             <p className="text-xl font-medium text-slate-900 mb-10">
               PathSix Solutions removes the technical burden from the business owner, allowing them to focus on what matters most: serving their customers.

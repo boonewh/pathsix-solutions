@@ -1,25 +1,17 @@
+import { pageMetadata } from '@/lib/metadata'
 import Image from 'next/image'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Managed Web Design Services | PathSix Solutions',
-  description: 'Custom websites built, hosted, and maintained for a low monthly fee. See your site before you pay. Starting at $159/mo with zero upfront costs.',
-  openGraph: {
-    title: 'Affordable Managed Web Design | PathSix Solutions',
-    description: 'Custom websites you can actually afford. Build, host, and maintain your professional website for $159/mo.',
-    url: 'https://pathsixsolutions.com/web-design',
-  },
-}
+export const metadata = pageMetadata('/web-design', 'Managed Web Design Services | PathSix Solutions', 'Custom websites built, hosted, and maintained for a low monthly fee. See your site before you pay. Starting at $159/mo with zero upfront costs.')
 
 export default function WebDesignPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'PathSix Web Designs - Custom Managed Websites',
-    url: 'https://pathsixsolutions.com/web-design',
+    url: 'https://www.pathsixsolutions.com/web-design',
     description: 'Affordable managed web design services. Custom websites built, hosted, and maintained for a low monthly fee.',
   }
 
@@ -103,8 +95,8 @@ export default function WebDesignPage() {
                     <div className="h-4 bg-slate-700 rounded w-1/2 animate-pulse"></div>
                     <div className="h-32 bg-slate-900 rounded border border-slate-700 p-4 mt-4">
                       <div className="flex items-center justify-between text-xs text-slate-500 mb-2">
-                        <span>Uptime</span>
-                        <span className="text-green-500">99.99%</span>
+                        <span>Hosting</span>
+                        <span className="text-green-500">Managed</span>
                       </div>
                       <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
                         <div className="bg-green-500 h-full w-full"></div>
@@ -196,7 +188,7 @@ export default function WebDesignPage() {
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">We Handle Everything</div>
                 <h3 className="text-2xl font-bold text-white mb-6">Fully Managed</h3>
                 <ul className="space-y-3 text-slate-300">
-                  <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Managed hosting — 99.9% uptime</li>
+                  <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Managed hosting</li>
                   <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> SSL security certificate</li>
                   <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Domain management</li>
                   <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Monthly content updates</li>
@@ -216,7 +208,7 @@ export default function WebDesignPage() {
                   <li className="flex items-center gap-3"><span className="text-emerald-500 font-bold">✓</span> Mobile responsiveness</li>
                   <li className="flex items-center gap-3"><span className="text-emerald-500 font-bold">✓</span> Meta titles &amp; descriptions</li>
                   <li className="flex items-center gap-3"><span className="text-emerald-500 font-bold">✓</span> Schema markup (structured data)</li>
-                  <li className="flex items-center gap-3"><span className="text-emerald-500 font-bold">✓</span> Sitemap submission &amp; Google indexing</li>
+                  <li className="flex items-center gap-3"><span className="text-emerald-500 font-bold">✓</span> Sitemap preparation &amp; indexing support</li>
                 </ul>
                 <Link href="/seo" className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-semibold text-sm transition-colors">
                   Want to go further? See Growth Plans →

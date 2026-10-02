@@ -1,25 +1,17 @@
+import { pageMetadata } from '@/lib/metadata'
 import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Advanced SEO & Local Search Services | PathSix Solutions',
-  description: 'Dominate Google Maps and local search rankings. Advanced SEO services focused on getting your business to the top of local search results.',
-  openGraph: {
-    title: 'SEO & Local Search Dominance | PathSix Solutions',
-    description: 'Turn your website into a lead-generating machine by capturing the top spots on Google Maps.',
-    url: 'https://pathsixsolutions.com/seo',
-  },
-}
+export const metadata = pageMetadata('/seo', 'Advanced SEO & Local Search Services | PathSix Solutions', 'Local SEO services focused on accurate business information, useful content, technical improvements, and measuring search visibility.')
 
 export default function SEOPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'PathSix Growth - Advanced SEO & Local Search',
-    url: 'https://pathsixsolutions.com/seo',
-    description: 'Advanced SEO services focused on Google Maps dominance and local search rankings.',
+    url: 'https://www.pathsixsolutions.com/seo',
+    description: 'Local SEO services focused on business profiles, useful content, technical improvements, and search visibility.',
   }
 
   return (
@@ -48,11 +40,11 @@ export default function SEOPage() {
                 </div>
                 <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
                   Don&apos;t just launch. <br/>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300">Dominate Local.</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300">Get Found Locally.</span>
                 </h1>
                 <p className="text-xl text-slate-400 mb-8 font-light leading-relaxed">
                   A beautiful website is the engine. SEO is the fuel. <br/>
-                  We turn your new site into a lead-generating machine by capturing the top spots on Google Maps.
+                  We improve your website and Google Business Profile to help relevant customers find and understand your business.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a href="#pricing" className="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg transition-all shadow-lg shadow-emerald-500/20 text-center">
@@ -76,14 +68,14 @@ export default function SEOPage() {
                   <div className="bg-slate-800 rounded-lg h-64 w-full relative overflow-hidden mb-4 opacity-80">
                     <Image
                       src="/images/seo-map.jpg"
-                      alt="Google Maps Ranking"
+                      alt="Illustration of local business visibility"
                       fill
                       className="object-cover opacity-50"
                     />
 
                     {/* Floating Pin 1 */}
-                    <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-emerald-500 text-white px-4 py-2 rounded-lg shadow-xl font-bold z-10 animate-bounce">
-                      #1 Your Business
+                    <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-emerald-500 text-white px-4 py-2 rounded-lg shadow-xl font-bold z-10">
+                      Your Business
                     </div>
                   </div>
                   <div className="space-y-2">
@@ -102,8 +94,7 @@ export default function SEOPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-white mb-4">&quot;Wait, isn&apos;t SEO included in my website?&quot;</h2>
               <p className="text-slate-400 max-w-3xl mx-auto text-lg">
-                Yes and No. We build your website with perfect <strong>Technical SEO</strong> (speed, structure, tags). That&apos;s like building a race car. <br/><br/>
-                <strong>Advanced SEO</strong> is the pit crew, the fuel, and the driver. It&apos;s the ongoing work required to beat the competitors who are also driving race cars.
+                Your website includes a <strong>technical SEO foundation</strong>: page structure, metadata, and attention to performance. <br/><br/> <strong>Ongoing SEO</strong> adds content, business profile work, and measurement. Search positions vary by query, location, and competition; no particular ranking is guaranteed.
               </p>
             </div>
 
@@ -127,8 +118,8 @@ export default function SEOPage() {
                 <h3 className="text-xl font-bold text-white mb-6 border-b border-slate-700 pb-4">PathSix Growth Plan</h3>
                 <ul className="space-y-4 text-slate-300">
                   <li className="flex items-center"><span className="text-emerald-500 mr-2 font-bold">➜</span> Monthly Blog/Content Writing</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2 font-bold">➜</span> Google Map Pack Aggression</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2 font-bold">➜</span> Review Generation Campaigns</li>
+                  <li className="flex items-center"><span className="text-emerald-500 mr-2 font-bold">➜</span> Google Business Profile Optimization</li>
+                  <li className="flex items-center"><span className="text-emerald-500 mr-2 font-bold">➜</span> Honest Customer Review Requests</li>
                   <li className="flex items-center"><span className="text-emerald-500 mr-2 font-bold">➜</span> Backlink Building (Authority)</li>
                   <li className="flex items-center"><span className="text-emerald-500 mr-2 font-bold">➜</span> Competitor Tracking</li>
                 </ul>
@@ -141,7 +132,7 @@ export default function SEOPage() {
         <section id="strategy" className="py-24 bg-slate-950">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-white mb-4">How We Rank You</h2>
+              <h2 className="text-3xl font-bold text-white mb-4">How We Improve Your Search Presence</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -150,7 +141,7 @@ export default function SEOPage() {
                 <div className="w-12 h-12 bg-emerald-900/30 rounded-lg flex items-center justify-center text-emerald-500 mb-4 text-2xl">📍</div>
                 <h3 className="text-xl font-bold text-white mb-2">Google Maps First</h3>
                 <p className="text-slate-400 text-sm">
-                  Most local searches happen on mobile. We optimize your Google Business Profile (photos, posts, categories) to get you into the &quot;Top 3 Pack.&quot;
+                  We improve your Google Business Profile with accurate categories, service information, photos, and updates. Local results depend on relevance, distance, and prominence.
                 </p>
               </div>
 
@@ -159,7 +150,7 @@ export default function SEOPage() {
                 <div className="w-12 h-12 bg-emerald-900/30 rounded-lg flex items-center justify-center text-emerald-500 mb-4 text-2xl">✍️</div>
                 <h3 className="text-xl font-bold text-white mb-2">Content That Ranks</h3>
                 <p className="text-slate-400 text-sm">
-                  Google loves fresh content. We write localized blog posts and service pages (e.g., &quot;Plumber in [City Name]&quot;) to catch specific search traffic.
+                  We write useful service pages and articles that answer real customer questions. Location content reflects where you actually work and what you offer there.
                 </p>
               </div>
 
@@ -168,7 +159,7 @@ export default function SEOPage() {
                 <div className="w-12 h-12 bg-emerald-900/30 rounded-lg flex items-center justify-center text-emerald-500 mb-4 text-2xl">⭐</div>
                 <h3 className="text-xl font-bold text-white mb-2">Reputation Engine</h3>
                 <p className="text-slate-400 text-sm">
-                  Reviews are a ranking factor. We set up automated email/SMS campaigns to ask your happy clients for 5-star reviews on autopilot.
+                  We help you request honest feedback from customers without selecting only happy clients, offering incentives, or asking for a particular rating or wording.
                 </p>
               </div>
             </div>
@@ -203,18 +194,18 @@ export default function SEOPage() {
               {/* Plan 2: Authority */}
               <div className="bg-slate-800 p-8 rounded-2xl border-2 border-emerald-500 shadow-xl shadow-emerald-500/10 flex flex-col relative">
                 <div className="absolute top-0 right-0 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-[13px]">RECOMMENDED</div>
-                <h3 className="text-xl font-bold text-white mb-2">Total Domination</h3>
+                <h3 className="text-xl font-bold text-white mb-2">Local Growth</h3>
                 <div className="text-4xl font-bold text-emerald-500 mb-2">$799<span className="text-lg text-slate-500 font-normal">/mo</span></div>
-                <p className="text-sm text-slate-400 mb-6 flex-grow">For businesses who want to expand their service area and crush competitors.</p>
+                <p className="text-sm text-slate-400 mb-6 flex-grow">For businesses that need ongoing content and broader local search support.</p>
 
                 <ul className="space-y-4 text-white mb-8 text-sm font-medium">
                   <li className="flex items-center"><span className="text-emerald-400 mr-2">✓</span> <strong>Everything in Maps Booster</strong></li>
                   <li className="flex items-center"><span className="text-emerald-400 mr-2">✓</span> 2 SEO-Optimized Blog Posts / Month</li>
-                  <li className="flex items-center"><span className="text-emerald-400 mr-2">✓</span> Advanced Competitor Spy Reports</li>
+                  <li className="flex items-center"><span className="text-emerald-400 mr-2">✓</span> Competitor Research Reports</li>
                   <li className="flex items-center"><span className="text-emerald-400 mr-2">✓</span> Backlink Outreach Campaign</li>
                   <li className="flex items-center"><span className="text-emerald-400 mr-2">✓</span> Dedicated Account Manager</li>
                 </ul>
-                <a href="/contact" className="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded font-bold transition-colors text-center">Get Domination Plan</a>
+                <a href="/contact" className="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded font-bold transition-colors text-center">Choose Local Growth</a>
               </div>
             </div>
           </div>

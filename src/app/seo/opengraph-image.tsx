@@ -50,7 +50,7 @@ export default async function Image() {
             maxWidth: 900,
           }}
         >
-          Dominate Local Search
+          Get Found Locally
         </div>
 
         {/* Subtitle */}
@@ -61,7 +61,7 @@ export default async function Image() {
             marginBottom: 40,
           }}
         >
-          Get to #1 on Google Maps
+          Practical SEO for Small Businesses
         </div>
 
         {/* Brand */}
