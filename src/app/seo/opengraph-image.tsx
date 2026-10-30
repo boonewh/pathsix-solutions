@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export const runtime = 'edge'
+export const runtime = 'nodejs'
 export const alt = 'Advanced SEO & Local Search Services | PathSix Solutions'
 export const size = {
   width: 1200,

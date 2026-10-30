@@ -1,6 +1,6 @@
 # PathSix Solutions - Unified Ecosystem
 
-This is the complete PathSix Solutions unified platform, built with Next.js 15, React 19, and Tailwind CSS. All services previously hosted on separate subdomains are now consolidated into a single, cohesive website.
+This is the complete PathSix Solutions unified platform, built with Next.js 16, React 19, and Tailwind CSS 3. All services previously hosted on separate subdomains are now consolidated into a single, cohesive website.
 
 ## 🎯 New Direction (December 2024)
 
@@ -55,7 +55,7 @@ public/
 
 ## Getting Started
 
-Use Node.js 24.x and npm. No `.env` file or database is required for local development. The contact form uses the existing hosted Formspree endpoint; submitting it sends a real inquiry.
+Use Node.js 24.22.1 (or a newer patched 24.x) and npm 11.17.0. No `.env` file or database is required for local development. The contact form uses the existing hosted Formspree endpoint; submitting it sends a real inquiry.
 
 1. **Install dependencies:**
    ```bash
@@ -69,15 +69,24 @@ Use Node.js 24.x and npm. No `.env` file or database is required for local devel
 
 3. **Open [http://localhost:3000](http://localhost:3000) in your browser**
 
-Before committing changes, run `npm run lint` and `npm run build`. To preview the production build locally, stop the development server and run `npm start`.
+Before committing changes, run `npm run lint`, `npm run typecheck`, and `npm run build`. To preview the production build locally, stop the development server and run `npm start`.
+
+After building, `npm run check:upgrade` starts its own loopback production server,
+runs public-page/metadata/image checks and desktop/mobile navigation/contact checks,
+then stops the server. Install its browser once with `npx playwright install chromium`.
+Contact requests are intercepted with fictional data; this command sends no real
+Formspree inquiries. Screenshots/results are ignored in `test-results/`.
 
 The GitHub repository is [boonewh/pathsix-solutions](https://github.com/boonewh/pathsix-solutions). Commit dependency changes with `package-lock.json` so `npm ci` reproduces the same installation. Publishing to `main` may trigger the existing Vercel deployment.
 
-The npm override for Next.js uses the project's patched PostCSS 8 dependency in place of Next.js 15's older pinned copy. Reassess this override when upgrading Next.js.
+Next.js 16's bundled PostCSS and the project's PostCSS dependency are patched;
+the old Next.js 15 PostCSS override is no longer needed. See
+[October maintenance notes](docs/SECURITY-MAINTENANCE-2026-10.md), including the
+explicit temporary ESLint 9 support exception.
 
 ## Features
 
-- ✅ **Next.js 15** with App Router
+- ✅ **Next.js 16** with App Router
 - ✅ **Unified Multi-Page Architecture** - All services under one domain
 - ✅ **Service-Specific Themes** - Each page has unique color scheme and branding
   - Web Design: Blue theme
