@@ -1,3 +1,5 @@
+import { CampaignHeader, CampaignFooter } from '@/components/CampaignChrome'
+import localFont from 'next/font/local'
 import { pageMetadata } from '@/lib/metadata'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -6,7 +8,7 @@ import Footer from '@/components/Footer'
 
 export const metadata = pageMetadata('/web-design', 'Managed Web Design Services | PathSix Solutions', 'Custom websites built, hosted, and maintained for a low monthly fee. See your site before you pay. Starting at $159/mo with zero upfront costs.')
 
-export default function WebDesignPage() {
+function CurrentWebDesignPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -425,4 +427,237 @@ export default function WebDesignPage() {
       <Footer />
     </>
   )
+}
+const webDesignFont = localFont({
+  src: '../../../public/fonts/InterVariable.woff2',
+  display: 'swap',
+  weight: '100 900',
+})
+
+const webProjects = [
+  { name: 'ASFI Construction', type: 'Construction & infrastructure', image: 'asfi.jpg', href: 'https://asficonstruction.com', color: 'orange' },
+  { name: 'Center for Social Success', type: 'Therapy & family services', image: 'cssdallas.jpg', href: 'https://cssdallas.com', color: 'blue' },
+  { name: 'All Seasons Foam', type: 'Insulation & building services', image: 'allseasons.jpg', href: 'https://allseasonsfoam.com', color: 'gold' },
+  { name: 'Lone Star Glass & Shower', type: 'Glass & shower services', image: 'lonestar.jpg', href: 'https://lsglassandshower.com', color: 'sage' },
+  { name: 'Permian Alliance', type: 'Business website', image: 'permian_alliance.jpg', href: 'https://permianalliance.com', color: 'sage' },
+  { name: 'PathSix Games', type: 'Our own gaming project', image: 'games.jpg', href: 'https://pathsix.games', color: 'gold' },
+  { name: 'Lotus RPG', type: 'Role-playing games', image: 'lotusrpg.jpg', href: 'https://lotusrpg.com', color: 'blue' },
+  { name: 'Odessa Symphony Guild', type: 'Community & the arts', image: 'osg.jpg', href: 'https://odessasymphonyguild.org', color: 'orange' },
+]
+
+const webInclusions = [
+  { title: 'Design that feels like you', description: 'Your colors, your voice, your customers. A custom layout built around your business, rather than a template with your logo dropped in.' },
+  { title: 'Good on every screen', description: 'Responsive layouts, clear navigation, and attention to performance, so customers can explore on their phone or at their desk.' },
+  { title: 'Hosting & domain management', description: 'Managed hosting, domain management, and an SSL certificate. The essentials are part of the service.' },
+  { title: 'Content updates', description: 'New services, updated details, or fresh photos. Monthly content updates are handled within your service plan.' },
+  { title: 'Maintenance & security', description: 'Ongoing maintenance and security monitoring, with someone looking after the technical side of your site.' },
+  { title: 'A search-ready foundation', description: 'Page titles, descriptions, structured data, and sitemap preparation, with indexing support and attention to speed.' },
+]
+
+const webFaqs = [
+  { question: 'What does the free preview include?', answer: 'A custom preview of your homepage, so you can see the design direction before you pay. The current preview turnaround is 3–5 days. The rest of the website is built after you decide to move forward.' },
+  { question: 'Is $159 the price for every website?', answer: 'Managed websites start at $159 per month with no upfront cost. We discuss the pages, functionality, and ongoing work you need and confirm the scope and price for your site before you commit.' },
+  { question: 'Can you update the website after it launches?', answer: 'Yes. Monthly content updates, maintenance, hosting, and security monitoring are part of the managed service. We agree on what your service plan covers, so you know how ongoing changes will be handled.' },
+  { question: 'Is SEO included?', answer: 'Your website includes a technical SEO foundation. Ongoing content, Google Business Profile management, and broader local search work are separate SEO services. No specific ranking is promised.' },
+  { question: 'What if I need more than a website?', answer: 'PathSix also builds CRM systems, custom applications, and integrations, and provides AI consulting. We can talk through whether an existing tool or a separate custom project is the right fit.' },
+]
+
+function WebProject({ project, index }: { project: typeof webProjects[number]; index: number }) {
+  return (
+    <a href={project.href} target="_blank" rel="noopener noreferrer" className="group block min-w-0" aria-label={'Visit ' + project.name + ' website'}>
+      <figure>
+        <div className={'campaign-project-frame web-project-' + project.color}>
+          <div className="campaign-project-meta"><span>Website / 0{index + 1}</span><span aria-hidden="true">↗</span></div>
+          <div className="relative aspect-[19/10] outline outline-1 -outline-offset-1 outline-black/10 motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:-translate-y-2">
+            <Image src={'/images/' + project.image} alt="" fill sizes="(min-width: 1280px) 560px, (min-width: 768px) 43vw, 88vw" className="object-cover object-top" />
+          </div>
+        </div>
+        <figcaption className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
+          <p className="text-lg font-medium group-hover:underline">{project.name}</p>
+          <p className="campaign-muted text-base sm:text-sm">{project.type}</p>
+        </figcaption>
+      </figure>
+    </a>
+  )
+}
+
+function WebDesignPreview() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'PathSix Web Designs - Custom Managed Websites',
+    url: 'https://www.pathsixsolutions.com/web-design',
+    description: metadata.description,
+  }
+
+  return (
+    <div className={webDesignFont.className + ' home-campaign webdesign-page isolate antialiased'}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <CampaignHeader links={[
+        { label: 'Home', href: '/' },
+        { label: 'Our work', href: '#portfolio' },
+        { label: 'What’s included', href: '#pricing' },
+        { label: 'How it works', href: '#how-it-works' },
+      ]} />
+      <main>
+        <section className="web-hero overflow-hidden">
+          <div className="campaign-container grid items-center gap-8 py-16 lg:grid-cols-2 lg:py-24">
+            <div className="flex flex-col items-start gap-7">
+              <p className="campaign-eyebrow campaign-gold">Web design / Built for your business</p>
+              <h1 className="max-w-[14ch] text-balance text-5xl font-semibold tracking-tight sm:text-6xl xl:text-7xl">A website you&apos;re <span className="campaign-gold">proud to share.</span></h1>
+              <p className="campaign-muted max-w-[38ch] text-pretty text-xl">Made to look like you. Built to work for your customers. And looked after, so you don&apos;t have to babysit it.</p>
+              <div className="flex flex-wrap items-center gap-8">
+                <Link href="/contact" className="campaign-primary">Request your free preview <span aria-hidden="true">↗</span></Link>
+                <a href="#portfolio" className="campaign-text-link">Explore our work <span aria-hidden="true">↓</span></a>
+              </div>
+              <p className="campaign-muted text-base">From <strong className="font-semibold text-[#fafaf7]">$159/month</strong>. No upfront cost.</p>
+            </div>
+            <a href="#portfolio" className="web-hero-art group block" aria-label="Explore the portfolio: ASFI Construction and Center for Social Success">
+              <div className="web-art-label"><span>Made for them.</span><span>Imagine yours. ↘</span></div>
+              <div className="web-art-main">
+                <Image src="/images/asfi.jpg" alt="" fill priority sizes="(min-width: 1280px) 610px, (min-width: 1024px) 45vw, 90vw" className="object-cover object-top" />
+              </div>
+              <div className="web-art-secondary">
+                <Image src="/images/cssdallas.jpg" alt="" fill priority sizes="(min-width: 1280px) 440px, (min-width: 1024px) 34vw, 68vw" className="object-cover object-top" />
+              </div>
+              <p className="web-art-caption">Actual PathSix website projects <span aria-hidden="true">↗</span></p>
+            </a>
+          </div>
+        </section>
+
+        <div className="campaign-promise">
+          <div className="campaign-container flex flex-wrap justify-between gap-x-8 gap-y-3 py-6">
+            <p className="font-medium">Your website. Off your to-do list.</p>
+            <p className="font-mono text-base sm:text-sm">Custom design / Managed hosting / Ongoing care</p>
+          </div>
+        </div>
+
+        <section id="portfolio" className="scroll-mt-8 py-20 md:py-28">
+          <div className="campaign-container">
+            <div className="grid items-end gap-8 lg:grid-cols-[3fr_2fr]">
+              <div className="flex flex-col gap-5">
+                <p className="campaign-eyebrow">A few introductions</p>
+                <h2 className="max-w-[20ch] text-balance text-4xl font-medium tracking-tight md:text-6xl">Their business.<br /><span className="campaign-orange-ink">Their own look.</span></h2>
+              </div>
+              <p className="campaign-muted max-w-[40ch] text-pretty text-lg">A contractor should feel like a contractor. A therapy practice should feel welcoming. The design starts with who you are and who you&apos;re trying to reach.</p>
+            </div>
+            <div className="mt-12 grid gap-8 md:grid-cols-2">
+              {webProjects.slice(0, 4).map((project, index) => <WebProject key={project.href} project={project} index={index} />)}
+            </div>
+            <details className="web-more-work mt-6 border-y py-5">
+              <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-8 text-lg font-medium">
+                More from the portfolio
+                <span aria-hidden="true" className="web-expand-plus text-2xl">+</span>
+                <span aria-hidden="true" className="web-expand-minus text-2xl">−</span>
+              </summary>
+              <div className="mt-8 grid gap-8 md:grid-cols-2">
+                {webProjects.slice(4).map((project, index) => <WebProject key={project.href} project={project} index={index + 4} />)}
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section id="pricing" className="web-inclusions scroll-mt-8 py-20 md:py-28">
+          <div className="campaign-container">
+            <div className="grid items-end gap-8 lg:grid-cols-[3fr_2fr]">
+              <div className="flex flex-col gap-5">
+                <p className="campaign-eyebrow campaign-gold">One managed service</p>
+                <h2 className="max-w-[20ch] text-balance text-4xl font-medium tracking-tight md:text-6xl">A great website.<br />Someone to handle it.</h2>
+              </div>
+              <p className="campaign-muted max-w-[40ch] text-pretty text-lg">The design gets you started. The hosting, maintenance, and ongoing support keep your website in good hands.</p>
+            </div>
+            <div className="mt-14 grid gap-8 lg:grid-cols-[2fr_3fr]">
+              <div className="web-plan flex flex-col items-start gap-6 self-start p-8 md:p-10">
+                <p className="campaign-eyebrow">Managed websites from</p>
+                <p className="text-7xl font-medium tracking-tight tabular-nums md:text-8xl">$159<span className="text-xl font-normal tracking-normal"> / mo</span></p>
+                <p className="text-xl font-medium">No upfront cost.</p>
+                <p className="max-w-[32ch] text-pretty text-base">See a custom homepage preview before you pay. We agree on your site&apos;s scope and price before you move forward.</p>
+                <Link href="/contact" className="campaign-text-link">See what yours could look like <span aria-hidden="true">↗</span></Link>
+              </div>
+              <dl className="web-inclusion-list">
+                {webInclusions.map((item, index) => (
+                  <div key={item.title} className="grid grid-cols-[1.5rem_1fr] gap-x-5 gap-y-2 py-6 first:pt-0 last:pb-0">
+                    <dt className="col-span-2 grid grid-cols-[1.5rem_1fr] items-baseline gap-5">
+                      <span className="campaign-gold font-mono text-base sm:text-sm">0{index + 1}</span>
+                      <span className="text-xl font-medium">{item.title}</span>
+                    </dt>
+                    <dd className="campaign-muted col-start-2 max-w-[48ch] text-pretty text-base">{item.description}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+            <div className="web-seo-note mt-12 flex flex-col justify-between gap-5 border-t pt-7 md:flex-row md:items-center">
+              <p className="campaign-muted max-w-[56ch] text-pretty">Want ongoing content and local search support? That&apos;s a separate service, built on your website&apos;s technical foundation.</p>
+              <Link href="/seo" className="campaign-text-link shrink-0">Explore SEO services <span aria-hidden="true">↗</span></Link>
+            </div>
+          </div>
+        </section>
+
+        <section id="how-it-works" className="web-process scroll-mt-8 py-20 md:py-28">
+          <div className="campaign-container">
+            <p className="campaign-eyebrow mb-5">An easier way to get started</p>
+            <h2 className="max-w-[22ch] text-balance text-4xl font-medium tracking-tight md:text-6xl">See it before you commit.</h2>
+            <ol role="list" className="mt-12 grid gap-8 md:grid-cols-3">
+              {[
+                ['Tell us about your business', 'What do you do? Who are your customers? What does your website need to help them do? We start with the answers.'],
+                ['Take a look at your homepage', 'Get a custom homepage preview in 3–5 days. See the direction and decide whether it feels right before you pay.'],
+                ['Let us take it from there', 'Once you decide to move forward, we build out the site, get it online, and handle the hosting and ongoing care.'],
+              ].map(([title, description], index) => (
+                <li key={title} className="web-process-step flex flex-col gap-5 border-t pt-6">
+                  <p className="font-mono text-base sm:text-sm">Step 0{index + 1}</p>
+                  <h3 className="max-w-[22ch] text-balance text-2xl font-medium tracking-tight">{title}</h3>
+                  <p className="max-w-[40ch] text-pretty text-base">{description}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="py-20 md:py-28">
+          <div className="campaign-container grid items-start gap-8 lg:grid-cols-2">
+            <figure className="campaign-quote flex flex-col gap-8 p-8 md:p-12">
+              <p className="campaign-eyebrow">From a client</p>
+              <blockquote><p className="relative max-w-[30ch] text-pretty text-2xl font-medium tracking-tight before:absolute before:-translate-x-full before:content-['\201C'] after:content-['\201D'] md:text-3xl">Working with Will was easy. He was much faster than we expected and had our new website up and running quickly.</p></blockquote>
+              <figcaption className="flex flex-col gap-1"><p className="font-semibold">Melissa</p><p>Center for Social Success</p></figcaption>
+            </figure>
+            <div>
+              <p className="campaign-eyebrow mb-5">A few things you might be wondering</p>
+              <h2 className="max-w-[24ch] text-balance text-3xl font-medium tracking-tight md:text-4xl">Before we get started.</h2>
+              <div className="web-faqs mt-8">
+                {webFaqs.map(faq => (
+                  <details key={faq.question} className="border-t py-4">
+                    <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-5 font-medium">
+                      {faq.question}
+                      <span aria-hidden="true" className="web-expand-plus text-xl">+</span>
+                      <span aria-hidden="true" className="web-expand-minus text-xl">−</span>
+                    </summary>
+                    <p className="campaign-muted mt-3 max-w-[48ch] text-pretty text-base">{faq.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="campaign-offer py-16 md:py-24">
+          <div className="campaign-container grid items-center gap-8 lg:grid-cols-[3fr_2fr]">
+            <div className="flex flex-col gap-5">
+              <p className="campaign-eyebrow campaign-gold">Let&apos;s make something that feels like you</p>
+              <h2 className="max-w-[20ch] text-balance text-4xl font-medium tracking-tight md:text-6xl">Your business.<br />Your next first impression.</h2>
+              <p className="campaign-muted max-w-[40ch] text-pretty text-lg">Tell us a little about your business. We&apos;ll show you what your homepage could look like.</p>
+            </div>
+            <div className="flex flex-col items-start gap-6 lg:items-end">
+              <Link href="/contact" className="campaign-primary">Request your free preview <span aria-hidden="true">↗</span></Link>
+              <a href="mailto:design@pathsixsolutions.com" className="campaign-text-link break-all">design@pathsixsolutions.com</a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <CampaignFooter />
+    </div>
+  )
+}
+
+export default function WebDesignPage() {
+  return process.env.NODE_ENV === 'development' ? <WebDesignPreview /> : <CurrentWebDesignPage />
 }

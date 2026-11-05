@@ -1,12 +1,20 @@
+import { CampaignHeader, CampaignFooter } from '@/components/CampaignChrome'
 import { pageMetadata } from '@/lib/metadata'
 import Image from 'next/image'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import localFont from 'next/font/local'
+
+const conceptFont = localFont({
+  src: '../../public/fonts/InterVariable.woff2',
+  display: 'swap',
+  weight: '100 900',
+})
 
 export const metadata = pageMetadata('/', 'PathSix Solutions | Web Design, CRM & AI Consulting', 'Custom websites, SEO, CRM solutions, custom applications, and practical AI consulting for small businesses.')
 
-export default function Home() {
+function CurrentHome() {
   // Schema markup for SEO
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -450,4 +458,173 @@ export default function Home() {
       <Footer />
     </>
   )
+}
+
+const homeServices = [
+  { name: 'Web design', href: '/web-design', description: 'A custom website that represents you well, with hosting, maintenance, and updates handled for you.' },
+  { name: 'SEO & local search', href: '/seo', description: 'Help the right customers find your business and understand what you offer.' },
+  { name: 'CRM solutions', href: '/crm', description: 'Keep your leads, follow-ups, and projects in a system that fits your team.' },
+  { name: 'Custom applications', href: '/build', description: 'Purpose-built software for the work your spreadsheets and existing tools cannot handle.' },
+  { name: 'AI consulting', href: '/ai-consulting', description: 'Choose useful AI tools, put them to work, and help your team use them confidently.' },
+]
+
+const homeProjects = [
+  { name: 'ASFI Construction', type: 'Construction & infrastructure', image: '/images/asfi.jpg', href: 'https://asficonstruction.com', tone: 'orange' },
+  { name: 'Center for Social Success', type: 'Therapy & family services', image: '/images/cssdallas.jpg', href: 'https://cssdallas.com', tone: 'blue' },
+  { name: 'All Seasons Foam', type: 'Insulation & building services', image: '/images/allseasons.jpg', href: 'https://allseasonsfoam.com', tone: 'gold' },
+]
+
+function CampaignProjects() {
+  return (
+    <section id="selected-work" className="campaign-work scroll-mt-8 py-20 md:py-28">
+      <div className="campaign-container">
+        <div className="grid items-end gap-8 lg:grid-cols-[3fr_2fr]">
+          <div className="flex flex-col gap-5">
+            <p className="campaign-eyebrow">Selected websites / Real businesses</p>
+            <h2 className="max-w-[20ch] text-balance text-4xl font-medium tracking-tight md:text-6xl">Your business has a personality.<br /><span className="campaign-orange-ink">Your website should, too.</span></h2>
+          </div>
+          <div className="flex flex-col items-start gap-6">
+            <p className="campaign-muted max-w-[40ch] text-pretty text-lg">A construction company. A therapy practice. A local trade. Different people, different customers. Each with a website that feels like their own.</p>
+            <Link href="/web-design" className="campaign-text-link">Explore web design <span aria-hidden="true">↗</span></Link>
+          </div>
+        </div>
+        <div className="mt-12 grid gap-8 md:grid-cols-2">
+          {homeProjects.slice(0, 2).map((project, index) => (
+            <a key={project.name} href={project.href} target="_blank" rel="noopener noreferrer" className="campaign-project group block min-w-0" aria-label={'Visit ' + project.name + ' website'}>
+              <figure>
+                <div className={'campaign-project-frame campaign-project-' + project.tone}>
+                  <div className="campaign-project-meta"><span>Website / 0{index + 1}</span><span aria-hidden="true">↗</span></div>
+                  <div className="relative aspect-[19/10] outline outline-1 -outline-offset-1 outline-black/10 motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:-translate-y-2">
+                    <Image src={project.image} alt="" fill sizes="(min-width: 1280px) 560px, (min-width: 768px) 43vw, 88vw" className="object-cover object-top" />
+                  </div>
+                </div>
+                <figcaption className="flex items-baseline justify-between gap-8 py-5">
+                  <p className="text-lg font-medium group-hover:underline">{project.name}</p>
+                  <p className="campaign-muted hidden text-sm sm:block">{project.type}</p>
+                </figcaption>
+              </figure>
+            </a>
+          ))}
+        </div>
+        <div className="campaign-more-work mt-4 flex flex-col justify-between gap-5 border-t pt-7 sm:flex-row sm:items-center">
+          <p className="campaign-muted">Also built for All Seasons Foam</p>
+          <a href={homeProjects[2].href} target="_blank" rel="noopener noreferrer" className="campaign-text-link">Visit the website <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function CampaignServices() {
+  return (
+    <>
+      <div className="campaign-banner relative overflow-hidden">
+        <Image src="/images/home-worktable-banner.webp" alt="Illustrative overhead scene of hands working with plans and colorful material samples." fill sizes="100vw" className="object-cover" />
+      </div>
+      <section id="services" className="campaign-services scroll-mt-8 py-20 md:py-28">
+        <div className="campaign-container grid gap-8 lg:grid-cols-[2fr_3fr]">
+          <div className="flex flex-col items-start gap-6">
+            <p className="campaign-eyebrow campaign-gold">Beyond the website</p>
+            <h2 className="max-w-[17ch] text-balance text-4xl font-medium tracking-tight md:text-5xl">Start with what your business needs.</h2>
+            <p className="campaign-muted max-w-[38ch] text-pretty text-lg">A better website is just the beginning. When you need to get found, organize the work, or make sense of AI, you have someone to turn to.</p>
+            <Link href="/contact" className="campaign-text-link">Talk through your next step <span aria-hidden="true">↗</span></Link>
+          </div>
+          <dl className="campaign-service-list">
+            {homeServices.map((service, index) => (
+              <div key={service.href} className="py-7 first:pt-0 last:pb-0">
+                <dt>
+                  <Link href={service.href} className="group grid grid-cols-[1.5rem_1fr_auto] items-baseline gap-5">
+                    <span className="campaign-service-number font-mono text-base tabular-nums sm:text-sm">0{index + 1}</span>
+                    <span className="text-xl font-medium group-hover:underline md:text-2xl">{service.name}</span>
+                    <span className="campaign-service-arrow" aria-hidden="true">↗</span>
+                  </Link>
+                </dt>
+                <dd className="campaign-muted ml-11 mt-3 max-w-[48ch] text-pretty text-base">{service.description}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+    </>
+  )
+}
+
+function CampaignAbout() {
+  return (
+    <section id="about" className="campaign-about scroll-mt-8 py-20 md:py-28">
+      <div className="campaign-container grid items-center gap-8 lg:grid-cols-2">
+        <div className="flex flex-col items-start gap-6">
+          <p className="campaign-eyebrow">The person behind PathSix</p>
+          <h2 className="max-w-[20ch] text-balance text-4xl font-medium tracking-tight md:text-5xl">Good work starts with a conversation.</h2>
+          <p className="campaign-muted max-w-[44ch] text-pretty text-lg">I&apos;m Will. I build websites and software for small businesses, and help people make better use of the technology they already have.</p>
+          <p className="campaign-muted max-w-[44ch] text-pretty text-lg">Tell me what you&apos;re trying to improve. I&apos;ll help you work out what makes sense—and stay involved as we put it to work.</p>
+          <Link href="/contact" className="campaign-text-link">Let&apos;s talk <span aria-hidden="true">↗</span></Link>
+        </div>
+        <figure className="campaign-quote flex flex-col gap-8 p-8 md:p-12">
+          <p aria-hidden="true" className="campaign-quote-mark font-medium">“</p>
+          <blockquote><p className="max-w-[30ch] text-pretty text-2xl font-medium tracking-tight md:text-3xl">Working with Will was easy. He was much faster than we expected and had our new website up and running quickly.</p></blockquote>
+          <figcaption className="flex flex-col gap-1">
+            <p className="font-semibold">Melissa</p>
+            <p>Center for Social Success</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  )
+}
+
+function PortfolioHomepage() {
+  return (
+    <div className={conceptFont.className + ' home-campaign isolate antialiased'}>
+      <CampaignHeader />
+      <main id="campaign-main">
+        <section className="campaign-hero relative isolate overflow-hidden">
+          <Image src="/images/home-workshop-hero.webp" alt="" fill priority sizes="100vw" className="campaign-hero-image object-cover" />
+          <div className="campaign-hero-shade absolute inset-0" />
+          <div className="campaign-container relative flex flex-col items-start py-16 md:py-24">
+            <p className="campaign-eyebrow mb-7">Custom websites. Fully managed.</p>
+            <h1 className="max-w-[13ch] text-balance text-5xl font-semibold tracking-tight sm:text-7xl lg:text-8xl xl:text-9xl">Your business.<br /><span className="campaign-gold">At its best.</span></h1>
+            <p className="mt-8 max-w-[39ch] text-pretty text-xl text-[#eeefe8]">A website that does your business justice.<br className="hidden sm:block" /> Built with care. Managed for you.</p>
+            <div className="mt-8 flex flex-wrap items-center gap-8">
+              <Link href="/contact" className="campaign-primary">Request your free preview <span aria-hidden="true">↗</span></Link>
+              <a href="#selected-work" className="campaign-text-link">See our work <span aria-hidden="true">↓</span></a>
+            </div>
+            <p className="mt-7 max-w-[40ch] text-pretty text-base text-[#eeefe8]">Managed websites from $159/month.<br className="sm:hidden" /> No upfront cost.</p>
+          </div>
+          <div className="campaign-hero-caption absolute bottom-7 right-8 hidden items-center gap-3 xl:flex" aria-hidden="true"><span />Built for people who build things.</div>
+        </section>
+        <div className="campaign-promise">
+          <div className="campaign-container flex flex-wrap items-center justify-between gap-x-8 gap-y-3 py-6">
+            <p className="font-medium">You run your business. We&apos;ll handle the website.</p>
+            <p className="font-mono text-base sm:text-sm">Design / Hosting / Ongoing care</p>
+          </div>
+        </div>
+        <CampaignProjects />
+        <CampaignServices />
+        <CampaignAbout />
+        <section className="campaign-offer py-16 md:py-24">
+          <div className="campaign-container grid items-end gap-8 lg:grid-cols-[3fr_2fr]">
+            <div className="flex flex-col items-start gap-6">
+              <p className="campaign-eyebrow">Your next chapter starts here</p>
+              <h2 className="max-w-[18ch] text-balance text-4xl font-medium tracking-tight md:text-6xl">Let&apos;s make your business look the part.</h2>
+              <p className="campaign-muted max-w-[44ch] text-pretty text-lg">Custom design, hosting, maintenance, and content updates. See your homepage before you pay.</p>
+              <Link href="/contact" className="campaign-primary">Request your free preview <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className="campaign-price flex flex-col items-start gap-4 lg:items-end">
+              <p className="campaign-muted">Managed websites from</p>
+              <p className="text-7xl font-medium tracking-tight tabular-nums md:text-8xl">$159<span className="text-xl font-normal tracking-normal"> / month</span></p>
+              <p className="campaign-muted">No upfront cost.</p>
+              <Link href="/web-design" className="campaign-text-link">What&apos;s included <span aria-hidden="true">↗</span></Link>
+            </div>
+          </div>
+        </section>
+      </main>
+      <CampaignFooter />
+    </div>
+  )
+}
+
+export default function Home() {
+  // Keep the approved live homepage until this local redesign is approved.
+  return process.env.NODE_ENV === 'development' ? <PortfolioHomepage /> : <CurrentHome />
 }
