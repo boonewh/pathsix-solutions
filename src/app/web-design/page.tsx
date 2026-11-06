@@ -1,428 +1,314 @@
 import { pageMetadata } from '@/lib/metadata'
 import Image from 'next/image'
 import Link from 'next/link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import localFont from 'next/font/local'
+import { SiteHeader, SiteFooter } from '@/components/SiteChrome'
+
+const inter = localFont({
+  src: '../../../public/fonts/InterVariable.woff2',
+  display: 'swap',
+  weight: '100 900',
+})
 
 export const metadata = pageMetadata('/web-design', 'Managed Web Design Services | PathSix Solutions', 'Custom websites built, hosted, and maintained for a low monthly fee. See your site before you pay. Starting at $159/mo with zero upfront costs.')
 
-export default function WebDesignPage() {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'PathSix Web Designs - Custom Managed Websites',
-    url: 'https://www.pathsixsolutions.com/web-design',
-    description: 'Affordable managed web design services. Custom websites built, hosted, and maintained for a low monthly fee.',
-  }
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'PathSix Web Designs - Custom Managed Websites',
+  url: 'https://www.pathsixsolutions.com/web-design',
+  description: 'Affordable managed web design services. Custom websites built, hosted, and maintained for a low monthly fee.',
+}
 
+/** Page photography. Prompts are recorded in design/homepage-imagery.txt. */
+const images = {
+  hero: { src: '/images/web-hero-worktable.webp', alt: 'A designer placing an orange color swatch on a printed website layout, beside a fan of color cards.' },
+  street: { src: '/images/web-main-street.webp', alt: 'A small-town Main Street at golden hour with colorful shop awnings and a water tower.' },
+  preview: { src: '/images/web-preview-meeting.webp', alt: 'A web designer and a shop owner reviewing a homepage preview on a laptop at his workbench.' },
+}
+
+const projects = [
+  { name: 'ABLE Center', type: 'Disability services nonprofit', image: '/images/ablecenter.jpg', href: 'https://ablecenterpb.org', tint: 'sky' },
+  { name: 'Advanced Chiropractic & Spinal Rehab', type: 'Chiropractic care, Abilene', image: '/images/advancedchiro.jpg', href: 'https://advancedchiroabilene.com', tint: 'peach' },
+  { name: 'R&M Hancock Counseling', type: 'Online counseling across Texas', image: '/images/rmcounseling.jpg', href: 'https://rmhancockcounseling.com', tint: 'butter' },
+  { name: 'ASFI Construction', type: 'Construction & infrastructure', image: '/images/asfi.jpg', href: 'https://asficonstruction.com', tint: 'sage' },
+  { name: 'Center for Social Success', type: 'Therapy & family services', image: '/images/cssdallas.jpg', href: 'https://cssdallas.com', tint: 'sky' },
+  { name: 'All Seasons Foam', type: 'Insulation & building services', image: '/images/allseasons.jpg', href: 'https://allseasonsfoam.com', tint: 'butter' },
+  { name: 'Lone Star Glass & Shower', type: 'Glass & shower installation', image: '/images/lonestar.jpg', href: 'https://lsglassandshower.com', tint: 'sage' },
+  { name: 'Permian Alliance', type: 'Business association', image: '/images/permian_alliance.jpg', href: 'https://permianalliance.com', tint: 'peach' },
+  { name: 'Odessa Symphony Guild', type: 'Community & the arts', image: '/images/osg.jpg', href: 'https://odessasymphonyguild.org', tint: 'sky' },
+  { name: 'Lotus RPG', type: 'Tabletop role-playing games', image: '/images/lotusrpg.jpg', href: 'https://lotusrpg.com', tint: 'butter' },
+  { name: 'PathSix Games', type: 'Our own game studio', image: '/images/games.jpg', href: 'https://pathsix.games', tint: 'peach' },
+]
+
+const inclusions = [
+  { title: 'Design that feels like you', description: 'Your colors, your voice, your customers. A custom layout built around your business, never a template with your logo dropped in.' },
+  { title: 'Good on every screen', description: 'Responsive layouts, clear navigation, and fast load times, so customers can explore on their phone or at their desk.' },
+  { title: 'Hosting & domain management', description: 'Managed hosting, domain management, and an SSL certificate. The essentials are part of the service.' },
+  { title: 'Content updates', description: 'New services, updated details, or fresh photos. Monthly content updates are handled within your service plan.' },
+  { title: 'Maintenance & security', description: 'Ongoing maintenance and security monitoring. No WordPress, no plugins, no headaches.' },
+  { title: 'A search-ready foundation', description: 'Page titles, descriptions, structured data, and sitemap preparation, with indexing support and attention to speed.' },
+]
+
+const steps = [
+  { title: 'Tell us about your business', description: 'What do you do? Who are your customers? What does your website need to help them do? We start with the answers.' },
+  { title: 'See your homepage', description: 'Get a custom homepage preview in 3–5 days. Decide whether it feels right before you pay anything.' },
+  { title: 'Let us take it from there', description: 'Once you decide to move forward, we build out the site, get it online, and handle the hosting and ongoing care.' },
+]
+
+const faqs = [
+  { question: 'What does the free preview include?', answer: 'A custom preview of your homepage, so you can see the design direction before you pay. Turnaround is currently 3–5 days. The rest of the website is built after you decide to move forward.' },
+  { question: 'Is $159 the price for every website?', answer: 'Managed websites start at $159 per month with no upfront cost. We talk through the pages, features, and ongoing work you need, and confirm the scope and price for your site before you commit.' },
+  { question: 'Can you update the website after it launches?', answer: 'Yes. Monthly content updates, maintenance, hosting, and security monitoring are part of the managed service. Most updates are made within a day.' },
+  { question: 'Is SEO included?', answer: 'Every site includes a technical SEO foundation. Ongoing content, Google Business Profile management, and broader local search work are a separate SEO service. No specific ranking is promised.' },
+  { question: 'What if I need more than a website?', answer: 'PathSix also builds CRM systems, custom applications, and integrations, and offers AI consulting. We can talk through whether an existing tool or a custom project is the right fit.' },
+]
+
+function Arrow({ direction = 'up-right' }: { direction?: 'up-right' | 'down' }) {
+  return <span aria-hidden="true" className="site-arrow">{direction === 'down' ? '↓' : '↗'}</span>
+}
+
+function Plus() {
   return (
     <>
+      <span aria-hidden="true" className="site-expand-plus text-2xl font-light">+</span>
+      <span aria-hidden="true" className="site-expand-minus text-2xl font-light">−</span>
+    </>
+  )
+}
+
+function ProjectCard({ project }: { project: typeof projects[number] }) {
+  return (
+    <a href={project.href} target="_blank" rel="noopener noreferrer" className="group block min-w-0" aria-label={'Visit the ' + project.name + ' website'}>
+      <figure>
+        <div className={'site-project-frame site-tint-' + project.tint}>
+          <div className="site-project-shot relative aspect-[2/1] overflow-hidden">
+            <Image src={project.image} alt="" fill sizes="(min-width: 1440px) 600px, (min-width: 768px) 44vw, 90vw" className="object-cover object-top" />
+          </div>
+        </div>
+        <figcaption className="flex items-baseline justify-between gap-6 pt-5">
+          <p className="text-lg font-semibold group-hover:underline">{project.name}</p>
+          <p className="site-muted hidden text-sm sm:block">{project.type}</p>
+        </figcaption>
+      </figure>
+    </a>
+  )
+}
+
+function Hero() {
+  return (
+    <section className="site-dark overflow-hidden">
+      <div className="site-container grid items-center gap-12 py-14 md:py-20 lg:grid-cols-[5fr_6fr] lg:py-24">
+        <div className="flex flex-col items-start">
+          <p className="site-eyebrow site-gold">Web design · Fully managed</p>
+          <h1 className="mt-6 max-w-[14ch] text-balance text-[2.75rem] font-semibold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
+            A website you&apos;re <span className="site-gold">proud to share.</span>
+          </h1>
+          <p className="site-muted mt-6 max-w-[40ch] text-pretty text-lg md:text-xl">
+            Made to look like you. Built to work for your customers. And looked after, so you never have to babysit it.
+          </p>
+          <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-5">
+            <Link href="/contact" className="site-primary">Request your free preview <Arrow /></Link>
+            <a href="#how-it-works" className="site-text-link">How it works <Arrow direction="down" /></a>
+          </div>
+          <p className="mt-8 text-sm text-[#d5d9d0]">From $159/month · No upfront cost · See it before you pay</p>
+        </div>
+        <div className="web-hero-art">
+          <div className="web-hero-photo relative overflow-hidden">
+            <Image src={images.hero.src} alt={images.hero.alt} fill priority sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" />
+          </div>
+          <a href="#portfolio" className="web-hero-card group" aria-label="See our work, starting with ASFI Construction">
+            <div className="relative aspect-[2/1] overflow-hidden">
+              <Image src="/images/asfi.jpg" alt="" fill priority sizes="(min-width: 1024px) 300px, 55vw" className="object-cover object-top" />
+            </div>
+            <p className="flex items-center justify-between gap-4 px-4 py-3 text-sm font-medium">
+              <span>Built for ASFI Construction</span><Arrow />
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Portfolio() {
+  return (
+    <section id="portfolio" className="scroll-mt-8 py-20 md:py-28">
+      <div className="site-container">
+        <div className="grid items-end gap-8 lg:grid-cols-[3fr_2fr]">
+          <div className="flex flex-col gap-5">
+            <p className="site-eyebrow site-eyebrow-accent">Recent work</p>
+            <h2 className="max-w-[18ch] text-balance text-4xl font-semibold tracking-tight md:text-5xl">
+              Their business. <span className="site-orange-ink">Their own look.</span>
+            </h2>
+          </div>
+          <p className="site-muted max-w-[42ch] text-pretty text-lg">A contractor should feel like a contractor. A therapy practice should feel welcoming. The design starts with who you are and who you&apos;re trying to reach.</p>
+        </div>
+        <div className="mt-14 grid gap-x-8 gap-y-10 md:grid-cols-2">
+          {projects.slice(0, 4).map(project => <ProjectCard key={project.href} project={project} />)}
+        </div>
+        <details className="site-disclosure mt-12 border-y">
+          <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-8 text-lg font-semibold">
+            More from the portfolio <Plus />
+          </summary>
+          <div className="grid gap-x-8 gap-y-10 pb-10 pt-4 md:grid-cols-2">
+            {projects.slice(4).map(project => <ProjectCard key={project.href} project={project} />)}
+          </div>
+        </details>
+        <div className="mt-10 flex justify-center">
+          <a href="https://www.designrush.com" target="_blank" rel="noopener noreferrer" className="opacity-90 transition-opacity hover:opacity-100">
+            <Image src="/images/verified_agencyv1.png" alt="DesignRush verified agency badge" width={240} height={96} className="h-auto w-[200px] object-contain" />
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Included() {
+  return (
+    <>
+      <div className="site-banner web-street-banner relative overflow-hidden">
+        <Image src={images.street.src} alt={images.street.alt} fill sizes="100vw" className="object-cover" />
+      </div>
+      <section id="pricing" className="site-dark scroll-mt-8 py-20 md:py-28">
+        <div className="site-container">
+          <div className="grid items-end gap-8 lg:grid-cols-[3fr_2fr]">
+            <div className="flex flex-col gap-5">
+              <p className="site-eyebrow site-gold">One managed service</p>
+              <h2 className="max-w-[18ch] text-balance text-4xl font-semibold tracking-tight md:text-5xl">A great website. Someone to look after it.</h2>
+            </div>
+            <p className="site-muted max-w-[42ch] text-pretty text-lg">The design gets you started. Hosting, maintenance, and ongoing updates keep your website in good hands.</p>
+          </div>
+          <div className="mt-14 grid gap-12 lg:grid-cols-[2fr_3fr]">
+            <div className="web-plan site-tint-butter flex flex-col items-start gap-5 self-start p-8 md:p-10">
+              <p className="site-eyebrow">Managed websites from</p>
+              <p className="text-7xl font-semibold tracking-tight tabular-nums md:text-8xl">$159<span className="ml-2 text-xl font-normal tracking-normal">/ month</span></p>
+              <p className="text-xl font-semibold">No upfront cost.</p>
+              <p className="max-w-[34ch] text-pretty">See a custom homepage preview before you pay. We agree on your site&apos;s scope and price before you move forward.</p>
+              <Link href="/contact" className="site-primary mt-2">Request your free preview <Arrow /></Link>
+            </div>
+            <ul className="site-service-list">
+              {inclusions.map((item, index) => (
+                <li key={item.title} className="grid grid-cols-[2rem_1fr] gap-x-4 py-6">
+                  <span className="site-service-number tabular-nums">0{index + 1}</span>
+                  <span>
+                    <span className="block text-xl font-medium">{item.title}</span>
+                    <span className="site-muted mt-2 block max-w-[50ch] text-pretty">{item.description}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="web-seo-note mt-14 flex flex-col justify-between gap-5 border-t pt-7 md:flex-row md:items-center">
+            <p className="site-muted max-w-[56ch] text-pretty">Want ongoing content and local search support? That&apos;s a separate service, built on your website&apos;s technical foundation.</p>
+            <Link href="/seo" className="site-text-link shrink-0">Explore SEO services <Arrow /></Link>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
+
+function HowItWorks() {
+  return (
+    <section id="how-it-works" className="scroll-mt-8 py-20 md:py-28">
+      <div className="site-container grid items-center gap-12 lg:grid-cols-2">
+        <div className="relative aspect-[16/10] overflow-hidden lg:aspect-[4/3]">
+          <Image src={images.preview.src} alt={images.preview.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover object-[68%_center]" />
+        </div>
+        <div>
+          <p className="site-eyebrow site-eyebrow-accent">An easier way to start</p>
+          <h2 className="mt-5 max-w-[16ch] text-balance text-4xl font-semibold tracking-tight md:text-5xl">See it before you commit.</h2>
+          <ol className="mt-10">
+            {steps.map((step, index) => (
+              <li key={step.title} className="web-step grid grid-cols-[2.5rem_1fr] gap-x-4 py-6">
+                <span className="web-step-number tabular-nums">{index + 1}</span>
+                <span>
+                  <span className="block text-xl font-semibold">{step.title}</span>
+                  <span className="site-muted mt-2 block max-w-[46ch] text-pretty">{step.description}</span>
+                </span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Questions() {
+  return (
+    <section className="pb-20 md:pb-28">
+      <div className="site-container grid items-start gap-12 lg:grid-cols-[2fr_3fr]">
+        <figure className="site-quote site-tint-peach flex flex-col gap-6 p-8 md:p-10">
+          <p aria-hidden="true" className="site-quote-mark">“</p>
+          <blockquote><p className="text-pretty text-2xl font-medium tracking-tight">Working with Will was easy. He was much faster than we expected and had our new website up and running quickly. He is able to make updates within a day at the most.</p></blockquote>
+          <figcaption className="flex flex-col gap-1">
+            <p className="font-semibold">Melissa</p>
+            <p className="site-muted">Center for Social Success</p>
+          </figcaption>
+        </figure>
+        <div>
+          <p className="site-eyebrow site-eyebrow-accent">Good questions</p>
+          <h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight md:text-4xl">Before we get started.</h2>
+          <div className="mt-8">
+            {faqs.map(faq => (
+              <details key={faq.question} className="site-disclosure border-t last:border-b">
+                <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-6 py-3 font-semibold">
+                  {faq.question} <Plus />
+                </summary>
+                <p className="site-muted max-w-[56ch] pb-6 text-pretty">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Offer() {
+  return (
+    <section className="site-dark site-offer py-20 md:py-24">
+      <div className="site-container grid items-end gap-10 lg:grid-cols-[3fr_2fr]">
+        <div className="flex flex-col items-start gap-6">
+          <p className="site-eyebrow site-gold">Let&apos;s make something that feels like you</p>
+          <h2 className="max-w-[18ch] text-balance text-4xl font-semibold tracking-tight md:text-6xl">Your business. Your next first impression.</h2>
+          <p className="site-muted max-w-[44ch] text-pretty text-lg">Tell us a little about your business. In 3–5 days, we&apos;ll show you what your homepage could look like.</p>
+        </div>
+        <div className="flex flex-col items-start gap-5 lg:items-end">
+          <Link href="/contact" className="site-primary">Get your free preview <Arrow /></Link>
+          <a href="mailto:design@pathsixsolutions.com" className="site-text-link break-all">design@pathsixsolutions.com</a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default function WebDesignPage() {
+  return (
+    <div className={inter.className + ' site-page antialiased'}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header />
-      <main className="font-sans text-slate-300 antialiased bg-slate-950">
-        {/* Hero Section */}
-        <header className="relative min-h-screen flex items-center bg-slate-950 overflow-hidden pt-20 lg:pt-0">
-          {/* THE IMAGE BACKGROUND (Portfolio Collage) */}
-          <div className="absolute inset-y-0 right-0 w-full lg:w-[60%] h-full opacity-40 lg:opacity-100 mix-blend-lighten pointer-events-none">
-            <Image
-              src="/images/web_hero.jpg"
-              alt="Digital Workspace"
-              fill
-              className="object-cover object-left lg:object-center grayscale hover:grayscale-0 transition-all duration-1000"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/20 to-transparent"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/5 to-transparent lg:hidden"></div>
+      <SiteHeader />
+      <main>
+        <Hero />
+        <div className="site-promise">
+          <div className="site-container flex flex-wrap items-center justify-between gap-x-8 gap-y-2 py-5">
+            <p className="font-medium">Your website. Off your to-do list.</p>
+            <p className="site-eyebrow">Custom design · Managed hosting · Ongoing care</p>
           </div>
-
-          {/* CONTENT CONTAINER */}
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-500 text-xs font-bold uppercase tracking-widest mb-8">
-                Managed Web Services
-              </div>
-
-              {/* Main Headline */}
-              <h1 className="text-5xl lg:text-7xl font-bold text-white leading-[1.1] mb-8">
-                Custom Websites <br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-400">
-                  You Can Afford.
-                </span>
-              </h1>
-
-              {/* Subtext */}
-              <p className="text-lg md:text-xl text-slate-400 mb-12 leading-relaxed max-w-lg border-l-4 border-blue-600 pl-6">
-                We build, host, and maintain your professional website for a low monthly fee. See your site before you pay a cent.
-              </p>
-
-              {/* Buttons */}
-              <div className="flex flex-col sm:flex-row gap-6 pt-4">
-                <a href="/contact" className="group relative px-8 py-4 bg-blue-600 rounded-xl leading-none flex items-center divide-x divide-blue-500 overflow-hidden shadow-xl shadow-blue-600/20 hover:shadow-blue-600/40 transition-all hover:-translate-y-1">
-                  <span className="pr-6 text-white font-bold text-lg">Request Preview</span>
-                  <span className="pl-6 text-blue-200 group-hover:text-white transition">
-                    <svg className="w-6 h-6 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                  </span>
-                </a>
-
-                <a href="#how-it-works" className="px-8 py-4 rounded-xl text-slate-300 font-bold text-lg hover:text-white hover:bg-white/5 transition-all border border-slate-700 hover:border-white/20 flex items-center gap-3">
-                  <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                  How it works
-                </a>
-              </div>
-            </div>
-          </div>
-        </header>
-
-        {/* Value Proposition */}
-        <section id="how-it-works" className="py-24 bg-slate-900 border-t border-slate-800">
-          <div className="container mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              {/* Abstract Tech/Server Representation */}
-              <div className="order-2 md:order-1 relative">
-                <div className="absolute inset-0 bg-blue-600 blur-[100px] opacity-20 rounded-full"></div>
-                <div className="relative bg-slate-800 border border-slate-700 rounded-2xl p-8 shadow-2xl">
-                  {/* Abstract "Code/Server" Visualization */}
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                    </div>
-                    <div className="h-4 bg-slate-700 rounded w-3/4 animate-pulse"></div>
-                    <div className="h-4 bg-slate-700 rounded w-1/2 animate-pulse"></div>
-                    <div className="h-32 bg-slate-900 rounded border border-slate-700 p-4 mt-4">
-                      <div className="flex items-center justify-between text-xs text-slate-500 mb-2">
-                        <span>Hosting</span>
-                        <span className="text-green-500">Managed</span>
-                      </div>
-                      <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                        <div className="bg-green-500 h-full w-full"></div>
-                      </div>
-                      <div className="mt-4 flex items-center justify-between text-xs text-slate-500">
-                        <span>Security</span>
-                        <span className="text-blue-500">SSL Active</span>
-                      </div>
-                    </div>
-                    <div className="absolute -right-6 -bottom-6 bg-blue-600 text-white px-6 py-3 rounded-xl shadow-lg font-bold">
-                      Managed Hosting
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="order-1 md:order-2">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Running a business is hard. <br/><span className="text-blue-500">Your website shouldn&apos;t be.</span></h2>
-                <div className="space-y-8">
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-blue-900/30 border border-blue-500/20 rounded-lg flex items-center justify-center text-blue-500">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white">Zero Upfront Cost</h3>
-                      <p className="mt-2 text-slate-400">Avoid big agency fees. We operate on a subscription model so you can keep your cash flow healthy.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-blue-900/30 border border-blue-500/20 rounded-lg flex items-center justify-center text-blue-500">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white">Fully Managed</h3>
-                      <p className="mt-2 text-slate-400">Hosting, security, updates, and maintenance are all included. You run your business, we run your site.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing / Features Grid — Bento Layout */}
-        <section id="pricing" className="py-24 bg-slate-950">
-          <div className="container mx-auto px-6">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Everything included. One monthly price.</h2>
-              <p className="text-lg text-slate-400">High-end results. Small business price.</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-              {/* Card 1: Custom Design — spans 2 cols */}
-              <div className="md:col-span-2 bg-slate-800 border border-slate-700 hover:border-blue-500 transition-all duration-300 rounded-2xl p-8 relative overflow-hidden">
-                <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
-                  backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)',
-                  backgroundSize: '24px 24px'
-                }}></div>
-                <div className="relative z-10">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">100% Original</div>
-                  <h3 className="text-2xl font-bold text-white mb-3">Custom Design</h3>
-                  <p className="text-slate-400 mb-6">We don&apos;t do templates. Every site is built from scratch around your brand, your voice, and your customers.</p>
-                  <ul className="space-y-3 text-slate-300">
-                    <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Brand-matched color palette &amp; typography</li>
-                    <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Unique layout — never a template</li>
-                    <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Mobile-first, responsive on every screen</li>
-                    <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Performance optimized for fast load times</li>
-                    <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Built to convert visitors into customers</li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Card 2: Price Stat */}
-              <div className="bg-slate-800 border border-slate-700 hover:border-blue-500 transition-all duration-300 rounded-2xl p-8 flex flex-col items-center justify-center text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-blue-600 blur-[80px] opacity-10 pointer-events-none rounded-2xl"></div>
-                <div className="relative z-10">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">$0 Upfront</div>
-                  <div className="text-slate-500 text-sm font-medium mb-1">Starting at</div>
-                  <div className="text-7xl font-bold text-blue-500 leading-none mb-2">$159</div>
-                  <div className="text-slate-400 text-lg font-medium mb-4">per month</div>
-                  <p className="text-slate-500 text-sm mb-6">See your site before you pay a cent.</p>
-                  <a href="/contact" className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-all text-sm">Request Free Preview</a>
-                </div>
-              </div>
-
-              {/* Card 3: Fully Managed */}
-              <div className="bg-slate-800 border border-slate-700 hover:border-blue-500 transition-all duration-300 rounded-2xl p-8">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">We Handle Everything</div>
-                <h3 className="text-2xl font-bold text-white mb-6">Fully Managed</h3>
-                <ul className="space-y-3 text-slate-300">
-                  <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Managed hosting</li>
-                  <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> SSL security certificate</li>
-                  <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Domain management</li>
-                  <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Monthly content updates</li>
-                  <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> Security monitoring</li>
-                  <li className="flex items-center gap-3"><span className="text-blue-500 font-bold">✓</span> No WordPress, no plugins, no headaches</li>
-                </ul>
-              </div>
-
-              {/* Card 4: Built-in SEO Foundation — spans 2 cols */}
-              <div className="md:col-span-2 bg-slate-800 border border-slate-700 hover:border-emerald-500 transition-all duration-300 rounded-2xl p-8 relative overflow-hidden">
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-b-2xl pointer-events-none"></div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/30 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6">Ships Search-Ready</div>
-                <h3 className="text-2xl font-bold text-white mb-3">Built-in SEO Foundation</h3>
-                <p className="text-slate-400 mb-6">Every site we build starts with a technical SEO foundation — no add-on required.</p>
-                <ul className="space-y-3 text-slate-300 mb-6">
-                  <li className="flex items-center gap-3"><span className="text-emerald-500 font-bold">✓</span> Core Web Vitals optimized (fast load speeds)</li>
-                  <li className="flex items-center gap-3"><span className="text-emerald-500 font-bold">✓</span> Mobile responsiveness</li>
-                  <li className="flex items-center gap-3"><span className="text-emerald-500 font-bold">✓</span> Meta titles &amp; descriptions</li>
-                  <li className="flex items-center gap-3"><span className="text-emerald-500 font-bold">✓</span> Schema markup (structured data)</li>
-                  <li className="flex items-center gap-3"><span className="text-emerald-500 font-bold">✓</span> Sitemap preparation &amp; indexing support</li>
-                </ul>
-                <Link href="/seo" className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-semibold text-sm transition-colors">
-                  Want to go further? See Growth Plans →
-                </Link>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials Section */}
-        <section id="portfolio" className="py-24 bg-slate-900 border-t border-slate-800">
-          <div className="container mx-auto px-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-20">Recent Work</h2>
-
-            {/* Top Row - 4 Projects */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
-              {/* Project 1 - ASFI */}
-              <a
-                href="https://asficonstruction.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
-              >
-                <div className="aspect-[16/9] relative overflow-hidden">
-                  <Image
-                    src="/images/asfi.jpg"
-                    alt="ASFI Construction Website"
-                    fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              </a>
-
-              {/* Project 2 - All Seasons */}
-              <a
-                href="https://allseasonsfoam.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
-              >
-                <div className="aspect-[16/9] relative overflow-hidden">
-                  <Image
-                    src="/images/allseasons.jpg"
-                    alt="All Seasons Foam Website"
-                    fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              </a>
-
-              {/* Project 3 - CSS Dallas */}
-              <a
-                href="https://cssdallas.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
-              >
-                <div className="aspect-[16/9] relative overflow-hidden">
-                  <Image
-                    src="/images/cssdallas.jpg"
-                    alt="CSS Dallas Website"
-                    fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              </a>
-
-              {/* Project 4 - Lone Star Glass & Shower */}
-              <a
-                href="https://lsglassandshower.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
-              >
-                <div className="aspect-[16/9] relative overflow-hidden">
-                  <Image
-                    src="/images/lonestar.jpg"
-                    alt="Lone Star Glass and Shower Website"
-                    fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              </a>
-            </div>
-
-            {/* Testimonial - Centered */}
-            <div className="max-w-3xl mx-auto mb-16">
-              <div className="bg-slate-800 p-10 md:p-12 rounded-2xl border border-slate-700 relative shadow-xl">
-                <div className="text-6xl text-blue-900 absolute top-6 left-6">&quot;</div>
-                <p className="text-slate-300 italic relative z-10 mb-6 text-lg md:text-xl">
-                  Working with Will was easy. He was much faster than we expected and had our new website up and running quickly. He is able to make updates within a day at the most.
-                </p>
-                <div className="flex items-center gap-4 relative z-10">
-                  <div className="font-bold text-white">
-                    Melissa <br/>
-                    <span className="text-sm text-blue-500 font-normal">Center for Social Success</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom Row - 4 Projects */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              {/* Project 5 - Permian Alliance */}
-              <a
-                href="https://permianalliance.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
-              >
-                <div className="aspect-[16/9] relative overflow-hidden">
-                  <Image
-                    src="/images/permian_alliance.jpg"
-                    alt="Permian Alliance Website"
-                    fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              </a>
-
-              {/* Project 6 - PathSix Games */}
-              <a
-                href="https://pathsix.games"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
-              >
-                <div className="aspect-[16/9] relative overflow-hidden">
-                  <Image
-                    src="/images/games.jpg"
-                    alt="PathSix Games Website"
-                    fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              </a>
-
-              {/* Project 7 - Lotus RPG */}
-              <a
-                href="https://lotusrpg.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
-              >
-                <div className="aspect-[16/9] relative overflow-hidden">
-                  <Image
-                    src="/images/lotusrpg.jpg"
-                    alt="Lotus RPG Website"
-                    fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              </a>
-
-              {/* Project 8 - Odessa Symphony Guild */}
-              <a
-                href="https://odessasymphonyguild.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-900 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
-              >
-                <div className="aspect-[16/9] relative overflow-hidden">
-                  <Image
-                    src="/images/osg.jpg"
-                    alt="Odessa Symphony Guild Website"
-                    fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              </a>
-            </div>
-
-            {/* DesignRush Banner Spot */}
-            <div className="mt-20 flex justify-center">
-              <a
-                href="https://www.designrush.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center relative hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/images/verified_agencyv1.png"
-                  alt="Design Rush Verified Badge"
-                  width={400}
-                  height={160}
-                  className="object-contain"
-                />
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact CTA */}
-        <section className="py-24 bg-slate-950 relative overflow-hidden border-t border-slate-800">
-          {/* Abstract background shapes */}
-          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-600 rounded-full mix-blend-multiply filter blur-[100px] opacity-20"></div>
-          <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-600 rounded-full mix-blend-multiply filter blur-[100px] opacity-20"></div>
-
-          <div className="container mx-auto px-6 text-center relative z-10">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">See your future website.</h2>
-            <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
-              We&apos;ll build a custom preview of your homepage in 3-5 days. If you don&apos;t love it, you don&apos;t pay.
-            </p>
-            <a href="/contact" className="inline-block bg-blue-600 hover:bg-blue-500 text-white text-xl font-bold py-4 px-10 rounded-xl shadow-lg shadow-blue-900/50 transition transform hover:-translate-y-1 hover:scale-105">
-              Get Your Free Preview
-            </a>
-            <p className="mt-6 text-sm text-slate-500">
-              Or email: <a href="mailto:design@pathsixsolutions.com" className="text-blue-500 hover:text-blue-400 underline">design@pathsixsolutions.com</a>
-            </p>
-          </div>
-        </section>
+        </div>
+        <Portfolio />
+        <Included />
+        <HowItWorks />
+        <Questions />
+        <Offer />
       </main>
-      <Footer />
-    </>
+      <SiteFooter />
+    </div>
   )
 }

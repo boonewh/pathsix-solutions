@@ -52,11 +52,11 @@ export default function HeroMedia({ poster, posterAlt, sources = [], className =
 
   return (
     <div className={'relative overflow-hidden ' + className}>
-      <Image src={poster} alt={posterAlt} fill priority sizes="100vw" className="home-hero-media object-cover" />
+      <Image src={poster} alt={posterAlt} fill priority sizes="100vw" className="site-hero-media object-cover" />
       {allowVideo && (
         <video
           ref={videoRef}
-          className={'home-hero-media absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ' + (playing ? 'opacity-100' : 'opacity-0')}
+          className={'site-hero-media absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ' + (playing ? 'opacity-100' : 'opacity-0')}
           autoPlay
           muted
           loop
@@ -72,7 +72,7 @@ export default function HeroMedia({ poster, posterAlt, sources = [], className =
         </video>
       )}
       {allowVideo && playing && (
-        <button type="button" onClick={togglePlayback} className="home-video-toggle" aria-label={paused ? 'Play background video' : 'Pause background video'}>
+        <button type="button" onClick={togglePlayback} className="site-video-toggle" aria-label={paused ? 'Play background video' : 'Pause background video'}>
           {paused ? (
             <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor" /></svg>
           ) : (
