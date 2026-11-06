@@ -21,11 +21,11 @@ const jsonLd = {
 }
 
 /**
- * Page photography. The hero is a stand-in and the map band stays hidden until
- * the commissioned photos exist (prompts in design/homepage-imagery.txt).
+ * Page photography (prompts in design/homepage-imagery.txt). The map band stays
+ * hidden until its photo exists.
  */
 const images: { hero: { src: string; alt: string }; map: { src: string; alt: string } | null } = {
-  hero: { src: '/images/web-main-street.webp', alt: 'A small-town Main Street at golden hour with colorful shop awnings.' },
+  hero: { src: '/images/seo-hero-main-street.webp', alt: 'A shop owner holding the door open for a smiling customer who found the shop on her phone, on a small-town Main Street at golden hour.' },
   map: null,
 }
 
