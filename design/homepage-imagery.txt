@@ -24,3 +24,11 @@ Two Google Flow clips, both generated from Codex stills of the same shop at gold
   2. The owner alone at the bench; his phone lights up and he smiles.
 Edit: scene 1 for about 3 seconds, 1-second crossfade to scene 2, which ends on the smile and crossfades back to scene 1.
 The file starts one second into scene 1 so the loop point lands inside a continuous shot (7.6 seconds, no audio).
+
+
+Web design page photography (requested November 2026, to be generated in Codex)
+Hero (4:5 portrait), planned file public/images/web-hero-worktable.webp:
+Premium editorial overhead photograph of a designer's worktable at golden hour in the same small Texas town shop setting: printed website layout sketches (boxes and lines, no readable text), colour swatch cards in vermilion orange, golden yellow, cobalt blue and sage green, a pencil, a succulent, a coffee mug, the edge of a dark laptop; one hand placing an orange swatch. Lower-left quarter kept calm for an overlapping screenshot card. No readable words, logos, UI, neon or watermark.
+Main Street band (21:9), planned file public/images/web-main-street.webp:
+Small Texas town Main Street at golden hour, independent storefronts with orange, cobalt and golden awnings, warm brick, the same water tower in the distance, a few candid locals and one shop owner propping open a door. Storefronts and people in the middle horizontal band. Blurry signage, no readable words, logos, chain stores, foreground cars or watermark.
+The "how it works" image reuses the laptop still from the hero video (public/images/web-preview-meeting.webp).
