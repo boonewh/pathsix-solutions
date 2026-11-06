@@ -2,63 +2,21 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import Footer from '@/components/Footer'
+import { SiteHeader, SiteFooter } from '@/components/SiteChrome'
 
-// Contact page header
-function ContactHeader() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+const services = [
+  { name: 'Web design', href: '/web-design' },
+  { name: 'SEO & local search', href: '/seo' },
+  { name: 'CRM solutions', href: '/crm' },
+  { name: 'Custom applications', href: '/build' },
+  { name: 'AI consulting', href: '/ai-consulting' },
+]
 
-  return (
-    <nav className="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex-shrink-0">
-            <span className="text-2xl font-bold text-white tracking-tight">Path<span className="text-amber-500">Six</span> Solutions</span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-baseline space-x-8">
-            <Link href="/" className="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium text-slate-300">← Back to Home</Link>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
-              aria-label="Toggle menu"
-            >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {mobileMenuOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-slate-900 border-t border-slate-800">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link href="/" className="block hover:bg-slate-800 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-base font-medium text-slate-300">← Back to Home</Link>
-          </div>
-        </div>
-      )}
-    </nav>
-  )
-}
+const nextSteps = [
+  { title: 'A real person reads it', description: 'Every message is read personally, and you\'ll hear back within 24 hours.' },
+  { title: 'A short conversation', description: 'We talk through what you need and what makes sense, in plain language.' },
+  { title: 'See it before you commit', description: 'For websites, you get a free homepage preview in 3–5 days before you pay anything.' },
+]
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -127,130 +85,76 @@ export default function ContactPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ContactHeader />
-      <main className="bg-slate-950 min-h-screen">
-        {/* Hero Section */}
-        <section className="pt-32 pb-16 lg:pt-40 lg:pb-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            {/* Icon */}
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-amber-500/10 rounded-full mb-6">
-              <svg className="w-10 h-10 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-              </svg>
-            </div>
-
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Let&apos;s Start a <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-300">Conversation</span>
+      <SiteHeader />
+      <main>
+        <section className="site-dark">
+          <div className="site-container py-14 md:py-20">
+            <p className="site-eyebrow site-gold">Contact</p>
+            <h1 className="mt-6 max-w-[16ch] text-balance text-[2.75rem] font-semibold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
+              Let&apos;s talk about <span className="site-gold">your business.</span>
             </h1>
-            <p className="text-xl text-slate-400 mb-4">
-              Whether you need a new website, better SEO, a custom CRM, a custom application, or practical AI consulting—we&apos;re here to help.
-            </p>
-            <p className="text-slate-500">
-              Fill out the form below and we&apos;ll get back to you within 24 hours.
+            <p className="site-muted mt-6 max-w-[46ch] text-pretty text-lg md:text-xl">
+              A new website, better search visibility, a CRM, a custom app, or practical help with AI. Tell us what you&apos;re working on and we&apos;ll get back to you within 24 hours.
             </p>
           </div>
         </section>
 
-        {/* Contact Form Section */}
-        <section className="pb-24">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              {/* Quick Info Cards */}
-              <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
-                <svg className="w-8 h-8 text-amber-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                <h3 className="text-white font-bold mb-1">Response Time</h3>
-                <p className="text-slate-400 text-sm">Within 24 hours</p>
+        <section className="py-16 md:py-24">
+          <div className="site-container grid items-start gap-12 lg:grid-cols-[2fr_3fr] lg:gap-16">
+            <aside className="order-2 flex flex-col gap-10 lg:order-1">
+              <div>
+                <p className="site-eyebrow site-eyebrow-accent">What happens next</p>
+                <ol className="mt-6">
+                  {nextSteps.map((step, index) => (
+                    <li key={step.title} className="web-step grid grid-cols-[2.5rem_1fr] gap-x-4 py-5">
+                      <span className="web-step-number tabular-nums">{index + 1}</span>
+                      <span>
+                        <span className="block text-lg font-semibold">{step.title}</span>
+                        <span className="site-muted mt-1 block text-pretty">{step.description}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ol>
               </div>
-
-              <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
-                <svg className="w-8 h-8 text-amber-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                </svg>
-                <h3 className="text-white font-bold mb-1">Email</h3>
-                <p className="text-slate-400 text-sm break-words">
-                  <a href="mailto:support@pathsixsolutions.com" className="hover:text-amber-500 transition-colors">
-                    support@pathsixsolutions.com
-                  </a>
-                </p>
+              <div className="contact-details site-tint-butter flex flex-col gap-5 p-7">
+                <div>
+                  <p className="site-eyebrow">Email</p>
+                  <a href="mailto:support@pathsixsolutions.com" className="site-text-link mt-1 break-all">support@pathsixsolutions.com</a>
+                </div>
+                <div>
+                  <p className="site-eyebrow">Prefer a call?</p>
+                  <a href="mailto:support@pathsixsolutions.com?subject=Call%20request" className="site-text-link mt-1">Request a call <span aria-hidden="true" className="site-arrow">↗</span></a>
+                </div>
+                <div>
+                  <p className="site-eyebrow">Where we work</p>
+                  <p className="mt-2">Based in Haskell, Texas. Remote and on-site options available.</p>
+                </div>
               </div>
+            </aside>
 
-              <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
-                <svg className="w-8 h-8 text-amber-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                </svg>
-                <h3 className="text-white font-bold mb-1">Location</h3>
-                <p className="text-slate-400 text-sm">Ask about remote and on-site options</p>
-              </div>
-            </div>
-
-            {/* Main Contact Form */}
-            <div className="bg-slate-900 p-8 md:p-12 rounded-2xl border border-slate-800 shadow-2xl">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name & Email Row */}
-                <div className="grid md:grid-cols-2 gap-6">
+            <div className="contact-form-card order-1 p-6 sm:p-8 md:p-10 lg:order-2">
+              <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Send us a message</h2>
+              <p className="site-muted mt-2">Fields marked <span aria-hidden="true">*</span><span className="sr-only">with an asterisk</span> are required.</p>
+              <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-6">
+                <div className="grid gap-6 md:grid-cols-2">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
-                      Your Name <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition"
-                      placeholder="John Doe"
-                    />
+                    <label htmlFor="name" className="contact-label">Your name <span aria-hidden="true" className="site-orange-ink">*</span></label>
+                    <input type="text" id="name" name="name" required autoComplete="name" value={formData.name} onChange={handleChange} className="contact-input" />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
-                      Email Address <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition"
-                      placeholder="john@example.com"
-                    />
+                    <label htmlFor="email" className="contact-label">Email address <span aria-hidden="true" className="site-orange-ink">*</span></label>
+                    <input type="email" id="email" name="email" required autoComplete="email" value={formData.email} onChange={handleChange} className="contact-input" />
                   </div>
                 </div>
-
-                {/* Company & Service Row */}
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid gap-6 md:grid-cols-2">
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-slate-300 mb-2">
-                      Company (Optional)
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition"
-                      placeholder="Your Company Name"
-                    />
+                    <label htmlFor="company" className="contact-label">Business name <span className="site-muted font-normal">(optional)</span></label>
+                    <input type="text" id="company" name="company" autoComplete="organization" value={formData.company} onChange={handleChange} className="contact-input" />
                   </div>
                   <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-slate-300 mb-2">
-                      Interested In
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition"
-                    >
-                      <option value="">Select a service...</option>
+                    <label htmlFor="service" className="contact-label">Interested in</label>
+                    <select id="service" name="service" value={formData.service} onChange={handleChange} className="contact-input">
+                      <option value="">Select a service…</option>
                       <option value="web-design">Web Design</option>
                       <option value="seo">SEO & Growth</option>
                       <option value="crm">Custom CRM</option>
@@ -261,108 +165,55 @@ export default function ContactPage() {
                     </select>
                   </div>
                 </div>
-
-                {/* Message */}
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
-                    Tell us about your project <span className="text-red-500">*</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={6}
-                    className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition resize-none"
-                    placeholder="What are you looking to accomplish? What challenges are you facing?"
-                  ></textarea>
+                  <label htmlFor="message" className="contact-label">Tell us about your project <span aria-hidden="true" className="site-orange-ink">*</span></label>
+                  <textarea id="message" name="message" required rows={6} value={formData.message} onChange={handleChange} className="contact-input resize-y" placeholder="What are you looking to accomplish? What's getting in the way?" />
                 </div>
 
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={submitting || submitted}
-                  className="w-full bg-amber-500 hover:bg-amber-600 disabled:bg-slate-600 disabled:cursor-not-allowed text-white font-bold py-4 rounded-lg transition-all shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 text-lg"
-                >
+                <button type="submit" disabled={submitting || submitted} className="site-primary contact-submit justify-center">
                   {submitting ? 'Sending...' : submitted ? 'Message Sent!' : 'Send Message'}
                 </button>
 
                 {submitted && (
-                  <div role="status" className="text-center p-4 bg-green-900/20 border border-green-500/30 rounded-lg">
-                    <p className="text-green-400 font-medium">
-                      ✓ Thanks! We&apos;ll get back to you within 24 hours.
-                    </p>
+                  <div role="status" className="contact-notice contact-notice-success">
+                    Thanks! We&apos;ll get back to you within 24 hours.
                   </div>
                 )}
 
                 {submitError && (
-                  <div role="alert" className="text-center p-4 bg-red-900/20 border border-red-500/30 rounded-lg text-red-200">
-                    We couldn&apos;t send your message. Your entries are still here, so you can try again.
-                    You can also <a href="mailto:support@pathsixsolutions.com" className="underline">email support@pathsixsolutions.com</a>.
+                  <div role="alert" className="contact-notice contact-notice-error">
+                    We couldn&apos;t send your message. Your entries are still here, so you can try again,
+                    or <a href="mailto:support@pathsixsolutions.com" className="underline">email support@pathsixsolutions.com</a>.
                   </div>
                 )}
 
-                <p className="text-center text-slate-500 text-sm">
-                  <svg className="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                  </svg>
-                  Please include only the information we need to respond to your inquiry.
-                </p>
+                <p className="site-muted text-sm">Please include only the information we need to respond to your inquiry.</p>
               </form>
-            </div>
-
-            {/* Alternative Contact Methods */}
-            <div className="mt-12 text-center">
-              <p className="text-slate-400 mb-4">Prefer a different method?</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="mailto:support@pathsixsolutions.com"
-                  className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors border border-slate-700 hover:border-amber-500"
-                >
-                  Email Us Directly
-                </a>
-                <a
-                  href="mailto:support@pathsixsolutions.com?subject=Call%20request"
-                  className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors border border-slate-700 hover:border-amber-500"
-                >
-                  Request a Call
-                </a>
-              </div>
             </div>
           </div>
         </section>
 
-        {/* Services Quick Links */}
-        <section className="py-16 bg-slate-900 border-t border-slate-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-white text-center mb-8">Or explore our services first</h2>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              <a href="/web-design" className="p-4 bg-slate-800 hover:bg-slate-700 rounded-lg border border-slate-700 hover:border-blue-500 transition-all text-center group">
-                <div className="text-blue-500 mb-2">🌐</div>
-                <div className="text-white font-medium text-sm group-hover:text-blue-500 transition-colors">Web Design</div>
-              </a>
-              <a href="/seo" className="p-4 bg-slate-800 hover:bg-slate-700 rounded-lg border border-slate-700 hover:border-emerald-500 transition-all text-center group">
-                <div className="text-emerald-500 mb-2">📈</div>
-                <div className="text-white font-medium text-sm group-hover:text-emerald-500 transition-colors">SEO & Growth</div>
-              </a>
-              <a href="/crm" className="p-4 bg-slate-800 hover:bg-slate-700 rounded-lg border border-slate-700 hover:border-blue-500 transition-all text-center group">
-                <div className="text-blue-500 mb-2">📊</div>
-                <div className="text-white font-medium text-sm group-hover:text-blue-500 transition-colors">Custom CRM</div>
-              </a>
-              <a href="/build" className="p-4 bg-slate-800 hover:bg-slate-700 rounded-lg border border-slate-700 hover:border-cyan-500 transition-all text-center group">
-                <div className="text-cyan-500 mb-2">⚙️</div>
-                <div className="text-white font-medium text-sm group-hover:text-cyan-500 transition-colors">Custom Apps</div>
-              </a>
-              <a href="/ai-consulting" className="p-4 bg-slate-800 hover:bg-slate-700 rounded-lg border border-slate-700 hover:border-teal-500 transition-all text-center group">
-                <div className="text-teal-500 mb-2">AI</div>
-                <div className="text-white font-medium text-sm group-hover:text-teal-500 transition-colors">AI Consulting</div>
-              </a>
+        <section className="site-dark py-16 md:py-20">
+          <div className="site-container grid gap-10 lg:grid-cols-[2fr_3fr]">
+            <div>
+              <p className="site-eyebrow site-gold">Not ready to write yet?</p>
+              <h2 className="mt-5 max-w-[16ch] text-balance text-3xl font-semibold tracking-tight md:text-4xl">Explore what we do first.</h2>
             </div>
+            <ul className="site-service-list">
+              {services.map((service, index) => (
+                <li key={service.href}>
+                  <Link href={service.href} className="group grid grid-cols-[2rem_1fr_auto] items-baseline gap-x-4 py-5">
+                    <span className="site-service-number tabular-nums">0{index + 1}</span>
+                    <span className="text-xl font-medium group-hover:underline">{service.name}</span>
+                    <span className="site-service-arrow" aria-hidden="true">↗</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       </main>
-      <Footer />
+      <SiteFooter />
     </>
   )
 }
