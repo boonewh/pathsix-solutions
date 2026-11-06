@@ -28,14 +28,17 @@ const images = {
 }
 
 const projects = [
-  { name: 'ASFI Construction', type: 'Construction & infrastructure', image: '/images/asfi.jpg', href: 'https://asficonstruction.com', tint: 'peach' },
+  { name: 'ABLE Center', type: 'Disability services nonprofit', image: '/images/ablecenter.jpg', href: 'https://ablecenterpb.org', tint: 'sky' },
+  { name: 'Advanced Chiropractic & Spinal Rehab', type: 'Chiropractic care, Abilene', image: '/images/advancedchiro.jpg', href: 'https://advancedchiroabilene.com', tint: 'peach' },
+  { name: 'R&M Hancock Counseling', type: 'Online counseling across Texas', image: '/images/rmcounseling.jpg', href: 'https://rmhancockcounseling.com', tint: 'butter' },
+  { name: 'ASFI Construction', type: 'Construction & infrastructure', image: '/images/asfi.jpg', href: 'https://asficonstruction.com', tint: 'sage' },
   { name: 'Center for Social Success', type: 'Therapy & family services', image: '/images/cssdallas.jpg', href: 'https://cssdallas.com', tint: 'sky' },
   { name: 'All Seasons Foam', type: 'Insulation & building services', image: '/images/allseasons.jpg', href: 'https://allseasonsfoam.com', tint: 'butter' },
   { name: 'Lone Star Glass & Shower', type: 'Glass & shower installation', image: '/images/lonestar.jpg', href: 'https://lsglassandshower.com', tint: 'sage' },
-  { name: 'Permian Alliance', type: 'Business association', image: '/images/permian_alliance.jpg', href: 'https://permianalliance.com', tint: 'sage' },
-  { name: 'Odessa Symphony Guild', type: 'Community & the arts', image: '/images/osg.jpg', href: 'https://odessasymphonyguild.org', tint: 'peach' },
-  { name: 'Lotus RPG', type: 'Tabletop role-playing games', image: '/images/lotusrpg.jpg', href: 'https://lotusrpg.com', tint: 'sky' },
-  { name: 'PathSix Games', type: 'Our own game studio', image: '/images/games.jpg', href: 'https://pathsix.games', tint: 'butter' },
+  { name: 'Permian Alliance', type: 'Business association', image: '/images/permian_alliance.jpg', href: 'https://permianalliance.com', tint: 'peach' },
+  { name: 'Odessa Symphony Guild', type: 'Community & the arts', image: '/images/osg.jpg', href: 'https://odessasymphonyguild.org', tint: 'sky' },
+  { name: 'Lotus RPG', type: 'Tabletop role-playing games', image: '/images/lotusrpg.jpg', href: 'https://lotusrpg.com', tint: 'butter' },
+  { name: 'PathSix Games', type: 'Our own game studio', image: '/images/games.jpg', href: 'https://pathsix.games', tint: 'peach' },
 ]
 
 const inclusions = [
@@ -79,7 +82,7 @@ function ProjectCard({ project }: { project: typeof projects[number] }) {
     <a href={project.href} target="_blank" rel="noopener noreferrer" className="group block min-w-0" aria-label={'Visit the ' + project.name + ' website'}>
       <figure>
         <div className={'site-project-frame site-tint-' + project.tint}>
-          <div className="site-project-shot relative aspect-[16/10] overflow-hidden">
+          <div className="site-project-shot relative aspect-[2/1] overflow-hidden">
             <Image src={project.image} alt="" fill sizes="(min-width: 1440px) 600px, (min-width: 768px) 44vw, 90vw" className="object-cover object-top" />
           </div>
         </div>
@@ -115,7 +118,7 @@ function Hero() {
             <Image src={images.hero.src} alt={images.hero.alt} fill priority sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" />
           </div>
           <a href="#portfolio" className="web-hero-card group" aria-label="See our work, starting with ASFI Construction">
-            <div className="relative aspect-[16/10] overflow-hidden">
+            <div className="relative aspect-[2/1] overflow-hidden">
               <Image src="/images/asfi.jpg" alt="" fill priority sizes="(min-width: 1024px) 300px, 55vw" className="object-cover object-top" />
             </div>
             <p className="flex items-center justify-between gap-4 px-4 py-3 text-sm font-medium">

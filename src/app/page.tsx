@@ -66,10 +66,10 @@ const heroVideo = [
 ]
 
 const projects = [
-  { name: 'ASFI Construction', type: 'Construction & infrastructure', image: '/images/asfi.jpg', href: 'https://asficonstruction.com', tint: 'peach' },
-  { name: 'Center for Social Success', type: 'Therapy & family services', image: '/images/cssdallas.jpg', href: 'https://cssdallas.com', tint: 'sky' },
-  { name: 'All Seasons Foam', type: 'Insulation & building services', image: '/images/allseasons.jpg', href: 'https://allseasonsfoam.com', tint: 'butter' },
-  { name: 'Lone Star Glass & Shower', type: 'Glass & shower installation', image: '/images/lonestar.jpg', href: 'https://lsglassandshower.com', tint: 'sage' },
+  { name: 'ABLE Center', type: 'Disability services nonprofit', image: '/images/ablecenter.jpg', href: 'https://ablecenterpb.org', tint: 'sky' },
+  { name: 'Advanced Chiropractic & Spinal Rehab', type: 'Chiropractic care, Abilene', image: '/images/advancedchiro.jpg', href: 'https://advancedchiroabilene.com', tint: 'peach' },
+  { name: 'ASFI Construction', type: 'Construction & infrastructure', image: '/images/asfi.jpg', href: 'https://asficonstruction.com', tint: 'butter' },
+  { name: 'Center for Social Success', type: 'Therapy & family services', image: '/images/cssdallas.jpg', href: 'https://cssdallas.com', tint: 'sage' },
 ]
 
 const services = [
@@ -136,7 +136,7 @@ function SelectedWork() {
             </h2>
           </div>
           <div className="flex flex-col items-start gap-6">
-            <p className="site-muted max-w-[42ch] text-pretty text-lg">A construction company. A therapy practice. A local trade. Different people, different customers, each with a website that feels like their own.</p>
+            <p className="site-muted max-w-[42ch] text-pretty text-lg">A nonprofit. A chiropractor. A construction company. A therapy practice. Different people, different customers, each with a website that feels like their own.</p>
             <Link href="/web-design" className="site-text-link">Explore web design <Arrow /></Link>
           </div>
         </div>
@@ -145,7 +145,7 @@ function SelectedWork() {
             <a key={project.name} href={project.href} target="_blank" rel="noopener noreferrer" className="group block min-w-0" aria-label={'Visit the ' + project.name + ' website'}>
               <figure>
                 <div className={'site-project-frame site-tint-' + project.tint}>
-                  <div className="site-project-shot relative aspect-[16/10] overflow-hidden">
+                  <div className="site-project-shot relative aspect-[2/1] overflow-hidden">
                     <Image src={project.image} alt="" fill sizes="(min-width: 1440px) 600px, (min-width: 768px) 44vw, 90vw" className="object-cover object-top" />
                   </div>
                 </div>
