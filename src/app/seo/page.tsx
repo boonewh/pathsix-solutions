@@ -1,231 +1,224 @@
 import { pageMetadata } from '@/lib/metadata'
 import Image from 'next/image'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Link from 'next/link'
+import localFont from 'next/font/local'
+import { SiteHeader, SiteFooter } from '@/components/SiteChrome'
+
+const inter = localFont({
+  src: '../../../public/fonts/InterVariable.woff2',
+  display: 'swap',
+  weight: '100 900',
+})
 
 export const metadata = pageMetadata('/seo', 'Advanced SEO & Local Search Services | PathSix Solutions', 'Local SEO services focused on accurate business information, useful content, technical improvements, and measuring search visibility.')
 
-export default function SEOPage() {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'PathSix Growth - Advanced SEO & Local Search',
-    url: 'https://www.pathsixsolutions.com/seo',
-    description: 'Local SEO services focused on business profiles, useful content, technical improvements, and search visibility.',
-  }
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'PathSix Growth - Advanced SEO & Local Search',
+  url: 'https://www.pathsixsolutions.com/seo',
+  description: 'Local SEO services focused on business profiles, useful content, technical improvements, and search visibility.',
+}
 
+/**
+ * Page photography. The hero is a stand-in and the map band stays hidden until
+ * the commissioned photos exist (prompts in design/homepage-imagery.txt).
+ */
+const images: { hero: { src: string; alt: string }; map: { src: string; alt: string } | null } = {
+  hero: { src: '/images/web-main-street.webp', alt: 'A small-town Main Street at golden hour with colorful shop awnings.' },
+  map: null,
+}
+
+const included = [
+  'Fast page load speeds',
+  'Mobile-friendly layouts',
+  'Page titles and descriptions',
+  'Schema markup (structured data)',
+  'Sitemap submission',
+]
+
+const growth = [
+  'Google Business Profile optimization',
+  'Monthly content writing',
+  'Honest customer review requests',
+  'Backlink building',
+  'Competitor tracking',
+]
+
+const approach = [
+  { title: 'Google Maps first', description: 'We improve your Google Business Profile with accurate categories, service information, photos, and updates. Local results depend on relevance, distance, and prominence.' },
+  { title: 'Content that answers real questions', description: 'Useful service pages and articles that answer what your customers actually ask. Location content reflects where you really work and what you offer there.' },
+  { title: 'A reputation you earn', description: 'We help you ask customers for honest feedback, without selecting only happy clients, offering incentives, or asking for a particular rating or wording.' },
+]
+
+const plans = [
+  {
+    name: 'Maps Booster',
+    price: '$299',
+    summary: 'For local service businesses that want to show up on the map.',
+    features: ['Google Business Profile management', 'Weekly Google Posts updates', 'Review request system (SMS/email)', '10 local citations per month', 'Monthly ranking report'],
+    cta: 'Start with Maps Booster',
+    featured: false,
+  },
+  {
+    name: 'Local Growth',
+    price: '$799',
+    summary: 'For businesses that need ongoing content and broader local search support.',
+    features: ['Everything in Maps Booster', '2 SEO-focused blog posts per month', 'Competitor research reports', 'Backlink outreach campaign', 'Dedicated account manager'],
+    cta: 'Choose Local Growth',
+    featured: true,
+  },
+]
+
+function Arrow({ direction = 'up-right' }: { direction?: 'up-right' | 'down' }) {
+  return <span aria-hidden="true" className="site-arrow">{direction === 'down' ? '↓' : '↗'}</span>
+}
+
+function Check() {
+  return <span aria-hidden="true" className="seo-check">✓</span>
+}
+
+export default function SEOPage() {
   return (
-    <>
+    <div className={inter.className + ' site-page antialiased'}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header />
-      <main className="bg-slate-950 text-slate-300">
-        {/* Hero Section */}
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-          {/* Background Effect */}
-          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
-            backgroundImage: 'linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px)',
-            backgroundSize: '40px 40px',
-            maskImage: 'radial-gradient(circle at center, black 40%, transparent 100%)'
-          }}></div>
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-900/20 rounded-full blur-[100px] pointer-events-none"></div>
-
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="flex flex-col lg:flex-row items-center gap-16">
-              <div className="lg:w-1/2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/30 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6">
-                  Traffic & Authority
-                </div>
-                <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
-                  Don&apos;t just launch. <br/>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300">Get Found Locally.</span>
-                </h1>
-                <p className="text-xl text-slate-400 mb-8 font-light leading-relaxed">
-                  A beautiful website is the engine. SEO is the fuel. <br/>
-                  We improve your website and Google Business Profile to help relevant customers find and understand your business.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="#pricing" className="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg transition-all shadow-lg shadow-emerald-500/20 text-center">
-                    View Growth Plans
-                  </a>
-                  <a href="#map-pack" className="px-8 py-4 bg-transparent border border-slate-700 hover:border-emerald-500 hover:text-white text-slate-300 font-medium rounded-lg transition-all text-center">
-                    What is the Map Pack?
-                  </a>
-                </div>
-              </div>
-
-              {/* Hero Graphic: The "Rank 1" visual */}
-              <div className="lg:w-1/2 relative">
-                <div className="relative bg-slate-900 border border-slate-700 rounded-2xl p-6 shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500">
-                  {/* Mockup of Google Search Result */}
-                  <div className="mb-4 flex items-center gap-4 bg-slate-950 p-3 rounded-lg border border-slate-800">
-                    <div className="w-6 h-6 rounded-full border-2 border-emerald-500"></div>
-                    <div className="h-2 w-32 bg-slate-700 rounded"></div>
-                  </div>
-                  {/* The Map Visual */}
-                  <div className="bg-slate-800 rounded-lg h-64 w-full relative overflow-hidden mb-4 opacity-80">
-                    <Image
-                      src="/images/seo-map.jpg"
-                      alt="Illustration of local business visibility"
-                      fill
-                      className="object-cover opacity-50"
-                    />
-
-                    {/* Floating Pin 1 */}
-                    <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-emerald-500 text-white px-4 py-2 rounded-lg shadow-xl font-bold z-10">
-                      Your Business
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-2 w-3/4 bg-slate-700 rounded"></div>
-                    <div className="h-2 w-1/2 bg-slate-700 rounded"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* The Problem / Difference */}
-        <section id="map-pack" className="py-24 bg-slate-900 border-y border-slate-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-white mb-4">&quot;Wait, isn&apos;t SEO included in my website?&quot;</h2>
-              <p className="text-slate-400 max-w-3xl mx-auto text-lg">
-                Your website includes a <strong>technical SEO foundation</strong>: page structure, metadata, and attention to performance. <br/><br/> <strong>Ongoing SEO</strong> adds content, business profile work, and measurement. Search positions vary by query, location, and competition; no particular ranking is guaranteed.
+      <SiteHeader />
+      <main>
+        <section className="site-dark overflow-hidden">
+          <div className="site-container grid items-center gap-12 py-14 md:py-20 lg:grid-cols-[5fr_6fr] lg:py-24">
+            <div className="flex flex-col items-start">
+              <p className="site-eyebrow site-gold">SEO · Local search</p>
+              <h1 className="mt-6 max-w-[14ch] text-balance text-[2.75rem] font-semibold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
+                Help the right customers <span className="site-gold">find you.</span>
+              </h1>
+              <p className="site-muted mt-6 max-w-[42ch] text-pretty text-lg md:text-xl">
+                A great website is the engine. Search is the fuel. We improve your website and Google Business Profile so nearby customers can find and understand your business.
               </p>
+              <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-5">
+                <Link href="/contact" className="site-primary">Talk about local search <Arrow /></Link>
+                <a href="#plans" className="site-text-link">See the plans <Arrow direction="down" /></a>
+              </div>
+              <p className="mt-8 text-sm text-[#d5d9d0]">Plans from $299/month · No lock-in contracts</p>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {/* Included Column */}
-              <div className="bg-slate-800 p-8 rounded-2xl border border-slate-500 relative">
-                <div className="absolute -top-4 right-8 bg-slate-500 text-white text-xs font-bold px-3 py-1 rounded">FREE WITH WEB DESIGN</div>
-                <h3 className="text-xl font-bold text-white mb-6 border-b border-slate-600 pb-4">Included in Web Design</h3>
-                <ul className="space-y-4 text-slate-300">
-                  <li className="flex items-center"><span className="text-slate-400 mr-2 font-bold">✓</span> Fast Page Load Speeds</li>
-                  <li className="flex items-center"><span className="text-slate-400 mr-2 font-bold">✓</span> Mobile Responsiveness</li>
-                  <li className="flex items-center"><span className="text-slate-400 mr-2 font-bold">✓</span> Proper Meta Titles & Descriptions</li>
-                  <li className="flex items-center"><span className="text-slate-400 mr-2 font-bold">✓</span> Schema Markup (Structured Data)</li>
-                  <li className="flex items-center"><span className="text-slate-400 mr-2 font-bold">✓</span> Sitemap Submission</li>
-                </ul>
-              </div>
-
-              {/* Growth Column */}
-              <div className="bg-slate-800 p-8 rounded-2xl border border-emerald-500 shadow-lg shadow-emerald-500/10 relative">
-                <div className="absolute -top-4 right-8 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded">THIS SERVICE</div>
-                <h3 className="text-xl font-bold text-white mb-6 border-b border-slate-700 pb-4">PathSix Growth Plan</h3>
-                <ul className="space-y-4 text-slate-300">
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2 font-bold">➜</span> Monthly Blog/Content Writing</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2 font-bold">➜</span> Google Business Profile Optimization</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2 font-bold">➜</span> Honest Customer Review Requests</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2 font-bold">➜</span> Backlink Building (Authority)</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2 font-bold">➜</span> Competitor Tracking</li>
-                </ul>
-              </div>
+            <div className="seo-hero-photo relative overflow-hidden">
+              <Image src={images.hero.src} alt={images.hero.alt} fill priority sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" />
             </div>
           </div>
         </section>
 
-        {/* Strategy Breakdown */}
-        <section id="strategy" className="py-24 bg-slate-950">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-white mb-4">How We Improve Your Search Presence</h2>
+        <div className="site-promise">
+          <div className="site-container flex flex-wrap items-center justify-between gap-x-8 gap-y-2 py-5">
+            <p className="font-medium">Get found by the people already looking for you.</p>
+            <p className="site-eyebrow">Business profile · Content · Reviews</p>
+          </div>
+        </div>
+
+        <section id="included" className="scroll-mt-8 py-20 md:py-28">
+          <div className="site-container">
+            <div className="grid items-end gap-8 lg:grid-cols-[3fr_2fr]">
+              <div className="flex flex-col gap-5">
+                <p className="site-eyebrow site-eyebrow-accent">A common question</p>
+                <h2 className="max-w-[18ch] text-balance text-4xl font-semibold tracking-tight md:text-5xl">
+                  &ldquo;Isn&apos;t SEO included in <span className="site-orange-ink">my website?&rdquo;</span>
+                </h2>
+              </div>
+              <p className="site-muted max-w-[44ch] text-pretty text-lg">Every website we build comes with a technical SEO foundation. Ongoing SEO adds content, business profile work, and measurement on top of it.</p>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Step 1 */}
-              <div className="group p-6 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500 transition-all">
-                <div className="w-12 h-12 bg-emerald-900/30 rounded-lg flex items-center justify-center text-emerald-500 mb-4 text-2xl">📍</div>
-                <h3 className="text-xl font-bold text-white mb-2">Google Maps First</h3>
-                <p className="text-slate-400 text-sm">
-                  We improve your Google Business Profile with accurate categories, service information, photos, and updates. Local results depend on relevance, distance, and prominence.
-                </p>
+            <div className="mt-14 grid gap-8 md:grid-cols-2">
+              <div className="site-tint-sage p-8 md:p-10">
+                <p className="site-eyebrow">Included with web design</p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-tight">The technical foundation</h3>
+                <ul className="mt-6 flex flex-col gap-3">
+                  {included.map(item => <li key={item} className="flex gap-3"><Check />{item}</li>)}
+                </ul>
+                <Link href="/web-design" className="site-text-link mt-8">About web design <Arrow /></Link>
               </div>
-
-              {/* Step 2 */}
-              <div className="group p-6 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500 transition-all">
-                <div className="w-12 h-12 bg-emerald-900/30 rounded-lg flex items-center justify-center text-emerald-500 mb-4 text-2xl">✍️</div>
-                <h3 className="text-xl font-bold text-white mb-2">Content That Ranks</h3>
-                <p className="text-slate-400 text-sm">
-                  We write useful service pages and articles that answer real customer questions. Location content reflects where you actually work and what you offer there.
-                </p>
+              <div className="site-tint-peach p-8 md:p-10">
+                <p className="site-eyebrow">This service</p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-tight">Ongoing local growth</h3>
+                <ul className="mt-6 flex flex-col gap-3">
+                  {growth.map(item => <li key={item} className="flex gap-3"><Check />{item}</li>)}
+                </ul>
+                <a href="#plans" className="site-text-link mt-8">See the plans <Arrow direction="down" /></a>
               </div>
+            </div>
+            <p className="site-muted mt-8 max-w-[70ch] text-pretty text-sm">Search positions vary by query, location, and competition. We work to improve your visibility, but no particular ranking is guaranteed.</p>
+          </div>
+        </section>
 
-              {/* Step 3 */}
-              <div className="group p-6 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500 transition-all">
-                <div className="w-12 h-12 bg-emerald-900/30 rounded-lg flex items-center justify-center text-emerald-500 mb-4 text-2xl">⭐</div>
-                <h3 className="text-xl font-bold text-white mb-2">Reputation Engine</h3>
-                <p className="text-slate-400 text-sm">
-                  We help you request honest feedback from customers without selecting only happy clients, offering incentives, or asking for a particular rating or wording.
-                </p>
+        {images.map && (
+          <div className="site-banner relative overflow-hidden">
+            <Image src={images.map.src} alt={images.map.alt} fill sizes="100vw" className="object-cover" />
+          </div>
+        )}
+
+        <section id="approach" className="site-dark scroll-mt-8 py-20 md:py-28">
+          <div className="site-container grid gap-12 lg:grid-cols-[2fr_3fr]">
+            <div className="flex flex-col items-start gap-6">
+              <p className="site-eyebrow site-gold">How we work</p>
+              <h2 className="max-w-[16ch] text-balance text-4xl font-semibold tracking-tight md:text-5xl">How we improve your search presence.</h2>
+              <p className="site-muted max-w-[38ch] text-pretty text-lg">SEO isn&apos;t magic. It&apos;s steady, honest work on the things search engines and customers both care about.</p>
+            </div>
+            <ul className="site-service-list">
+              {approach.map((item, index) => (
+                <li key={item.title} className="grid grid-cols-[2rem_1fr] gap-x-4 py-7 first:pt-0">
+                  <span className="site-service-number tabular-nums">0{index + 1}</span>
+                  <span>
+                    <span className="block text-xl font-medium md:text-2xl">{item.title}</span>
+                    <span className="site-muted mt-2 block max-w-[52ch] text-pretty">{item.description}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section id="plans" className="scroll-mt-8 py-20 md:py-28">
+          <div className="site-container">
+            <div className="grid items-end gap-8 lg:grid-cols-[3fr_2fr]">
+              <div className="flex flex-col gap-5">
+                <p className="site-eyebrow site-eyebrow-accent">Plans</p>
+                <h2 className="max-w-[18ch] text-balance text-4xl font-semibold tracking-tight md:text-5xl">Simple monthly growth.</h2>
               </div>
+              <p className="site-muted max-w-[42ch] text-pretty text-lg">No lock-in contracts. Cancel anytime.</p>
+            </div>
+            <div className="mt-14 grid gap-8 md:grid-cols-2">
+              {plans.map(plan => (
+                <div key={plan.name} className={'seo-plan flex flex-col p-8 md:p-10 ' + (plan.featured ? 'site-tint-butter seo-plan-featured' : 'seo-plan-plain')}>
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="text-2xl font-semibold tracking-tight">{plan.name}</h3>
+                    {plan.featured && <span className="seo-plan-badge">Recommended</span>}
+                  </div>
+                  <p className="mt-4 text-6xl font-semibold tracking-tight tabular-nums">{plan.price}<span className="ml-2 text-lg font-normal tracking-normal">/ month</span></p>
+                  <p className="site-muted mt-4 text-pretty">{plan.summary}</p>
+                  <ul className="mt-8 flex flex-grow flex-col gap-3">
+                    {plan.features.map(feature => <li key={feature} className="flex gap-3"><Check />{feature}</li>)}
+                  </ul>
+                  <Link href="/contact" className={(plan.featured ? 'site-primary' : 'seo-secondary') + ' mt-10 justify-center'}>{plan.cta} <Arrow /></Link>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Pricing Section */}
-        <section id="pricing" className="py-24 bg-slate-900 border-t border-slate-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-white mb-4">Simple Monthly Growth</h2>
-              <p className="text-slate-400">No lock-in contracts. Cancel anytime.</p>
+        <section className="site-dark site-offer py-20 md:py-24">
+          <div className="site-container grid items-end gap-10 lg:grid-cols-[3fr_2fr]">
+            <div className="flex flex-col items-start gap-6">
+              <p className="site-eyebrow site-gold">Ready when you are</p>
+              <h2 className="max-w-[18ch] text-balance text-4xl font-semibold tracking-tight md:text-6xl">Let us handle the steady work.</h2>
+              <p className="site-muted max-w-[44ch] text-pretty text-lg">You handle the new customers. Tell us about your business and where you want to be found.</p>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:w-3/4 mx-auto gap-8">
-              {/* Plan 1: Local Booster */}
-              <div className="bg-slate-950 p-8 rounded-2xl border border-slate-700 flex flex-col hover:border-slate-500 transition-colors">
-                <h3 className="text-xl font-bold text-white mb-2">Maps Booster</h3>
-                <div className="text-4xl font-bold text-emerald-500 mb-2">$299<span className="text-lg text-slate-500 font-normal">/mo</span></div>
-                <p className="text-sm text-slate-400 mb-6 flex-grow">Perfect for local service businesses who just want to show up on the map.</p>
-
-                <ul className="space-y-4 text-slate-300 mb-8 text-sm">
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Google Business Profile Management</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Weekly &quot;Google Posts&quot; Updates</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Review Request System (SMS/Email)</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> 10 Local Citations / Month</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Monthly Ranking Report</li>
-                </ul>
-                <a href="/contact" className="w-full py-3 border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white rounded font-bold transition-colors text-center">Start Boosting</a>
-              </div>
-
-              {/* Plan 2: Authority */}
-              <div className="bg-slate-800 p-8 rounded-2xl border-2 border-emerald-500 shadow-xl shadow-emerald-500/10 flex flex-col relative">
-                <div className="absolute top-0 right-0 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-[13px]">RECOMMENDED</div>
-                <h3 className="text-xl font-bold text-white mb-2">Local Growth</h3>
-                <div className="text-4xl font-bold text-emerald-500 mb-2">$799<span className="text-lg text-slate-500 font-normal">/mo</span></div>
-                <p className="text-sm text-slate-400 mb-6 flex-grow">For businesses that need ongoing content and broader local search support.</p>
-
-                <ul className="space-y-4 text-white mb-8 text-sm font-medium">
-                  <li className="flex items-center"><span className="text-emerald-400 mr-2">✓</span> <strong>Everything in Maps Booster</strong></li>
-                  <li className="flex items-center"><span className="text-emerald-400 mr-2">✓</span> 2 SEO-Optimized Blog Posts / Month</li>
-                  <li className="flex items-center"><span className="text-emerald-400 mr-2">✓</span> Competitor Research Reports</li>
-                  <li className="flex items-center"><span className="text-emerald-400 mr-2">✓</span> Backlink Outreach Campaign</li>
-                  <li className="flex items-center"><span className="text-emerald-400 mr-2">✓</span> Dedicated Account Manager</li>
-                </ul>
-                <a href="/contact" className="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded font-bold transition-colors text-center">Choose Local Growth</a>
-              </div>
+            <div className="flex flex-col items-start gap-5 lg:items-end">
+              <Link href="/contact" className="site-primary">Talk about local search <Arrow /></Link>
+              <a href="mailto:growth@pathsixsolutions.com" className="site-text-link break-all">growth@pathsixsolutions.com</a>
             </div>
-          </div>
-        </section>
-
-        {/* Contact CTA */}
-        <section className="py-20 bg-slate-950 border-t border-slate-800 text-center">
-          <div className="max-w-2xl mx-auto px-4">
-            <h2 className="text-3xl font-bold text-white mb-6">Ready to climb the ranks?</h2>
-            <p className="text-slate-400 mb-8">SEO isn&apos;t magic. It&apos;s consistency. Let us handle the grind while you handle the leads.</p>
-            <a href="/contact" className="inline-block bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-4 rounded-lg transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40">Contact Growth Team</a>
-
-            <p className="mt-6 text-slate-500 text-sm">
-              Or email directly: <a href="mailto:growth@pathsixsolutions.com" className="text-emerald-500 hover:text-emerald-400 underline">growth@pathsixsolutions.com</a>
-            </p>
-
           </div>
         </section>
       </main>
-      <Footer />
-    </>
+      <SiteFooter />
+    </div>
   )
 }
