@@ -177,6 +177,17 @@ body {
 .contact-notice-error { background: var(--site-peach); color: #7a2a12; }
 .contact-details { --site-muted: #5b5a45; }
 
+/* SEO page */
+.seo-hero-photo { aspect-ratio: 16 / 9; border-radius: 2px; }
+.seo-map-banner { width: 100%; height: max(170px, calc(100vw * 270 / 1817)); }
+.seo-map-banner img { object-position: 45% center; }
+.seo-check { color: var(--site-orange-ink); font-weight: 700; }
+.seo-plan-plain { background: #ffffff; outline: 1px solid #2026211f; }
+.seo-plan-featured { --site-muted: #5b5a45; }
+.seo-plan-badge { @apply rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em]; background: var(--site-ink); color: var(--site-gold); }
+.seo-secondary { @apply inline-flex min-h-14 items-center gap-6 rounded-sm px-6 py-4 font-semibold transition-colors; border: 1px solid var(--site-ink); }
+.seo-secondary:hover { background: var(--site-ink); color: var(--site-paper); }
+
 @media (prefers-reduced-motion: reduce) {
   .site-project-shot img, .web-hero-card { transition: none; }
   .group:hover .site-project-shot img { transform: none; }
