@@ -39,34 +39,111 @@ body {
   @apply px-4 sm:px-6 lg:px-8;
 }
 
-/* Flip card 3D effect */
-.flip-card {
-  perspective: 1000px;
+/* Homepage: ivory and charcoal base. Color lives in the photography,
+   soft tints carry it through the page, full-strength accents stay small. */
+.home-page {
+  --home-ink: #202621;
+  --home-paper: #fafaf7;
+  --home-muted: #59625a;
+  --home-orange: #fa7049;
+  --home-orange-ink: #c4532f;
+  --home-gold: #f4c64f;
+  --home-peach: #fbe3d8;
+  --home-butter: #f9eecb;
+  --home-sky: #dfe6f5;
+  --home-sage: #dde7da;
+  background: var(--home-paper);
+  color: var(--home-ink);
+  font-feature-settings: 'cv11', 'ss01', 'ss03';
 }
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease;
+.home-container { @apply mx-auto w-full max-w-[1320px] px-6 md:px-10 lg:px-16; }
+.home-page a:focus-visible, .home-page button:focus-visible { outline: 3px solid currentColor; outline-offset: 5px; }
+.home-muted { color: var(--home-muted); }
+.home-gold { color: var(--home-gold); }
+.home-orange-ink { color: var(--home-orange-ink); }
+.home-eyebrow { @apply text-xs font-semibold uppercase tracking-[0.16em]; }
+.home-eyebrow-accent { color: var(--home-orange-ink); }
+.home-eyebrow-light { color: #e9ebe4; }
+
+/* Dark surfaces: header, hero, services, offer, footer */
+.home-header, .home-hero, .home-dark, .home-footer {
+  --home-muted: #bfc5bc;
+  background: var(--home-ink);
+  color: var(--home-paper);
 }
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+.home-header { border-bottom: 1px solid #fafaf71a; }
+.home-brand { @apply inline-flex shrink-0 items-baseline text-2xl font-semibold tracking-tight; }
+.home-brand > span:first-child { color: var(--home-orange); }
+.home-brand-sub { @apply ml-2 text-base font-normal tracking-normal; }
+.home-nav-link { @apply text-[15px]; color: #e3e6df; }
+.home-nav-link:hover, .home-footer a:hover { color: var(--home-gold); }
+.home-header-contact { @apply inline-flex min-h-10 items-center rounded-sm px-4 text-[15px] font-semibold; background: var(--home-orange); color: var(--home-ink); }
+.home-header-contact:hover { background: var(--home-gold); }
+.home-menu-button { @apply min-h-11 px-2 text-base font-medium; }
+.home-mobile-menu { @apply absolute right-6 top-full z-50 flex w-64 flex-col p-3 md:right-10; background: var(--home-ink); outline: 1px solid #fafaf72e; }
+.home-mobile-menu a { @apply rounded-sm px-3 py-3; }
+.home-mobile-menu a:hover { background: #fafaf712; }
+
+/* Buttons and links */
+.home-primary { @apply inline-flex min-h-14 items-center gap-6 rounded-sm px-6 py-4 font-semibold transition-colors; background: var(--home-orange); color: var(--home-ink); }
+.home-primary:hover { background: var(--home-gold); }
+.home-text-link { @apply inline-flex min-h-11 items-center gap-4 font-medium underline underline-offset-8; text-decoration-color: color-mix(in srgb, currentColor 35%, transparent); }
+.home-text-link:hover { text-decoration-color: currentColor; }
+.home-arrow { @apply text-lg font-normal no-underline; }
+
+/* Hero: full-bleed media on larger screens, stacked media over text on phones */
+.home-hero-frame { aspect-ratio: 4 / 3; }
+.home-hero-media { object-position: 72% center; }
+.home-hero-shade { display: none; }
+.home-hero-content { padding-top: 40px; padding-bottom: 56px; }
+.home-hero-caption { display: none; }
+.home-video-toggle { @apply absolute bottom-4 right-4 z-20 inline-flex h-10 w-10 items-center justify-center rounded-full; background: #202621b3; color: var(--home-paper); border: 1px solid #fafaf74d; }
+.home-video-toggle:hover { border-color: var(--home-gold); color: var(--home-gold); }
+@media (min-width: 768px) {
+  .home-hero-frame { position: absolute; inset: 0; aspect-ratio: auto; z-index: -2; }
+  .home-hero-media { object-position: center 55%; }
+  .home-hero-shade { display: block; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, #202621d9 0%, #20262194 38%, #20262100 72%); }
+  .home-hero-content { min-height: min(760px, calc(100svh - 80px)); justify-content: center; padding-top: 96px; padding-bottom: 96px; }
+  /* The text column spans the hero; let clicks through to the video's pause button underneath. */
+  .home-hero-content { pointer-events: none; }
+  .home-hero-content > * { pointer-events: auto; }
+  .home-video-toggle { bottom: 28px; right: auto; left: 40px; }
 }
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
+@media (min-width: 1280px) {
+  .home-hero-caption { @apply absolute bottom-7 right-10 flex items-center gap-3 text-sm; color: #f2f3ee; }
+  .home-hero-caption > span { width: 36px; height: 2px; background: var(--home-orange); }
 }
-.flip-card-back {
-  transform: rotateY(180deg);
+
+.home-promise { background: var(--home-butter); color: var(--home-ink); }
+
+/* Selected work: soft tints, real screenshots */
+.home-project-frame { @apply p-5 transition-colors md:p-8; }
+.home-project-shot { box-shadow: 0 1px 2px #2026211a, 0 12px 28px #20262114; }
+.home-project-shot img { transition: transform 500ms ease; }
+.group:hover .home-project-shot img { transform: scale(1.02); }
+.home-tint-peach { background: var(--home-peach); }
+.home-tint-butter { background: var(--home-butter); }
+.home-tint-sky { background: var(--home-sky); }
+.home-tint-sage { background: var(--home-sage); }
+
+.home-banner { height: clamp(260px, 38vw, 560px); }
+.home-banner img { object-position: center 45%; }
+
+.home-service-list > li + li { border-top: 1px solid #fafaf726; }
+.home-service-list > li:first-child > a { padding-top: 0; }
+.home-service-number { @apply text-sm font-semibold; color: var(--home-gold); }
+.home-service-arrow { @apply text-xl; color: var(--home-orange); }
+
+.home-quote { --home-muted: #5b5a45; }
+.home-quote-mark { height: 36px; font-size: 88px; line-height: 1; color: var(--home-orange-ink); }
+
+.home-offer { border-top: 6px solid var(--home-orange); }
+.home-price { color: var(--home-gold); }
+
+.home-footer { border-top: 1px solid #fafaf71a; }
+.home-footer-bottom { border-color: #fafaf726; }
+
+@media (prefers-reduced-motion: reduce) {
+  .home-project-shot img { transition: none; }
+  .group:hover .home-project-shot img { transform: none; }
 }

@@ -113,7 +113,7 @@ try {
       }
       await page.goto(base, {waitUntil: 'networkidle'})
       await noOverflow(page)
-      const hero = page.getByAltText('Developer Workspace', {exact: true})
+      const hero = page.getByAltText('A web designer and a shop owner looking at a laptop together at a sunlit workbench.', {exact: true})
       await visible(hero)
       await hero.evaluate(image => image.decode())
       assert(await hero.evaluate(image => image.naturalWidth > 0))
