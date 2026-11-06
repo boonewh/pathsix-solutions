@@ -20,13 +20,10 @@ const jsonLd = {
   description: 'Affordable managed web design services. Custom websites built, hosted, and maintained for a low monthly fee.',
 }
 
-/**
- * Page photography. The hero image is a stand-in, and the Main Street band stays
- * hidden until its photo exists (prompts in design/homepage-imagery.txt).
- */
-const images: Record<'hero' | 'preview', { src: string; alt: string }> & { street: { src: string; alt: string } | null } = {
-  hero: { src: '/images/home-worktable-banner.webp', alt: 'Overhead view of a worktable with plans and colorful material samples.' },
-  street: null,
+/** Page photography. Prompts are recorded in design/homepage-imagery.txt. */
+const images = {
+  hero: { src: '/images/web-hero-worktable.webp', alt: 'A designer placing an orange color swatch on a printed website layout, beside a fan of color cards.' },
+  street: { src: '/images/web-main-street.webp', alt: 'A small-town Main Street at golden hour with colorful shop awnings and a water tower.' },
   preview: { src: '/images/web-preview-meeting.webp', alt: 'A web designer and a shop owner reviewing a homepage preview on a laptop at his workbench.' },
 }
 
@@ -168,11 +165,9 @@ function Portfolio() {
 function Included() {
   return (
     <>
-      {images.street && (
-        <div className="site-banner relative overflow-hidden">
-          <Image src={images.street.src} alt={images.street.alt} fill sizes="100vw" className="object-cover" />
-        </div>
-      )}
+      <div className="site-banner web-street-banner relative overflow-hidden">
+        <Image src={images.street.src} alt={images.street.alt} fill sizes="100vw" className="object-cover" />
+      </div>
       <section id="pricing" className="site-dark scroll-mt-8 py-20 md:py-28">
         <div className="site-container">
           <div className="grid items-end gap-8 lg:grid-cols-[3fr_2fr]">

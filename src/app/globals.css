@@ -153,7 +153,9 @@ body {
 
 /* Web design page */
 .web-hero-art { position: relative; padding-bottom: 48px; }
-.web-hero-photo { aspect-ratio: 4 / 3; border-radius: 2px; }
+.web-hero-photo { aspect-ratio: 1 / 1; border-radius: 2px; }
+.web-hero-photo img { object-position: center 40%; }
+.web-street-banner img { object-position: 40% 60%; }
 .web-hero-card { @apply absolute bottom-0 left-4 w-[58%] max-w-[340px] overflow-hidden rounded-sm transition-transform md:left-[-24px]; background: var(--site-paper); color: var(--site-ink); box-shadow: 0 2px 4px #0000002e, 0 24px 48px #0000004d; transform: rotate(-2deg); }
 .web-hero-card:hover { transform: rotate(-2deg) translateY(-4px); }
 .web-plan { --site-muted: #5b5a45; color: var(--site-ink); }
