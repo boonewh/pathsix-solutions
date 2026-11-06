@@ -3,7 +3,7 @@
 import { useRef, useState, useSyncExternalStore } from 'react'
 import Image from 'next/image'
 
-type VideoSource = { src: string; type: string }
+type VideoSource = { src: string; type: string; media?: string }
 
 type HeroMediaProps = {
   /** Still frame from the video. Always rendered, so it is the fallback whenever the video can't play. */
@@ -65,10 +65,9 @@ export default function HeroMedia({ poster, posterAlt, sources = [], className =
           poster={poster}
           aria-hidden="true"
           onPlaying={() => setPlaying(true)}
-          onError={() => setFailed(true)}
         >
           {sources.map((source, index) => (
-            <source key={source.src} src={source.src} type={source.type} onError={index === sources.length - 1 ? () => setFailed(true) : undefined} />
+            <source key={source.src} src={source.src} type={source.type} media={source.media} onError={index === sources.length - 1 ? () => setFailed(true) : undefined} />
           ))}
         </video>
       )}

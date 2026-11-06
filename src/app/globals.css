@@ -97,12 +97,16 @@ body {
 .home-hero-shade { display: none; }
 .home-hero-content { padding-top: 40px; padding-bottom: 56px; }
 .home-hero-caption { display: none; }
-.home-video-toggle { @apply absolute bottom-4 right-4 z-20 inline-flex h-10 w-10 items-center justify-center rounded-full; background: #202621b3; color: var(--home-paper); }
+.home-video-toggle { @apply absolute bottom-4 right-4 z-20 inline-flex h-10 w-10 items-center justify-center rounded-full; background: #202621b3; color: var(--home-paper); border: 1px solid #fafaf74d; }
+.home-video-toggle:hover { border-color: var(--home-gold); color: var(--home-gold); }
 @media (min-width: 768px) {
   .home-hero-frame { position: absolute; inset: 0; aspect-ratio: auto; z-index: -2; }
   .home-hero-media { object-position: center 55%; }
   .home-hero-shade { display: block; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, #202621d9 0%, #20262194 38%, #20262100 72%); }
   .home-hero-content { min-height: min(760px, calc(100svh - 80px)); justify-content: center; padding-top: 96px; padding-bottom: 96px; }
+  /* The text column spans the hero; let clicks through to the video's pause button underneath. */
+  .home-hero-content { pointer-events: none; }
+  .home-hero-content > * { pointer-events: auto; }
   .home-video-toggle { bottom: 28px; right: auto; left: 40px; }
 }
 @media (min-width: 1280px) {

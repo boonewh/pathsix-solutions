@@ -55,11 +55,15 @@ const jsonLd = {
 }
 
 /**
- * Hero video. Add the produced files to /public/videos and list them here
- * (WebM first, MP4 second). Until then the poster image is shown on its own.
- * e.g. { src: '/videos/home-hero.webm', type: 'video/webm' }, { src: '/videos/home-hero.mp4', type: 'video/mp4' }
+ * Hero video: a designer and a shop owner at a laptop, dissolving to the owner smiling at his phone.
+ * Phones get the 720p cut; desktops get WebM, with MP4 as the fallback.
+ * The poster is the video's first frame and is shown on its own whenever the video can't or shouldn't play.
  */
-const heroVideo: { src: string; type: string }[] = []
+const heroVideo = [
+  { src: '/videos/home-hero-720.mp4', type: 'video/mp4', media: '(max-width: 767px)' },
+  { src: '/videos/home-hero.webm', type: 'video/webm' },
+  { src: '/videos/home-hero.mp4', type: 'video/mp4' },
+]
 
 const projects = [
   { name: 'ASFI Construction', type: 'Construction & infrastructure', image: '/images/asfi.jpg', href: 'https://asficonstruction.com', tint: 'peach' },
@@ -84,8 +88,8 @@ function Hero() {
   return (
     <section className="home-hero relative isolate">
       <HeroMedia
-        poster="/images/home-workshop-hero.webp"
-        posterAlt="A small-business workshop with an open orange roll-up door and a craftsperson at a sunlit workbench."
+        poster="/images/home-hero-poster.webp"
+        posterAlt="A web designer and a shop owner looking at a laptop together at a sunlit workbench."
         sources={heroVideo}
         className="home-hero-frame"
       />
