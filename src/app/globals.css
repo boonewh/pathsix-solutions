@@ -163,6 +163,20 @@ body {
 .web-step + .web-step { border-top: 1px solid #2026211f; }
 .web-step-number { @apply inline-flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold; background: var(--site-peach); color: var(--site-orange-ink); }
 
+/* Contact page */
+.contact-form-card { background: #ffffff; box-shadow: 0 1px 2px #2026210f, 0 12px 32px #2026210f; outline: 1px solid #2026211a; }
+.contact-label { @apply mb-2 block text-sm font-semibold; }
+.contact-input { @apply w-full rounded-sm px-4 py-3 text-base transition-colors; background: var(--site-paper); border: 1px solid #20262140; color: var(--site-ink); }
+.contact-input::placeholder { color: #59625a99; }
+.contact-input:hover { border-color: #20262170; }
+.contact-input:focus { outline: none; border-color: var(--site-orange-ink); box-shadow: 0 0 0 3px #fa704940; }
+.contact-submit { width: 100%; }
+.contact-submit:disabled { cursor: not-allowed; background: #c9cdc5; color: #4a514a; }
+.contact-notice { @apply rounded-sm p-4 text-center; }
+.contact-notice-success { background: var(--site-sage); color: #1f4a2a; }
+.contact-notice-error { background: var(--site-peach); color: #7a2a12; }
+.contact-details { --site-muted: #5b5a45; }
+
 @media (prefers-reduced-motion: reduce) {
   .site-project-shot img, .web-hero-card { transition: none; }
   .group:hover .site-project-shot img { transform: none; }
