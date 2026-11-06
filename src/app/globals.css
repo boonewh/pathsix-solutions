@@ -179,6 +179,8 @@ body {
 
 /* SEO page */
 .seo-hero-photo { aspect-ratio: 16 / 9; border-radius: 2px; }
+.seo-map-banner { width: 100%; height: max(170px, calc(100vw * 270 / 1817)); }
+.seo-map-banner img { object-position: 45% center; }
 .seo-check { color: var(--site-orange-ink); font-weight: 700; }
 .seo-plan-plain { background: #ffffff; outline: 1px solid #2026211f; }
 .seo-plan-featured { --site-muted: #5b5a45; }

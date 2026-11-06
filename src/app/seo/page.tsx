@@ -21,12 +21,10 @@ const jsonLd = {
 }
 
 /**
- * Page photography (prompts in design/homepage-imagery.txt). The map band stays
- * hidden until its photo exists.
- */
-const images: { hero: { src: string; alt: string }; map: { src: string; alt: string } | null } = {
+/** Page photography (prompts in design/homepage-imagery.txt). */
+const images = {
   hero: { src: '/images/seo-hero-main-street.webp', alt: 'A shop owner holding the door open for a smiling customer who found the shop on her phone, on a small-town Main Street at golden hour.' },
-  map: null,
+  map: { src: '/images/seo-map-table.webp', alt: 'A paper town map with colored push pins on a sunlit wooden table, beside coffee, glasses, and a notebook.' },
 }
 
 const included = [
@@ -149,11 +147,9 @@ export default function SEOPage() {
           </div>
         </section>
 
-        {images.map && (
-          <div className="site-banner relative overflow-hidden">
-            <Image src={images.map.src} alt={images.map.alt} fill sizes="100vw" className="object-cover" />
-          </div>
-        )}
+        <div className="seo-map-banner relative overflow-hidden">
+          <Image src={images.map.src} alt={images.map.alt} fill sizes="100vw" className="object-cover" />
+        </div>
 
         <section id="approach" className="site-dark scroll-mt-8 py-20 md:py-28">
           <div className="site-container grid gap-12 lg:grid-cols-[2fr_3fr]">

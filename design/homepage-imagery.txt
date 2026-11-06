@@ -37,6 +37,5 @@ SEO page photography (requested November 2026, to be generated in Codex)
 The old world-map "#1" pin image (seo-map.jpg) was removed: it showed the world instead of a local area and implied a guaranteed #1 ranking.
 Hero, public/images/seo-hero-main-street.webp (Codex returned three variants in one image; the large top panel was cropped out at 1254x710 and is shown at 16:9):
 Same small Texas town Main Street at golden hour, colorful awnings, water tower in the distance. A woman on the sidewalk at right looks up from her phone (screen facing away, not visible) toward a shop with an orange awning; the owner in an apron holds the door open with a welcoming smile. Candid. No readable words, logos, visible phone screen, map pins or graphics, or watermark.
-Map band (21:9), planned file public/images/seo-map-table.webp:
+Map band, public/images/seo-map-table.webp (Codex returned a 6.7:1 strip; a thin white top border was trimmed and it is shown at its native shape, min 170px tall on phones):
 Overhead view of a folded paper road map of a small town on a weathered wooden table at golden hour, with orange, cobalt and golden push pins, black coffee, reading glasses, a pencil, a notebook with unreadable scribbles, and a face-down phone. Map and pins in the middle horizontal band. No readable words, street names, logos, screens, digital map graphics or watermark.
-Until the map photo arrives, the map band is hidden.
