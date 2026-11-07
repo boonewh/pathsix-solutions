@@ -1,302 +1,275 @@
 import { pageMetadata } from '@/lib/metadata'
 import Image from 'next/image'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Link from 'next/link'
+import localFont from 'next/font/local'
+import { SiteHeader, SiteFooter } from '@/components/SiteChrome'
+
+const inter = localFont({
+  src: '../../../public/fonts/InterVariable.woff2',
+  display: 'swap',
+  weight: '100 900',
+})
 
 export const metadata = pageMetadata('/build', 'Custom Software Development | PathSix Solutions', 'Replace spreadsheets with custom web applications. Client portals, internal tools, and business software built for your exact workflow.')
 
-export default function BuildPage() {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'PathSix Build - Custom Software Engineering',
-    url: 'https://www.pathsixsolutions.com/build',
-    description: 'Custom web applications and internal tools to replace spreadsheets and streamline operations.',
-  }
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'PathSix Build - Custom Software Engineering',
+  url: 'https://www.pathsixsolutions.com/build',
+  description: 'Custom web applications and internal tools to replace spreadsheets and streamline operations.',
+}
 
+/**
+ * Page photography. The hero is a stand-in and the blueprint band stays hidden
+ * until the commissioned photos exist (prompts in design/homepage-imagery.txt).
+ */
+const images: { hero: { src: string; alt: string }; blueprint: { src: string; alt: string } | null } = {
+  hero: { src: '/images/home-worktable-banner.webp', alt: 'Overhead view of a worktable with plans and colorful material samples.' },
+  blueprint: null,
+}
+
+const signs = [
+  { title: 'Version control chaos', description: '"Who has the latest version? Is it Final_v3_REAL.xlsx or Final_v4.xlsx?" Data gets overwritten and lost.', tint: 'peach' },
+  { title: 'Security nightmares', description: 'Emailing sensitive client lists or financial data as attachments. One wrong forward and your data is public.', tint: 'butter' },
+  { title: 'Zero automation', description: 'Five hours a week copy-pasting data from one sheet to another just to generate a report.', tint: 'sky' },
+]
+
+const projects = [
+  {
+    category: 'Webhook automation',
+    name: 'Booster Club Purchase Router',
+    problem: 'A school athletics booster club was manually checking Stripe and forwarding every membership, yard sign, and donation notification to the right person by hand.',
+    outcomes: [
+      'Stripe purchases automatically route to the right inbox, with zero manual forwarding',
+      'Admin dashboard with per-recipient delivery tracking, fulfillment workflow, and CSV export',
+      'Passwordless admin access via magic link, with no credentials to manage',
+    ],
+    stack: ['Next.js', 'Supabase', 'Stripe', 'Resend'],
+    caseStudy: 'https://willboone.dev/#cabc',
+    tint: 'peach',
+  },
+  {
+    category: 'Payments & registration',
+    name: 'Symphony Guild Student Platform',
+    problem: 'A performing arts organization was collecting student registrations on paper forms and chasing unpaid dues by email. They had a hard deadline, a parent meeting where signups were expected, and needed a fully working system in two weeks.',
+    outcomes: [
+      'Students register online; a QuickBooks invoice is created automatically in the background',
+      'The roster marks paid the moment the QuickBooks payment clears, with no one touching a dashboard',
+      'Admin panel with a real-time roster, grade filters, KPI cards, and configurable pricing',
+    ],
+    stack: ['Next.js', 'Supabase', 'QuickBooks API', 'Vercel'],
+    caseStudy: 'https://willboone.dev/#osg',
+    tint: 'sky',
+  },
+  {
+    category: 'Custom SaaS platform',
+    name: 'PathSix CRM',
+    problem: 'Field services businesses were tracking leads in spreadsheets, following up by memory, and had zero visibility into their pipeline or revenue.',
+    outcomes: [
+      'Full lead-to-client lifecycle: capture, assignment, follow-up, conversion, and project tracking',
+      '13 reporting endpoints: pipeline, revenue by client, MRR forecasting, retention, and more',
+      'White-label configuration, so each tenant gets their own branding, statuses, and feature set',
+    ],
+    stack: ['React', 'Python', 'PostgreSQL', 'Fly.io'],
+    caseStudy: 'https://willboone.dev/#crm',
+    internal: { href: '/crm', label: 'See the CRM' },
+    tint: 'sage',
+  },
+  {
+    category: 'AI-powered app',
+    name: 'SMS Reminder Platform',
+    problem: 'Built to prove that AI-guided development could ship production-grade software. No app to download. No account to create. Just text it.',
+    outcomes: [
+      'Text naturally ("Call client Tue 2pm") and Claude Haiku parses the intent and schedules the reminder',
+      'DST-safe scheduling, 14+ SMS commands, and consent and opt-out workflows',
+      'Ships as two products (personal and group) sharing a single core package',
+    ],
+    stack: ['Next.js', 'Claude Haiku', 'Twilio', 'PostgreSQL'],
+    caseStudy: 'https://willboone.dev/#ai-builds',
+    tint: 'butter',
+  },
+]
+
+const subscriptionIncludes = [
+  'Dedicated development hours each month',
+  'Continuous build, test, and iterate, with no disappearing acts',
+  'Hosting and deployment planned as part of your build',
+  'You own 100% of the code, always',
+  'Priority response between sessions',
+]
+
+function Arrow({ direction = 'up-right' }: { direction?: 'up-right' | 'down' }) {
+  return <span aria-hidden="true" className="site-arrow">{direction === 'down' ? '↓' : '↗'}</span>
+}
+
+function Check() {
+  return <span aria-hidden="true" className="seo-check">✓</span>
+}
+
+export default function BuildPage() {
   return (
-    <>
+    <div className={inter.className + ' site-page antialiased'}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header />
-      <main className="bg-slate-950 text-slate-300">
-        {/* Hero Section */}
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-          <div className="absolute inset-0 opacity-20 pointer-events-none" style={{
-            backgroundImage: 'linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px)',
-            backgroundSize: '40px 40px',
-            maskImage: 'linear-gradient(to bottom, transparent, 5%, white, 95%, transparent)'
-          }}></div>
-
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="flex flex-col lg:flex-row gap-16 items-center">
-              <div className="lg:w-1/2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-900/30 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-6">
-                  Custom Engineering
-                </div>
-                <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
-                  Stop running your business on <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-200">spreadsheets.</span>
-                </h1>
-                <p className="text-xl text-slate-400 mb-8 font-light leading-relaxed">
-                  Off-the-shelf software is too rigid. Excel is too messy. We build custom, secure web applications tailored exactly to your operational workflows.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="/contact" className="px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-lg transition-all shadow-lg shadow-cyan-500/20 text-center">
-                    Start a Build
-                  </a>
-                  <a href="#process" className="px-8 py-4 bg-slate-800 border border-slate-700 hover:border-cyan-500 text-white font-medium rounded-lg transition-all text-center">
-                    How It Works
-                  </a>
-                </div>
-              </div>
-
-              <div className="lg:w-1/2 relative">
-                <div className="relative rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-900 aspect-video group">
-                  <Image
-                    src="/images/build_hero.jpg"
-                    alt="Blueprint to Application"
-                    fill
-                    className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
-                    priority
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-slate-900/90 border-t border-slate-700 p-4 font-mono text-xs text-cyan-400 z-10">
-                    <div className="flex gap-2 mb-2">
-                      <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                    </div>
-                    <p>&gt; Compiling solution...</p>
-                    <p>&gt; Removing operational bottlenecks...</p>
-                    <p className="text-white">&gt; Build Complete.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* The Problem: The Spreadsheet Ceiling */}
-        <section id="problems" className="py-24 bg-slate-900 border-y border-slate-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">Signs you&apos;ve hit the &quot;Spreadsheet Ceiling&quot;</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto mb-16">
-              Spreadsheets are great for prototyping. They are terrible for running a company. If these sound familiar, it&apos;s time to build.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-              <div className="p-6 rounded-xl bg-slate-800 border border-slate-700 hover:border-red-500/50 transition-colors">
-                <div className="text-red-500 text-4xl mb-4 font-mono">!</div>
-                <h3 className="text-xl font-bold text-white mb-2">Version Control Chaos</h3>
-                <p className="text-slate-400 text-sm">&quot;Who has the latest version? Is it &apos;Final_v3_REAL.xlsx&apos; or &apos;Final_v4.xlsx&apos;?&quot; Data gets overwritten and lost.</p>
-              </div>
-              <div className="p-6 rounded-xl bg-slate-800 border border-slate-700 hover:border-red-500/50 transition-colors">
-                <div className="text-red-500 text-4xl mb-4 font-mono">!</div>
-                <h3 className="text-xl font-bold text-white mb-2">Security Nightmares</h3>
-                <p className="text-slate-400 text-sm">Emailing sensitive client lists or financial data as attachments. One wrong forward and your data is public.</p>
-              </div>
-              <div className="p-6 rounded-xl bg-slate-800 border border-slate-700 hover:border-red-500/50 transition-colors">
-                <div className="text-red-500 text-4xl mb-4 font-mono">!</div>
-                <h3 className="text-xl font-bold text-white mb-2">Zero Automation</h3>
-                <p className="text-slate-400 text-sm">You spend 5 hours a week copy-pasting data from one sheet to another just to generate a report.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Solutions / Real Projects */}
-        <section id="solutions" className="py-24 bg-slate-950">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-6">
-              <h2 className="text-3xl font-bold text-white mb-4">What We Build</h2>
-              <div className="h-1 w-20 bg-cyan-500 rounded"></div>
-            </div>
-            <p className="text-slate-400 mb-16 max-w-2xl">These aren&apos;t mockups. Every project below is in production, handling real users and real data.</p>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-              {/* Project 1 — CABC Email Router */}
-              <div className="bg-slate-800 border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 rounded-2xl p-8 flex flex-col gap-6">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <div className="inline-flex items-center gap-2 px-2 py-1 rounded bg-cyan-900/30 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3">Webhook Automation</div>
-                    <h3 className="text-xl font-bold text-white">Booster Club Purchase Router</h3>
-                  </div>
-                  <span className="flex-shrink-0 text-xs font-bold text-slate-500 border border-slate-600 rounded px-2 py-1 uppercase tracking-wide">Production</span>
-                </div>
-                <p className="text-slate-400 text-sm italic border-l-2 border-slate-600 pl-4">
-                  &ldquo;A school athletics booster club was manually checking Stripe and forwarding every membership, yard sign, and donation notification to the right person by hand.&rdquo;
-                </p>
-                <ul className="space-y-2 text-slate-300 text-sm">
-                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Stripe purchases automatically route to the right inbox — zero manual forwarding</li>
-                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Admin dashboard with per-recipient delivery tracking, fulfillment workflow, and CSV export</li>
-                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Passwordless admin access via magic link — no credentials to manage</li>
-                </ul>
-                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-700">
-                  {['Next.js', 'Supabase', 'Stripe', 'Resend'].map(t => (
-                    <span key={t} className="text-xs text-slate-500 border border-slate-700 rounded px-2 py-0.5">{t}</span>
-                  ))}
-                  <a href="https://willboone.dev/#cabc" target="_blank" rel="noopener noreferrer" className="ml-auto text-xs text-cyan-500 hover:text-cyan-400 font-medium transition-colors">Case study ↗</a>
-                </div>
-              </div>
-
-              {/* Project 2 — OSG Belles & Beaux */}
-              <div className="bg-slate-800 border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 rounded-2xl p-8 flex flex-col gap-6">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <div className="inline-flex items-center gap-2 px-2 py-1 rounded bg-cyan-900/30 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3">Payments & Registration</div>
-                    <h3 className="text-xl font-bold text-white">Symphony Guild Student Platform</h3>
-                  </div>
-                  <span className="flex-shrink-0 text-xs font-bold text-slate-500 border border-slate-600 rounded px-2 py-1 uppercase tracking-wide">Production</span>
-                </div>
-                <p className="text-slate-400 text-sm italic border-l-2 border-slate-600 pl-4">
-                  &ldquo;A performing arts organization was collecting student registrations on paper forms and chasing unpaid dues by email. They had a hard deadline — a parent meeting where signups were expected — and needed a fully working system in two weeks.&rdquo;
-                </p>
-                <ul className="space-y-2 text-slate-300 text-sm">
-                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Students register online; a QuickBooks invoice is created automatically in the background</li>
-                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Roster marks paid the moment QuickBooks payment clears — no one touches a dashboard</li>
-                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Admin panel: real-time roster, grade filters, KPI cards, and configurable pricing</li>
-                </ul>
-                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-700">
-                  {['Next.js', 'Supabase', 'QuickBooks API', 'Vercel'].map(t => (
-                    <span key={t} className="text-xs text-slate-500 border border-slate-700 rounded px-2 py-0.5">{t}</span>
-                  ))}
-                  <a href="https://willboone.dev/#osg" target="_blank" rel="noopener noreferrer" className="ml-auto text-xs text-cyan-500 hover:text-cyan-400 font-medium transition-colors">Case study ↗</a>
-                </div>
-              </div>
-
-              {/* Project 3 — PathSix CRM */}
-              <div className="bg-slate-800 border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 rounded-2xl p-8 flex flex-col gap-6">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <div className="inline-flex items-center gap-2 px-2 py-1 rounded bg-cyan-900/30 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3">Custom SaaS Platform</div>
-                    <h3 className="text-xl font-bold text-white">PathSix CRM</h3>
-                  </div>
-                  <span className="flex-shrink-0 text-xs font-bold text-slate-500 border border-slate-600 rounded px-2 py-1 uppercase tracking-wide">Production</span>
-                </div>
-                <p className="text-slate-400 text-sm italic border-l-2 border-slate-600 pl-4">
-                  &ldquo;Field services businesses were tracking leads in spreadsheets, following up by memory, and had zero visibility into their pipeline or revenue.&rdquo;
-                </p>
-                <ul className="space-y-2 text-slate-300 text-sm">
-                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Full lead → client lifecycle: capture, assignment, follow-up, conversion, and project tracking</li>
-                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> 13 reporting endpoints: pipeline, revenue by client, MRR forecasting, retention, and more</li>
-                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> White-label config — each tenant gets their own branding, statuses, and feature set</li>
-                </ul>
-                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-700">
-                  {['React', 'Python', 'PostgreSQL', 'Fly.io'].map(t => (
-                    <span key={t} className="text-xs text-slate-500 border border-slate-700 rounded px-2 py-0.5">{t}</span>
-                  ))}
-                  <a href="https://willboone.dev/#crm" target="_blank" rel="noopener noreferrer" className="ml-auto text-xs text-cyan-500 hover:text-cyan-400 font-medium transition-colors">Case study ↗</a>
-                </div>
-              </div>
-
-              {/* Project 4 — Sunday Nudge */}
-              <div className="bg-slate-800 border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 rounded-2xl p-8 flex flex-col gap-6">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <div className="inline-flex items-center gap-2 px-2 py-1 rounded bg-cyan-900/30 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3">AI-Powered App</div>
-                    <h3 className="text-xl font-bold text-white">SMS Reminder Platform</h3>
-                  </div>
-                  <span className="flex-shrink-0 text-xs font-bold text-slate-500 border border-slate-600 rounded px-2 py-1 uppercase tracking-wide">Production</span>
-                </div>
-                <p className="text-slate-400 text-sm italic border-l-2 border-slate-600 pl-4">
-                  &ldquo;Wanted to prove that AI-guided development could ship production-grade software. No app to download. No account to create. Just text it.&rdquo;
-                </p>
-                <ul className="space-y-2 text-slate-300 text-sm">
-                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Text naturally (&ldquo;Call client Tue 2pm&rdquo;) — Claude Haiku parses intent, schedules the reminder</li>
-                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> DST-safe scheduling, 14+ SMS commands, consent and opt-out workflows</li>
-                  <li className="flex items-start gap-3"><span className="text-cyan-500 font-bold mt-0.5">✓</span> Ships as two products (personal + group) sharing a single core package</li>
-                </ul>
-                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-700">
-                  {['Next.js', 'Claude Haiku', 'Twilio', 'PostgreSQL'].map(t => (
-                    <span key={t} className="text-xs text-slate-500 border border-slate-700 rounded px-2 py-0.5">{t}</span>
-                  ))}
-                  <a href="https://willboone.dev/#ai-builds" target="_blank" rel="noopener noreferrer" className="ml-auto text-xs text-cyan-500 hover:text-cyan-400 font-medium transition-colors">Case study ↗</a>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing Strategy */}
-        <section id="process" className="py-24 bg-slate-900 border-t border-slate-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-white mb-4">Transparent Engineering</h2>
-              <p className="text-slate-400 max-w-2xl mx-auto">
-                Custom software is an investment. We don&apos;t do &quot;black box&quot; pricing. We start small, validate, and build.
+      <SiteHeader />
+      <main>
+        <section className="site-dark overflow-hidden">
+          <div className="site-container grid items-center gap-12 py-14 md:py-20 lg:grid-cols-[5fr_6fr] lg:py-24">
+            <div className="flex flex-col items-start">
+              <p className="site-eyebrow site-gold">Custom apps · Built for your workflow</p>
+              <h1 className="mt-6 max-w-[14ch] text-balance text-[2.75rem] font-semibold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
+                Stop running your business on <span className="site-gold">spreadsheets.</span>
+              </h1>
+              <p className="site-muted mt-6 max-w-[42ch] text-pretty text-lg md:text-xl">
+                Off-the-shelf software is too rigid. Excel is too messy. We build secure web applications tailored to the way your business actually works.
               </p>
+              <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-5">
+                <Link href="/contact" className="site-primary">Start a build <Arrow /></Link>
+                <a href="#process" className="site-text-link">How it works <Arrow direction="down" /></a>
+              </div>
+              <p className="mt-8 text-sm text-[#d5d9d0]">Start with a $499 Blueprint, credited back if you build</p>
             </div>
+            <div className="build-hero-photo relative overflow-hidden">
+              <Image src={images.hero.src} alt={images.hero.alt} fill priority sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" />
+            </div>
+          </div>
+        </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Step 1: Blueprint */}
-              <div className="bg-slate-950 p-8 rounded-2xl border border-slate-700 flex flex-col relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-cyan-400"></div>
-                <h3 className="text-xl font-bold text-white mb-2">01. The Blueprint</h3>
-                <div className="text-3xl font-bold text-cyan-400 mb-2">$499</div>
-                <p className="text-xs text-cyan-600 font-bold uppercase mb-6">Credited back if you build</p>
-                <p className="text-slate-400 text-sm mb-6 flex-grow">
-                  We sit down to map out your entire workflow, database structure, and user needs. You get a technical roadmap PDF.
-                </p>
-                <a href="/contact" className="w-full py-3 border border-slate-600 hover:border-cyan-400 hover:text-cyan-400 text-white rounded font-medium transition-colors text-center">Book Session</a>
+        <div className="site-promise">
+          <div className="site-container flex flex-wrap items-center justify-between gap-x-8 gap-y-2 py-5">
+            <p className="font-medium">Client portals, internal tools, and business software. Built to fit.</p>
+            <p className="site-eyebrow">You own 100% of the code</p>
+          </div>
+        </div>
+
+        <section id="problems" className="scroll-mt-8 py-20 md:py-28">
+          <div className="site-container">
+            <div className="grid items-end gap-8 lg:grid-cols-[3fr_2fr]">
+              <div className="flex flex-col gap-5">
+                <p className="site-eyebrow site-eyebrow-accent">Sound familiar?</p>
+                <h2 className="max-w-[18ch] text-balance text-4xl font-semibold tracking-tight md:text-5xl">
+                  Signs you&apos;ve hit the <span className="site-orange-ink">spreadsheet ceiling.</span>
+                </h2>
               </div>
+              <p className="site-muted max-w-[44ch] text-pretty text-lg">Spreadsheets are great for prototyping. They are terrible for running a company. If these sound familiar, it&apos;s time to build.</p>
+            </div>
+            <div className="mt-14 grid gap-6 md:grid-cols-3">
+              {signs.map(sign => (
+                <div key={sign.title} className={'build-sign p-8 site-tint-' + sign.tint}>
+                  <h3 className="text-xl font-semibold tracking-tight">{sign.title}</h3>
+                  <p className="build-sign-text mt-3 text-pretty">{sign.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-              {/* Step 2: Build Subscription */}
-              <div className="bg-gradient-to-b from-slate-800 to-slate-900 p-8 rounded-2xl border border-cyan-500 shadow-xl shadow-cyan-500/10 flex flex-col relative transform md:-translate-y-4">
-                <div className="absolute top-0 right-0 bg-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-[13px]">MOST POPULAR</div>
-                <h3 className="text-xl font-bold text-white mb-2">02. Build Subscription</h3>
-                <div className="text-3xl font-bold text-cyan-400 mb-1">$499<span className="text-lg text-slate-400 font-normal">/mo</span></div>
-                <p className="text-xs text-cyan-600 font-bold uppercase mb-6">5-Month Minimum Contract</p>
-                <p className="text-slate-400 text-sm mb-6 flex-grow">
-                  Most agencies quote a big project fee, take the money, and hand you something half-finished. We work differently. One monthly rate gets you a dedicated developer in your corner — building and iterating on your software every month until it&apos;s exactly what your business needs.
-                </p>
-                <ul className="text-sm text-slate-300 space-y-3 mb-8">
-                  <li className="flex items-start gap-2"><span className="text-cyan-400 font-bold mt-0.5">✓</span> Dedicated development hours each month</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400 font-bold mt-0.5">✓</span> Continuous build, test, and iterate — no disappearing acts</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400 font-bold mt-0.5">✓</span> Hosting and deployment planned as part of your build</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400 font-bold mt-0.5">✓</span> You own 100% of the code, always</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400 font-bold mt-0.5">✓</span> Priority response between sessions</li>
+        <section id="solutions" className="site-dark scroll-mt-8 py-20 md:py-28">
+          <div className="site-container">
+            <div className="grid items-end gap-8 lg:grid-cols-[3fr_2fr]">
+              <div className="flex flex-col gap-5">
+                <p className="site-eyebrow site-gold">What we build</p>
+                <h2 className="max-w-[18ch] text-balance text-4xl font-semibold tracking-tight md:text-5xl">Real software, in production.</h2>
+              </div>
+              <p className="site-muted max-w-[44ch] text-pretty text-lg">These aren&apos;t mockups. Every project below is live, handling real users and real data.</p>
+            </div>
+            <div className="mt-14 grid gap-6 lg:grid-cols-2">
+              {projects.map(project => (
+                <article key={project.name} className={'build-project flex flex-col p-7 md:p-9 site-tint-' + project.tint}>
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="site-eyebrow">{project.category}</p>
+                      <h3 className="mt-2 text-2xl font-semibold tracking-tight">{project.name}</h3>
+                    </div>
+                    <span className="build-badge">In production</span>
+                  </div>
+                  <p className="build-project-muted mt-5 text-pretty italic">&ldquo;{project.problem}&rdquo;</p>
+                  <ul className="mt-6 flex flex-grow flex-col gap-3">
+                    {project.outcomes.map(outcome => <li key={outcome} className="flex gap-3 text-pretty"><Check />{outcome}</li>)}
+                  </ul>
+                  <div className="mt-7 flex flex-wrap items-center gap-2">
+                    {project.stack.map(tech => <span key={tech} className="build-chip">{tech}</span>)}
+                  </div>
+                  <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+                    <a href={project.caseStudy} target="_blank" rel="noopener noreferrer" className="site-text-link">Case study <Arrow /></a>
+                    {project.internal && <Link href={project.internal.href} className="site-text-link">{project.internal.label} <Arrow /></Link>}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {images.blueprint && (
+          <div className="site-banner relative overflow-hidden">
+            <Image src={images.blueprint.src} alt={images.blueprint.alt} fill sizes="100vw" className="object-cover" />
+          </div>
+        )}
+
+        <section id="process" className="scroll-mt-8 py-20 md:py-28">
+          <div className="site-container">
+            <div className="grid items-end gap-8 lg:grid-cols-[3fr_2fr]">
+              <div className="flex flex-col gap-5">
+                <p className="site-eyebrow site-eyebrow-accent">How it works</p>
+                <h2 className="max-w-[18ch] text-balance text-4xl font-semibold tracking-tight md:text-5xl">Transparent engineering.</h2>
+              </div>
+              <p className="site-muted max-w-[44ch] text-pretty text-lg">Custom software is an investment. We don&apos;t do &ldquo;black box&rdquo; pricing. We start small, validate, and build.</p>
+            </div>
+            <div className="mt-14 grid gap-6 lg:grid-cols-[1fr_1.35fr_1fr]">
+              <div className="seo-plan seo-plan-plain flex flex-col p-8">
+                <p className="site-eyebrow">Step 01</p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-tight">The Blueprint</h3>
+                <p className="mt-4 text-5xl font-semibold tracking-tight tabular-nums">$499</p>
+                <p className="site-orange-ink mt-2 text-sm font-semibold">Credited back if you build</p>
+                <p className="site-muted mt-5 flex-grow text-pretty">We sit down to map out your entire workflow, database structure, and user needs. You get a technical roadmap PDF.</p>
+                <Link href="/contact" className="seo-secondary mt-8 justify-center">Book a session <Arrow /></Link>
+              </div>
+              <div className="seo-plan site-tint-butter seo-plan-featured flex flex-col p-8 md:p-10">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="site-eyebrow">Step 02</p>
+                    <h3 className="mt-3 text-2xl font-semibold tracking-tight">Build Subscription</h3>
+                  </div>
+                  <span className="seo-plan-badge">Most popular</span>
+                </div>
+                <p className="mt-4 text-5xl font-semibold tracking-tight tabular-nums">$499<span className="ml-2 text-lg font-normal tracking-normal">/ month</span></p>
+                <p className="site-muted mt-2 text-sm font-semibold">5-month minimum</p>
+                <p className="site-muted mt-5 text-pretty">Most agencies quote a big project fee, take the money, and hand you something half-finished. One monthly rate gets you a dedicated developer in your corner, building and iterating on your software every month until it&apos;s exactly what your business needs.</p>
+                <ul className="mt-6 flex flex-grow flex-col gap-3">
+                  {subscriptionIncludes.map(item => <li key={item} className="flex gap-3"><Check />{item}</li>)}
                 </ul>
-                <a href="/contact" className="w-full py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded font-bold transition-colors text-center">Start Your Build</a>
+                <Link href="/contact" className="site-primary mt-8 justify-center">Start your build <Arrow /></Link>
               </div>
-
-              {/* Step 3: Enterprise */}
-              <div className="bg-slate-950 p-8 rounded-2xl border border-slate-700 flex flex-col relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-slate-700"></div>
-                <h3 className="text-xl font-bold text-white mb-2">03. Custom Scale</h3>
-                <div className="text-3xl font-bold text-white mb-2">Custom Quote</div>
-                <p className="text-xs text-slate-500 font-bold uppercase mb-6">Full Platform Build</p>
-                <p className="text-slate-400 text-sm mb-6 flex-grow">
-                  For mature businesses needing a complete operating system. Integrations with Xero/QuickBooks, complex permissions, and mobile support.
-                </p>
-                <a href="/contact" className="w-full py-3 border border-slate-600 hover:border-white hover:text-white text-white rounded font-medium transition-colors text-center">Contact Us</a>
+              <div className="seo-plan seo-plan-plain flex flex-col p-8">
+                <p className="site-eyebrow">Step 03</p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-tight">Custom Scale</h3>
+                <p className="mt-4 text-3xl font-semibold tracking-tight">Custom quote</p>
+                <p className="site-muted mt-2 text-sm font-semibold">Full platform build</p>
+                <p className="site-muted mt-5 flex-grow text-pretty">For mature businesses needing a complete operating system. Integrations with Xero or QuickBooks, complex permissions, and mobile support.</p>
+                <Link href="/contact" className="seo-secondary mt-8 justify-center">Contact us <Arrow /></Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Contact CTA */}
-        <section className="py-20 bg-slate-950 border-t border-slate-800">
-          <div className="max-w-3xl mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">Let&apos;s map out your solution.</h2>
-            <p className="text-slate-400 mb-8">Not sure if you need a custom build? Let&apos;s chat. If we can solve it with a $20/month off-the-shelf tool, we&apos;ll tell you to buy that instead.</p>
-
-            <a
-              href="/contact"
-              className="inline-block bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-4 px-10 rounded-lg transition-all shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 text-lg"
-            >
-              Request Blueprint Session
-            </a>
-
-            <p className="mt-6 text-slate-500 text-sm">
-              Or email: <a href="mailto:build@pathsixsolutions.com" className="text-cyan-500 hover:text-cyan-400 underline">build@pathsixsolutions.com</a>
-            </p>
+        <section className="site-dark site-offer py-20 md:py-24">
+          <div className="site-container grid items-end gap-10 lg:grid-cols-[3fr_2fr]">
+            <div className="flex flex-col items-start gap-6">
+              <p className="site-eyebrow site-gold">Let&apos;s map out your solution</p>
+              <h2 className="max-w-[18ch] text-balance text-4xl font-semibold tracking-tight md:text-6xl">Not sure you need a custom build?</h2>
+              <p className="site-muted max-w-[46ch] text-pretty text-lg">Let&apos;s talk. If we can solve it with a $20/month off-the-shelf tool, we&apos;ll tell you to buy that instead.</p>
+            </div>
+            <div className="flex flex-col items-start gap-5 lg:items-end">
+              <Link href="/contact" className="site-primary">Request a Blueprint session <Arrow /></Link>
+              <a href="mailto:build@pathsixsolutions.com" className="site-text-link break-all">build@pathsixsolutions.com</a>
+            </div>
           </div>
         </section>
       </main>
-      <Footer />
-    </>
+      <SiteFooter />
+    </div>
   )
 }
