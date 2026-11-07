@@ -1,24 +1,21 @@
 import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 
 export const metadata = pageMetadata('/resources/web-design/wordpress-vs-custom', 'Architectural Decision: WordPress vs. Custom Code | PathSix Solutions', 'A comparative analysis of WordPress CMS versus Custom Software Development. Understand when to choose managed hosting and when to invest in bespoke applications.')
 
 export default function WordPressVsCustomArticle() {
   return (
     <>
-      <Header />
       <main className="bg-white min-h-screen selection:bg-blue-100">
         {/* Breadcrumb */}
-        <div className="bg-slate-900 pt-28 pb-4 px-6">
+        <div className="site-dark pt-8 pb-4 px-6">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-2 text-sm text-slate-500">
-              <Link href="/resources" className="hover:text-amber-500 transition-colors">
+              <Link href="/resources" className="hover:text-[var(--site-gold)] transition-colors">
                 Resources
               </Link>
               <span>/</span>
-              <Link href="/resources/web-design" className="hover:text-amber-500 transition-colors">
+              <Link href="/resources/web-design" className="hover:text-[var(--site-gold)] transition-colors">
                 Web Design
               </Link>
               <span>/</span>
@@ -28,7 +25,7 @@ export default function WordPressVsCustomArticle() {
         </div>
 
         {/* HERO SECTION */}
-        <header className="bg-slate-900 text-white py-16 px-6">
+        <header className="site-dark py-16 px-6">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-sm font-bold text-blue-400 uppercase tracking-widest mb-4">
               Technical Strategy
@@ -250,7 +247,6 @@ export default function WordPressVsCustomArticle() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   )
 }
