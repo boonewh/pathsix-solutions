@@ -31,6 +31,7 @@ const shots = {
   leads: { src: '/images/crm-leads.webp', width: 1900, height: 917, alt: 'PathSix CRM leads table with status, type, source, contact details, and owner.' },
   calendar: { src: '/images/crm-calendar.webp', width: 1917, height: 915, alt: 'PathSix CRM month calendar with color-coded follow-ups for accounts, leads, and projects.' },
   projects: { src: '/images/crm-projects.webp', width: 1916, height: 893, alt: 'PathSix CRM projects table with status, type, value, and linked account.' },
+  leadMobile: { src: '/images/crm-lead-mobile.webp', width: 360, height: 722, alt: 'A lead record in PathSix CRM on a phone, with status, source, owner, and contact details.' },
   calendarMobile: { src: '/images/crm-calendar-mobile.webp', width: 355, height: 710, alt: 'PathSix CRM calendar in list view on a phone.' },
   reports: { src: '/images/crm-reports.webp', width: 1901, height: 913, alt: 'PathSix CRM reports page showing sales team activity by salesperson.' },
 }
@@ -43,6 +44,7 @@ const features: { eyebrow: string; title: string; description: string; shot: Sho
     title: 'Know exactly who needs a follow-up.',
     description: 'Every lead in one place with its status, source, contact details, and owner. Filter by stage, switch between cards and a table, and convert a lead to an account when they say yes.',
     shot: shots.leads,
+    phone: shots.leadMobile,
     tint: 'sky',
   },
   {
