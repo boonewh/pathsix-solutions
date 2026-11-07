@@ -23,12 +23,12 @@ const jsonLd = {
 }
 
 /**
- * Page photography. The hero is a stand-in and the horizon band stays hidden
- * until the commissioned photos exist (prompts in design/homepage-imagery.txt).
+ * Page photography (prompts in design/homepage-imagery.txt). The hero is a
+ * stand-in until its commissioned photo arrives.
  */
-const images: { hero: { src: string; alt: string }; horizon: { src: string; alt: string } | null } = {
+const images = {
   hero: { src: '/images/build-blueprint-band.webp', alt: 'Colored sticky notes arranged in tidy columns beside a hand-drawn workflow diagram.' },
-  horizon: null,
+  horizon: { src: '/images/ai-horizon-band.webp', alt: 'A person with a coffee mug looking out an office window at sunrise over small-town rooftops and a water tower.' },
 }
 
 const whyNow = [
@@ -136,11 +136,9 @@ export default function AIConsultingPage() {
           </div>
         </section>
 
-        {images.horizon && (
-          <div className="site-banner relative overflow-hidden">
-            <Image src={images.horizon.src} alt={images.horizon.alt} fill sizes="100vw" className="object-cover" />
-          </div>
-        )}
+        <div className="site-banner ai-horizon-banner relative overflow-hidden">
+          <Image src={images.horizon.src} alt={images.horizon.alt} fill sizes="100vw" className="object-cover" />
+        </div>
 
         <section id="engagements" className="scroll-mt-8 py-20 md:py-28">
           <div className="site-container">
