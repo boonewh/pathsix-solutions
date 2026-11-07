@@ -1,7 +1,5 @@
 import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 
 export const metadata = pageMetadata('/resources/seo/google-map-optimization', 'Google Maps Optimization: The Complete Guide | PathSix Solutions', 'A practical guide to Google Business Profiles, accurate business information, website content, and honest customer reviews.')
 
@@ -19,17 +17,16 @@ const ShieldIcon = () => (
 export default function GoogleMapsGuide() {
   return (
     <>
-      <Header />
       <main className="bg-white min-h-screen selection:bg-blue-100">
         {/* Breadcrumb */}
-        <div className="bg-slate-900 pt-28 pb-4 px-6">
+        <div className="site-dark pt-8 pb-4 px-6">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-2 text-sm text-slate-500">
-              <Link href="/resources" className="hover:text-amber-500 transition-colors">
+              <Link href="/resources" className="hover:text-[var(--site-gold)] transition-colors">
                 Resources
               </Link>
               <span>/</span>
-              <Link href="/resources/seo" className="hover:text-amber-500 transition-colors">
+              <Link href="/resources/seo" className="hover:text-[var(--site-gold)] transition-colors">
                 SEO
               </Link>
               <span>/</span>
@@ -39,7 +36,7 @@ export default function GoogleMapsGuide() {
         </div>
 
         {/* Hero Section */}
-        <header className="relative bg-slate-900 text-white py-16 px-6 overflow-hidden">
+        <header className="relative site-dark text-white py-16 px-6 overflow-hidden">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#4b5563_1px,transparent_1px)] [background-size:16px_16px]"></div>
           <div className="max-w-4xl mx-auto relative z-10 text-center">
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
@@ -328,7 +325,6 @@ export default function GoogleMapsGuide() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

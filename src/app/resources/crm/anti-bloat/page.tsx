@@ -1,7 +1,5 @@
 import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 
 export const metadata = pageMetadata('/resources/crm/anti-bloat', 'The Anti-Bloat Philosophy | PathSix Solutions', 'Why your CRM is costing you more than just subscription fees. The case for right-sized, purpose-built CRM solutions.')
 
@@ -28,17 +26,16 @@ const DatabaseIcon = () => (
 export default function AntiBloatArticle() {
   return (
     <>
-      <Header />
       <main className="bg-white min-h-screen selection:bg-blue-100">
         {/* Breadcrumb */}
-        <div className="bg-slate-900 pt-28 pb-4 px-6">
+        <div className="site-dark pt-8 pb-4 px-6">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-2 text-sm text-slate-500">
-              <Link href="/resources" className="hover:text-amber-500 transition-colors">
+              <Link href="/resources" className="hover:text-[var(--site-gold)] transition-colors">
                 Resources
               </Link>
               <span>/</span>
-              <Link href="/resources/crm" className="hover:text-amber-500 transition-colors">
+              <Link href="/resources/crm" className="hover:text-[var(--site-gold)] transition-colors">
                 CRM
               </Link>
               <span>/</span>
@@ -48,7 +45,7 @@ export default function AntiBloatArticle() {
         </div>
 
         {/* Hero Section */}
-        <header className="relative bg-slate-900 py-16 px-6 overflow-hidden">
+        <header className="relative site-dark py-16 px-6 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-blue-900/20 blur-3xl"></div>
             <div className="absolute bottom-0 left-0 h-[300px] w-[300px] rounded-full bg-slate-800/30 blur-3xl"></div>
@@ -247,7 +244,6 @@ export default function AntiBloatArticle() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   )
 }

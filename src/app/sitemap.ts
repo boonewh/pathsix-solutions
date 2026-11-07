@@ -8,7 +8,6 @@ const publishedPaths = [
   "/contact",
   "/crm",
   "/",
-  "/resources/build",
   "/resources/crm/anti-bloat",
   "/resources/crm",
   "/resources",

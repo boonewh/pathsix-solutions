@@ -1,7 +1,5 @@
 import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 
 export const metadata = pageMetadata('/resources/vibe/vibe-coding-trap', 'The "Vibe Coding" Trap | PathSix Solutions', 'When AI Prototypes Meet Real-World Production. From Vibe to Viable.')
 
@@ -22,17 +20,16 @@ const ScaleIcon = () => (
 export default function VibeCodingTrap() {
   return (
     <>
-      <Header />
       <main className="bg-white min-h-screen selection:bg-amber-100">
         {/* Breadcrumb */}
-        <div className="bg-slate-950 pt-28 pb-4 px-6">
+        <div className="site-dark pt-8 pb-4 px-6">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-2 text-sm text-slate-500">
-              <Link href="/resources" className="hover:text-amber-500 transition-colors">
+              <Link href="/resources" className="hover:text-[var(--site-gold)] transition-colors">
                 Resources
               </Link>
               <span>/</span>
-              <Link href="/resources/vibe" className="hover:text-amber-500 transition-colors">
+              <Link href="/resources/vibe" className="hover:text-[var(--site-gold)] transition-colors">
                 AI Resources
               </Link>
               <span>/</span>
@@ -42,7 +39,7 @@ export default function VibeCodingTrap() {
         </div>
 
         {/* Hero Section */}
-        <header className="relative bg-slate-950 text-white py-16 px-6 overflow-hidden border-b border-slate-800">
+        <header className="relative site-dark text-white py-16 px-6 overflow-hidden border-b border-slate-800">
           <div className="absolute inset-0 opacity-20"
                style={{ backgroundImage: 'linear-gradient(#334155 1px, transparent 1px), linear-gradient(90deg, #334155 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
           </div>
@@ -260,7 +257,6 @@ export default function VibeCodingTrap() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

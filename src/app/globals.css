@@ -205,6 +205,12 @@ body {
 .build-hero-photo { aspect-ratio: 4 / 3; border-radius: 2px; }
 .ai-horizon-banner img { object-position: 12% 62%; }
 .build-blueprint-banner img { object-position: 58% center; }
+.resource-card { --site-muted: #4d554e; color: var(--site-ink); transition: transform 200ms ease; }
+.resource-card:hover { transform: translateY(-3px); }
+.resource-card-text { color: #4d554e; }
+.resource-chip { @apply inline-flex min-h-10 items-center gap-2 rounded-full px-4 text-sm font-medium transition-colors; outline: 1px solid #fafaf74d; }
+.resource-chip:hover { outline-color: var(--site-gold); color: var(--site-gold); }
+.resource-chip-count { @apply rounded-full px-2 text-xs font-semibold; background: #fafaf71f; }
 .build-sign-text { color: #4d554e; }
 .build-project { --site-muted: #4d554e; color: var(--site-ink); }
 .build-project-muted { color: #4d554e; }
@@ -212,6 +218,7 @@ body {
 .build-chip { @apply rounded-full px-3 py-1 text-xs font-semibold; background: #ffffffb3; outline: 1px solid #20262126; }
 
 @media (prefers-reduced-motion: reduce) {
-  .site-project-shot img, .web-hero-card { transition: none; }
+  .site-project-shot img, .web-hero-card, .resource-card { transition: none; }
+  .resource-card:hover { transform: none; }
   .group:hover .site-project-shot img { transform: none; }
 }
