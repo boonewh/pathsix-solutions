@@ -188,6 +188,17 @@ body {
 .seo-secondary { @apply inline-flex min-h-14 items-center gap-6 rounded-sm px-6 py-4 font-semibold transition-colors; border: 1px solid var(--site-ink); }
 .seo-secondary:hover { background: var(--site-ink); color: var(--site-paper); }
 
+/* CRM page */
+.crm-shot { overflow: hidden; border-radius: 6px; background: #ffffff; box-shadow: 0 1px 2px #20262124, 0 18px 40px #2026212e; outline: 1px solid #2026211f; }
+.crm-shot-bar { display: flex; gap: 6px; align-items: center; height: 26px; padding: 0 12px; background: #eceee9; border-bottom: 1px solid #2026211a; }
+.crm-shot-bar span { width: 9px; height: 9px; border-radius: 9999px; background: #c9cdc5; }
+.crm-hero-shot { position: relative; z-index: 1; margin-bottom: -5rem; }
+.crm-hero-shot .crm-shot { box-shadow: 0 2px 6px #0000004d, 0 30px 60px #00000059; outline: 1px solid #fafaf72e; }
+.crm-promise > div { padding-top: calc(5rem + 1.5rem); }
+.crm-shot-frame { padding: 20px; }
+@media (min-width: 768px) { .crm-shot-frame { padding: 36px; } }
+.crm-pricing { --site-muted: #5b5a45; }
+
 @media (prefers-reduced-motion: reduce) {
   .site-project-shot img, .web-hero-card { transition: none; }
   .group:hover .site-project-shot img { transform: none; }
