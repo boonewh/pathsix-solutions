@@ -47,9 +47,8 @@ One single photograph, not a collage. Overhead view of a cluttered small-busines
 Blueprint band, public/images/build-blueprint-band.webp (Codex returned 2.33:1; shown in the standard photo band, phone crop centered on the sticky notes):
 One single photograph, not a collage. Overhead view of a clean wooden table at golden hour with sticky notes in orange, gold, cobalt and sage arranged in tidy workflow columns, a hand-drawn boxes-and-arrows diagram (no words), a pencil, coffee, reading glasses, and one hand placing a note. Content in the middle horizontal band. No readable words, logos, screens or watermark.
 
-AI Consulting photography (requested November 2026, to be generated in Codex)
-Hero (4:3), planned file public/images/ai-hero-roadmap.webp:
+AI Consulting photography (November 2026, generated in Codex)
+Hero (4:3), public/images/ai-hero-roadmap.webp:
 One single photograph, not a collage. A leadership team of three (mixed ages and backgrounds) at a whiteboard in a bright, warm meeting room at golden hour; the board shows a hand-drawn roadmap timeline with boxes, arrows and orange, gold, cobalt and sage sticky notes, no readable words. One person points to the far end of the timeline. Candid. No UI screens, robots, holograms, sci-fi, readable text, logos or watermark.
 Horizon band, public/images/ai-horizon-band.webp (Codex returned 2.33:1; phone crop keeps the person and the sunrise):
 One single photograph, not a collage. View from an upper-floor office window at sunrise over small Texas town rooftops with the same water tower on the horizon; a person's silhouette at far left holding a coffee mug, looking out. Calm, hopeful, forward-looking. Horizon and person in the middle band. No readable text, logos, screens, sci-fi or watermark.
-Until the hero photo arrives, the hero uses the Custom Apps blueprint image.

@@ -22,12 +22,9 @@ const jsonLd = {
   provider: { '@type': 'Organization', name: 'PathSix Solutions', url: 'https://www.pathsixsolutions.com' },
 }
 
-/**
- * Page photography (prompts in design/homepage-imagery.txt). The hero is a
- * stand-in until its commissioned photo arrives.
- */
+/** Page photography (prompts in design/homepage-imagery.txt). */
 const images = {
-  hero: { src: '/images/build-blueprint-band.webp', alt: 'Colored sticky notes arranged in tidy columns beside a hand-drawn workflow diagram.' },
+  hero: { src: '/images/ai-hero-roadmap.webp', alt: 'A team of three at a whiteboard roadmap in a sunlit meeting room, one person pointing to the final step.' },
   horizon: { src: '/images/ai-horizon-band.webp', alt: 'A person with a coffee mug looking out an office window at sunrise over small-town rooftops and a water tower.' },
 }
 
