@@ -20,12 +20,9 @@ const jsonLd = {
   description: 'Custom web applications and internal tools to replace spreadsheets and streamline operations.',
 }
 
-/**
- * Page photography (prompts in design/homepage-imagery.txt). The hero is a
- * stand-in until its commissioned photo arrives.
- */
+/** Page photography (prompts in design/homepage-imagery.txt). */
 const images = {
-  hero: { src: '/images/home-worktable-banner.webp', alt: 'Overhead view of a worktable with plans and colorful material samples.' },
+  hero: { src: '/images/build-hero-spreadsheets.webp', alt: 'A cluttered desk buried in highlighted spreadsheet printouts, sticky notes, a calculator, and coffee.' },
   blueprint: { src: '/images/build-blueprint-band.webp', alt: 'Colored sticky notes arranged in tidy columns beside a hand-drawn workflow diagram on a sunlit wooden table.' },
 }
 
