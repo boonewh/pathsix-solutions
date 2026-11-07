@@ -39,3 +39,11 @@ Hero, public/images/seo-hero-main-street.webp (Codex returned three variants in 
 Same small Texas town Main Street at golden hour, colorful awnings, water tower in the distance. A woman on the sidewalk at right looks up from her phone (screen facing away, not visible) toward a shop with an orange awning; the owner in an apron holds the door open with a welcoming smile. Candid. No readable words, logos, visible phone screen, map pins or graphics, or watermark.
 Map band, public/images/seo-map-table.webp (Codex returned a 6.7:1 strip; a thin white top border was trimmed and it is shown at its native shape, min 170px tall on phones):
 Overhead view of a folded paper road map of a small town on a weathered wooden table at golden hour, with orange, cobalt and golden push pins, black coffee, reading glasses, a pencil, a notebook with unreadable scribbles, and a face-down phone. Map and pins in the middle horizontal band. No readable words, street names, logos, screens, digital map graphics or watermark.
+
+Custom Apps (/build) photography (requested November 2026, to be generated in Codex)
+The old build_hero.jpg (a neon hologram dashboard with misspelled text) was removed.
+Hero (4:3), planned file public/images/build-hero-spreadsheets.webp:
+One single photograph, not a collage. Overhead view of a cluttered small-business desk at golden hour: printed spreadsheets (gridlines, no readable numbers or words) with yellow highlighter, orange and gold sticky notes, binder clips, a calculator with curling paper tape, black coffee, a pencil, the edge of a closed dark laptop. Overwhelmed but relatable. No readable text, logos, screens or watermark.
+Blueprint band, public/images/build-blueprint-band.webp (Codex returned 2.33:1; shown in the standard photo band, phone crop centered on the sticky notes):
+One single photograph, not a collage. Overhead view of a clean wooden table at golden hour with sticky notes in orange, gold, cobalt and sage arranged in tidy workflow columns, a hand-drawn boxes-and-arrows diagram (no words), a pencil, coffee, reading glasses, and one hand placing a note. Content in the middle horizontal band. No readable words, logos, screens or watermark.
+Until the hero photo arrives, the hero uses the homepage worktable image.

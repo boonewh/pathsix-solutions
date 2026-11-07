@@ -201,6 +201,15 @@ body {
 .crm-phone { position: absolute; right: -6px; bottom: -28px; width: 30%; max-width: 190px; overflow: hidden; border-radius: 20px; border: 5px solid #1b1f1c; background: #1b1f1c; box-shadow: 0 2px 6px #00000040, 0 24px 48px #2026214d; }
 @media (min-width: 768px) { .crm-phone { right: -18px; bottom: -40px; width: 24%; border-radius: 26px; border-width: 7px; } }
 
+/* Custom Apps page */
+.build-hero-photo { aspect-ratio: 4 / 3; border-radius: 2px; }
+.build-blueprint-banner img { object-position: 58% center; }
+.build-sign-text { color: #4d554e; }
+.build-project { --site-muted: #4d554e; color: var(--site-ink); }
+.build-project-muted { color: #4d554e; }
+.build-badge { @apply shrink-0 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em]; background: var(--site-ink); color: var(--site-paper); }
+.build-chip { @apply rounded-full px-3 py-1 text-xs font-semibold; background: #ffffffb3; outline: 1px solid #20262126; }
+
 @media (prefers-reduced-motion: reduce) {
   .site-project-shot img, .web-hero-card { transition: none; }
   .group:hover .site-project-shot img { transform: none; }
