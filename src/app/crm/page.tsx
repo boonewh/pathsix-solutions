@@ -31,10 +31,13 @@ const shots = {
   leads: { src: '/images/crm-leads.webp', width: 1900, height: 917, alt: 'PathSix CRM leads table with status, type, source, contact details, and owner.' },
   calendar: { src: '/images/crm-calendar.webp', width: 1917, height: 915, alt: 'PathSix CRM month calendar with color-coded follow-ups for accounts, leads, and projects.' },
   projects: { src: '/images/crm-projects.webp', width: 1916, height: 893, alt: 'PathSix CRM projects table with status, type, value, and linked account.' },
+  calendarMobile: { src: '/images/crm-calendar-mobile.webp', width: 355, height: 710, alt: 'PathSix CRM calendar in list view on a phone.' },
   reports: { src: '/images/crm-reports.webp', width: 1901, height: 913, alt: 'PathSix CRM reports page showing sales team activity by salesperson.' },
 }
 
-const features = [
+type Shot = { src: string; width: number; height: number; alt: string }
+
+const features: { eyebrow: string; title: string; description: string; shot: Shot; phone?: Shot; tint: string }[] = [
   {
     eyebrow: 'Lead management',
     title: 'Know exactly who needs a follow-up.',
@@ -47,6 +50,7 @@ const features = [
     title: 'Every follow-up on one calendar.',
     description: 'Accounts, leads, and projects, color-coded on a month, week, day, or list view. See what is overdue, what is due today, and what is coming up.',
     shot: shots.calendar,
+    phone: shots.calendarMobile,
     tint: 'butter',
   },
   {
@@ -76,7 +80,7 @@ function Arrow({ direction = 'up-right' }: { direction?: 'up-right' | 'down' }) 
   return <span aria-hidden="true" className="site-arrow">{direction === 'down' ? '↓' : '↗'}</span>
 }
 
-function Screenshot({ shot, priority = false, sizes }: { shot: typeof shots.dashboard; priority?: boolean; sizes: string }) {
+function Screenshot({ shot, priority = false, sizes }: { shot: Shot; priority?: boolean; sizes: string }) {
   return (
     <figure className="crm-shot">
       <div className="crm-shot-bar" aria-hidden="true"><span /><span /><span /></div>
@@ -146,7 +150,14 @@ export default function CRMPage() {
                     <p className="site-muted max-w-[44ch] text-pretty text-lg">{feature.description}</p>
                   </div>
                   <div className={'crm-shot-frame site-tint-' + feature.tint + ' ' + (index % 2 === 1 ? 'lg:order-1' : '')}>
-                    <Screenshot shot={feature.shot} sizes="(min-width: 1024px) 60vw, 92vw" />
+                    <div className="relative">
+                      <Screenshot shot={feature.shot} sizes="(min-width: 1024px) 60vw, 92vw" />
+                      {feature.phone && (
+                        <figure className="crm-phone">
+                          <Image src={feature.phone.src} alt={feature.phone.alt} width={feature.phone.width} height={feature.phone.height} sizes="(min-width: 1024px) 180px, 30vw" className="block h-auto w-full" />
+                        </figure>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}

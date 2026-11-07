@@ -198,6 +198,8 @@ body {
 .crm-shot-frame { padding: 20px; }
 @media (min-width: 768px) { .crm-shot-frame { padding: 36px; } }
 .crm-pricing { --site-muted: #5b5a45; }
+.crm-phone { position: absolute; right: -6px; bottom: -28px; width: 30%; max-width: 190px; overflow: hidden; border-radius: 20px; border: 5px solid #1b1f1c; background: #1b1f1c; box-shadow: 0 2px 6px #00000040, 0 24px 48px #2026214d; }
+@media (min-width: 768px) { .crm-phone { right: -18px; bottom: -40px; width: 24%; border-radius: 26px; border-width: 7px; } }
 
 @media (prefers-reduced-motion: reduce) {
   .site-project-shot img, .web-hero-card { transition: none; }
