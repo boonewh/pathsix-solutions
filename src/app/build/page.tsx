@@ -21,12 +21,12 @@ const jsonLd = {
 }
 
 /**
- * Page photography. The hero is a stand-in and the blueprint band stays hidden
- * until the commissioned photos exist (prompts in design/homepage-imagery.txt).
+ * Page photography (prompts in design/homepage-imagery.txt). The hero is a
+ * stand-in until its commissioned photo arrives.
  */
-const images: { hero: { src: string; alt: string }; blueprint: { src: string; alt: string } | null } = {
+const images = {
   hero: { src: '/images/home-worktable-banner.webp', alt: 'Overhead view of a worktable with plans and colorful material samples.' },
-  blueprint: null,
+  blueprint: { src: '/images/build-blueprint-band.webp', alt: 'Colored sticky notes arranged in tidy columns beside a hand-drawn workflow diagram on a sunlit wooden table.' },
 }
 
 const signs = [
@@ -203,11 +203,9 @@ export default function BuildPage() {
           </div>
         </section>
 
-        {images.blueprint && (
-          <div className="site-banner relative overflow-hidden">
-            <Image src={images.blueprint.src} alt={images.blueprint.alt} fill sizes="100vw" className="object-cover" />
-          </div>
-        )}
+        <div className="site-banner build-blueprint-banner relative overflow-hidden">
+          <Image src={images.blueprint.src} alt={images.blueprint.alt} fill sizes="100vw" className="object-cover" />
+        </div>
 
         <section id="process" className="scroll-mt-8 py-20 md:py-28">
           <div className="site-container">

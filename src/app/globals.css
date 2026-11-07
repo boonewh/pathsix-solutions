@@ -203,6 +203,7 @@ body {
 
 /* Custom Apps page */
 .build-hero-photo { aspect-ratio: 4 / 3; border-radius: 2px; }
+.build-blueprint-banner img { object-position: 58% center; }
 .build-sign-text { color: #4d554e; }
 .build-project { --site-muted: #4d554e; color: var(--site-ink); }
 .build-project-muted { color: #4d554e; }
