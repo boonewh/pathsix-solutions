@@ -27,30 +27,30 @@ This is the complete PathSix Solutions unified platform, built with Next.js 16, 
 src/
 ├── app/                     # Next.js App Router
 │   ├── layout.tsx          # Root layout with metadata
-│   ├── page.tsx            # Main ecosystem hub page
+│   ├── page.tsx            # Homepage (hero video)
+│   ├── not-found.tsx       # Branded 404 page
 │   ├── web-design/         # Web Design service page
-│   │   └── page.tsx
-│   ├── seo/                # SEO/Growth service page
-│   │   └── page.tsx
-│   ├── crm/                # CRM service page
-│   │   └── page.tsx
-│   ├── build/              # Custom Development service page
-│   │   └── page.tsx
-│   ├── vibe/               # AI Deployment service page
-│   │   └── page.tsx
-│   ├── globals.css         # Global Tailwind styles
+│   ├── seo/                # SEO / local search service page
+│   ├── crm/                # PathSix CRM page
+│   ├── build/              # Custom Apps service page
+│   ├── ai-consulting/      # AI Consulting service page
+│   ├── contact/            # Contact form
+│   ├── resources/          # Guides hub, topic pages and articles
+│   ├── globals.css         # Tailwind plus the shared site-* design styles
 │   ├── sitemap.ts          # Auto-generated sitemap
 │   └── robots.ts           # Robots.txt configuration
-└── components/             # Shared components
-    ├── Header.tsx          # Main navigation (used on homepage)
-    └── Footer.tsx          # Shared footer (all pages)
+├── components/
+│   ├── SiteChrome.tsx      # Shared header and footer
+│   ├── HeroMedia.tsx       # Homepage hero video with image fallback
+│   ├── ResourceList.tsx    # Article cards
+│   └── ResourceTopicPage.tsx
+└── lib/
+    ├── metadata.ts         # Page metadata helper
+    └── resources.ts        # Published articles, grouped by topic
 public/
-├── favicon.svg             # Custom P6 favicon
-└── images/                 # Service images and assets
-    ├── solutions_hero.jpg  # Main page hero
-    ├── web_hero.jpg        # Web design page hero
-    ├── seo-map.jpg         # SEO page map visual
-    └── dashboard.jpg       # CRM dashboard mockup
+├── fonts/                  # Inter variable font
+├── images/                 # Page photography and CRM screenshots
+└── videos/                 # Homepage hero video
 ```
 
 ## Getting Started
