@@ -13,7 +13,7 @@ export const resourceTopics: ResourceTopic[] = [
       { title: 'The Subscription Model: Treating Your Website as a Service', href: '/resources/web-design/subscription-model', excerpt: 'Why subscription-based web design fits the reality of maintaining a modern website, comparing upfront and ongoing costs.', readTime: '4 min read' },
       { title: 'How to Choose the Right Web Designer', href: '/resources/web-design/choosing-a-web-designer', excerpt: 'What to ask, and which red flags to watch for, when hiring a web designer.', readTime: '5 min read' },
       { title: 'Managed vs Traditional Hosting: What’s Best for Your Business?', href: '/resources/web-design/managed-vs-traditional-hosting', excerpt: 'How managed and traditional hosting differ, and how the choice affects your costs and your time.', readTime: '4 min read' },
-      { title: 'WordPress vs. Custom Software: Selecting the Right Foundation', href: '/resources/web-design/wordpress-vs-custom', excerpt: 'When a WordPress site makes sense, and when it’s worth investing in custom software.', readTime: '5 min read' },
+      { title: 'WordPress or Custom Code? Choosing the Right Foundation', href: '/resources/web-design/wordpress-vs-custom', excerpt: 'When each one fits, what to watch for, and why planning to take a site in-house usually points to WordPress.', readTime: '6 min read' },
     ],
   },
   {

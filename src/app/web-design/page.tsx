@@ -46,7 +46,7 @@ const inclusions = [
   { title: 'Good on every screen', description: 'Responsive layouts, clear navigation, and fast load times, so customers can explore on their phone or at their desk.' },
   { title: 'Hosting & domain management', description: 'Managed hosting, domain management, and an SSL certificate. The essentials are part of the service.' },
   { title: 'Content updates', description: 'New services, updated details, or fresh photos. Monthly content updates are handled within your service plan.' },
-  { title: 'Maintenance & security', description: 'Ongoing maintenance and security monitoring. No WordPress, no plugins, no headaches.' },
+  { title: 'Maintenance & security', description: 'Ongoing updates, backups and security monitoring, whether your site runs on WordPress or custom code.' },
   { title: 'A search-ready foundation', description: 'Page titles, descriptions, structured data, and sitemap preparation, with indexing support and attention to speed.' },
 ]
 
