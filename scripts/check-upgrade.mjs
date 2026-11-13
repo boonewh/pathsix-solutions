@@ -54,7 +54,7 @@ try {
   assert(ready, 'Production server ready')
   await check('20 public pages, metadata, sitemap, robots, links and legacy redirects', () => command('scripts/check-seo.mjs'))
   await check('six generated sharing images and one optimized local image', async () => {
-    for (const path of ['/opengraph-image', '/web-design/opengraph-image', '/seo/opengraph-image', '/crm/opengraph-image', '/build/opengraph-image', '/ai-consulting/opengraph-image', '/_next/image?url=%2Fimages%2Fsolutions_hero.jpg&w=640&q=75']) {
+    for (const path of ['/opengraph-image', '/web-design/opengraph-image', '/seo/opengraph-image', '/crm/opengraph-image', '/build/opengraph-image', '/ai-consulting/opengraph-image', '/_next/image?url=%2Fimages%2Fcrm-dashboard.webp&w=640&q=75']) {
       const response = await fetch(base + path, {signal: AbortSignal.timeout(30000)})
       assert.equal(response.status, 200, path)
       assert.match(response.headers.get('content-type') || '', /^image\//)
