@@ -1,7 +1,7 @@
 import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 
-export const metadata = pageMetadata('/resources/web-design/wordpress-vs-custom', 'Architectural Decision: WordPress vs. Custom Code | PathSix Solutions', 'A comparative analysis of WordPress CMS versus Custom Software Development. Understand when to choose managed hosting and when to invest in bespoke applications.')
+export const metadata = pageMetadata('/resources/web-design/wordpress-vs-custom', 'WordPress or Custom Code? Choosing the Right Foundation | PathSix Solutions', 'A practical comparison of WordPress and custom code. When each one fits, what to watch for, and why planning to take a site in-house usually points to WordPress.')
 
 export default function WordPressVsCustomArticle() {
   return (
@@ -19,7 +19,7 @@ export default function WordPressVsCustomArticle() {
                 Web Design
               </Link>
               <span>/</span>
-              <span className="text-[#bfc5bc]">WordPress vs. Custom Software</span>
+              <span className="text-[#bfc5bc]">WordPress or Custom Code?</span>
             </div>
           </div>
         </div>
@@ -32,7 +32,7 @@ export default function WordPressVsCustomArticle() {
             </p>
             <h1 className="text-3xl md:text-5xl font-semibold tracking-tight mb-6 leading-tight">
               Selecting the Right Foundation: <br />
-              <span className="text-[#f4c64f]">WordPress vs. Custom Software</span>
+              <span className="text-[#f4c64f]">WordPress or Custom Code?</span>
             </h1>
             <div className="flex flex-col items-center justify-center space-y-2 mt-8">
               <p className="text-lg font-medium text-[#e6e8e2]">
@@ -57,7 +57,7 @@ export default function WordPressVsCustomArticle() {
 
             <div className="bg-[#f3f1ea] border-l-4 border-[#fa7049] p-8 my-8 shadow-sm">
               <p className="text-lg text-[#202621] leading-relaxed">
-                This guide compares two approaches to building a website or application. PathSix builds custom websites and applications; the WordPress discussion explains an alternative rather than a managed WordPress offer.
+                PathSix builds both WordPress sites and custom code. Neither is the right answer for every project. This guide explains how we decide, based on who will run the site, how often it changes, and what it needs to do.
               </p>
             </div>
           </div>
@@ -94,13 +94,13 @@ export default function WordPressVsCustomArticle() {
                 <p className="text-[#59625a] leading-relaxed text-sm">
                   WordPress is the judicious choice when your primary goal is <strong>communication</strong>. If you need
                   to publish articles, manage a standard online store, or update team bios without calling a developer,
-                  a CMS is efficient.
+                  a CMS is efficient. Because so many developers know the platform, you are never dependent on a single provider.
                 </p>
               </div>
 
               {/* Hidden Costs */}
               <div className="bg-[#fafaf7] p-8 border-t-4 border-[#b9b5a8] shadow-sm">
-                <h3 className="text-lg font-semibold text-[#202621] mb-4 uppercase tracking-wide">The Hidden Costs</h3>
+                <h3 className="text-lg font-semibold text-[#202621] mb-4 uppercase tracking-wide">The Trade-offs</h3>
                 <ul className="space-y-4 text-sm text-[#59625a] leading-relaxed">
                   <li className="flex items-start">
                     <span className="text-[#b5452a] font-semibold mr-2">⚠</span>
@@ -118,7 +118,7 @@ export default function WordPressVsCustomArticle() {
             <div className="mt-8 bg-[#fbe3d8] p-6 rounded-sm border border-[#f3cdbb]">
               <h4 className="font-semibold text-[#202621] mb-2 text-sm uppercase">The PathSix Approach</h4>
               <p className="text-[#3d453e] text-sm leading-relaxed">
-                Our managed web-design service uses custom code. If you are comparing a WordPress provider, ask who maintains the platform, tests updates, manages backups, and handles support.
+                We build and maintain WordPress sites. It is our usual recommendation when you will edit the site yourself or expect to manage it in-house down the road. Either way, agree up front on who maintains the platform, tests updates, manages backups, and handles support.
               </p>
             </div>
           </div>
@@ -128,10 +128,10 @@ export default function WordPressVsCustomArticle() {
         <section className="py-20 px-6 bg-[#fafaf7]">
           <div className="max-w-5xl mx-auto">
             <div className="mb-12 max-w-3xl">
-              <h2 className="text-3xl font-semibold text-[#202621] mb-4">2. Custom Software: Precision Engineering</h2>
+              <h2 className="text-3xl font-semibold text-[#202621] mb-4">2. Custom Code: Built Around the Work</h2>
               <p className="text-[#59625a] leading-relaxed">
-                Custom development is the &quot;bespoke&quot; approach. We do not try to force a blogging platform to run your business logic.
-                Instead, we architect a solution specifically for your requirements.
+                Custom development is the &quot;bespoke&quot; approach. Rather than adapting an existing platform, we architect a solution
+                specifically for your requirements.
               </p>
             </div>
 
@@ -161,6 +161,21 @@ export default function WordPressVsCustomArticle() {
               </div>
             </div>
 
+            {/* Custom trade-offs */}
+            <div className="mt-8 bg-[#f3f1ea] p-8 border-t-4 border-[#b9b5a8]">
+              <h3 className="text-lg font-semibold text-[#202621] mb-4 uppercase tracking-wide">The Trade-offs</h3>
+              <ul className="space-y-4 text-sm text-[#59625a] leading-relaxed">
+                <li className="flex items-start">
+                  <span className="text-[#b5452a] font-semibold mr-2">⚠</span>
+                  <span><strong>Developer Dependency:</strong> Most changes require a developer who knows the codebase. That works well with an ongoing partner, and less well if you plan to take the site in-house.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#b5452a] font-semibold mr-2">⚠</span>
+                  <span><strong>Upfront Investment:</strong> Building from requirements takes more planning and development time than configuring an existing platform.</span>
+                </li>
+              </ul>
+            </div>
+
             {/* PathSix Approach Callout */}
             <div className="mt-8 bg-[#202621] p-6 rounded-sm text-white">
               <h4 className="font-semibold text-[#f4c64f] mb-2 text-sm uppercase">The PathSix Approach</h4>
@@ -171,7 +186,50 @@ export default function WordPressVsCustomArticle() {
           </div>
         </section>
 
-        {/* SECTION 3: COMPARATIVE ANALYSIS */}
+        {/* SECTION 3: THE HANDOVER QUESTION */}
+        <section className="py-20 px-6 bg-[#f3f1ea]">
+          <div className="max-w-5xl mx-auto">
+            <div className="mb-12 max-w-3xl">
+              <h2 className="text-3xl font-semibold text-[#202621] mb-4">3. The Handover Question</h2>
+              <p className="text-[#59625a] leading-relaxed">
+                Features and budget matter, but one question often settles the decision faster: <strong className="text-[#202621]">who will look after this site a year from now?</strong>
+              </p>
+            </div>
+
+            {/* Analogy Block */}
+            <div className="bg-[#fafaf7] p-8 border border-[#e4e1d6] shadow-sm mb-12 flex flex-col md:flex-row gap-6 items-start">
+              <div className="flex-shrink-0 bg-[#e4e1d6] text-[#59625a] font-semibold px-4 py-2 text-xs uppercase tracking-wide rounded">
+                The Analogy
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#202621] mb-2">The Truck Any Mechanic Can Service</h3>
+                <p className="text-[#59625a]">
+                  A common pickup can be repaired at almost any shop in town. A custom-built vehicle may outperform it, but only a few
+                  people know how it was put together. If you plan to hand over the keys, the common truck is the safer choice.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-[#fafaf7] p-8 border-t-4 border-[#fa7049] shadow-sm">
+                <h3 className="text-lg font-semibold text-[#202621] mb-4 uppercase tracking-wide">Taking It In-House</h3>
+                <p className="text-[#59625a] leading-relaxed text-sm">
+                  If you expect to move the site to your own team or another provider within a year or so, <strong>WordPress</strong> is usually
+                  the better foundation. Your staff can manage content without a developer, and the next provider can pick up where we left off.
+                </p>
+              </div>
+              <div className="bg-[#fafaf7] p-8 border-t-4 border-[#202621] shadow-sm">
+                <h3 className="text-lg font-semibold text-[#202621] mb-4 uppercase tracking-wide">An Ongoing Partner</h3>
+                <p className="text-[#59625a] leading-relaxed text-sm">
+                  If we will keep maintaining the site, or it needs functionality WordPress handles poorly, <strong>custom code</strong> keeps
+                  the system lean and built around your exact workflow.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 4: COMPARATIVE ANALYSIS */}
         <section className="bg-[#202621] text-white py-20 px-6">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-semibold mb-6">Comparative Analysis</h2>
@@ -214,7 +272,7 @@ export default function WordPressVsCustomArticle() {
                 <div>
                   <span className="block font-semibold text-white mb-2">WordPress</span>
                   <p className="text-sm text-[#bfc5bc] leading-relaxed">
-                    Generally cheaper to build upfront. However, long-term costs can rise due to premium plugin subscriptions, maintenance fees, and technical debt.
+                    Generally cheaper to build upfront, and often cheaper to maintain because so many developers know the platform. Long-term costs can still rise with premium plugin subscriptions and neglected updates.
                   </p>
                 </div>
                 <div>
@@ -233,10 +291,10 @@ export default function WordPressVsCustomArticle() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-semibold text-[#202621] mb-6">Recommendation</h2>
             <p className="text-lg text-[#59625a] mb-8 leading-relaxed">
-              A <strong className="text-[#202621]">CMS such as WordPress</strong> can suit teams that need to edit content themselves. <strong className="text-[#202621]">Custom websites and applications</strong> can suit a managed site or a specialized workflow. Choose based on your editing needs, features, support, and budget.
+              <strong className="text-[#202621]">WordPress</strong> suits teams that edit content themselves or plan to take the site in-house. <strong className="text-[#202621]">Custom code</strong> suits a site we will maintain together, or a specialized workflow that a CMS would strain to support. Choose based on your editing needs, features, long-term support, and budget.
             </p>
             <p className="text-lg text-[#59625a] mb-10 leading-relaxed">
-              PathSix provides custom web design and application development. Talk with us about your requirements so we can explain the options and agree on a suitable scope.
+              PathSix builds both. Tell us how you plan to run the site, and we will recommend the platform that fits your business, not the one we prefer.
             </p>
             <Link
               href="/contact"
